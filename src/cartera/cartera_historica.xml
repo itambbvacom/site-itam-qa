@@ -178,7 +178,7 @@
 
 				google.visualization.events.addListener(table, 'ready',
 					function(event) {
-						if ($("#table").height() >= 300) {
+						if ($("#table").height() >= 500) {
 							$("#headers_table").width($("#headers_table").width() - 3);
 						}
 						
@@ -231,7 +231,7 @@
 					</td>
 				</tr>
 			</table>
-			<div id="contenido_tabla" style="height:300px;overflow:hidden;position:relative;">
+			<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
 				<table width="100%">
 					<tr>
 						<td><div id="table"></div></td>
