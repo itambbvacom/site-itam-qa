@@ -233,7 +233,7 @@
     }
 }
                 </script>
-                <input type="button" value="press me" onclick="selectElementContents(document.getElementById('table'));"/>
+                <input type="button" value="press me" onclick="selectElementContents(document.getElementById('dashboard'));"/>
                 <div id="dashboard">
                         <table width="100%">
                                 <tr>
