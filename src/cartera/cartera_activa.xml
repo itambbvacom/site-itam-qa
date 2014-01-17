@@ -46,6 +46,13 @@
 					text-align: center;	
 					color: #000000;
 			}
+      .cell_warning_info_style {
+          height: 35px;
+					border-bottom: 1px solid #D9D9D9;
+					background-color: #FFD966;
+					text-align: center;	
+					color: #000000;
+      }
 			.cell_width_200 {
 					width: 200px;
 			}
@@ -79,7 +86,7 @@
 						  wheelSpeed: 20,
 						  wheelPropagation: false
 						});
-				var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dE9sRnJ1UTFrMmUyZUNVZUJCWnIxcWc&usp=drive_web#gid=0');
+				var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dGp4Q0dlSXh2X29qeVhJWm9ha2hDaEE&usp=drive_web#gid=0');
 				query.send(handleQueryResponse);
 				
 			}
@@ -176,19 +183,20 @@
 					data.setCell(row, column_fase, data.getValue(row, column_fase), data.getFormattedValue(row, column_fase), {'className': 'cell_style bold_style cell_width_120'});
 
 					stilo = 'cell_style bold_style cell_width_70';
-          if ((data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1 && data.getValue(row, column_finfase) < fecha_actual) {
-            stilo = 'cell_warning_style bold_style cell_width_70';
-          } else { 
+					if ((data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1 && data.getValue(row, column_finfase) < fecha_actual) {
+						stilo = 'cell_warning_style bold_style cell_width_70';
+					} else {
+ 
             if (data.getValue(row, column_finfase) >= fecha_actual
                 && ((((data.getValue(row, column_finfase)-fecha_actual)/1000)/60)/60)/24 <= 7) {
                   stilo = 'cell_warning_info_style bold_style cell_width_70';
-            }
+                }
    
           }
-          data.setCell(row, column_finfase, data.getValue(row, column_finfase), data.getFormattedValue(row, column_finfase), {'className': stilo});
-          data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'});
-                                        
-       }
+					data.setCell(row, column_finfase, data.getValue(row, column_finfase), data.getFormattedValue(row, column_finfase), {'className': stilo});
+					data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'});
+					
+				}
 				
 				var view = new google.visualization.DataView(data);
 				view.setColumns([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
@@ -199,9 +207,9 @@
 
 				google.visualization.events.addListener(table, 'ready',
 					function(event) {
-						if ($("#table").height() >= 500) {
-							$("#headers_table").width($("#headers_table").width() - 3);
-						}
+						//if ($("#table").height() >= 500) {
+							//$("#headers_table").width($("#headers_table").width() - 3);
+						//}
 						
 						$("#table table tbody tr:last-child td").each(function(index){
 							if ($("#w"+(index+1)).val() > $(this).width()) {
