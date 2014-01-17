@@ -59,22 +59,17 @@
                         }
                 </style>
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery-1.10.2.min.js"></script>
-                <link href="https://site-itam.googlecode.com/svn/trunk/lib/perfect-scrollbar.css" rel="stylesheet">
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.mousewheel.js"></script>
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/perfect-scrollbar.js"></script>
+                <script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-1.10.2.min.js"></script>
+                <link href="https://site-itam.googlecode.com/svn/branches/lib/perfect-scrollbar.css" rel="stylesheet">
+                <script src="https://site-itam.googlecode.com/svn/branches/lib/jquery.mousewheel.js"></script>
+                <script src="https://site-itam.googlecode.com/svn/branches/lib/perfect-scrollbar.js"></script>
                 <script type="text/javascript">
                         google.load('visualization', '1.1', {packages: ['controls','table']});
                         google.setOnLoadCallback(draw);
 
                         function draw() {
-                                $('#contenido_tabla').perfectScrollbar({
-                                                  wheelSpeed: 20,
-                                                  wheelPropagation: false
-                                                });
                                 var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dDFpLXpZc1g1RkJ4THRMdUc2M3JPYXc&usp=drive_web#gid=0');
                                 query.send(handleQueryResponse);
-                                
                         }
                         
                         function handleQueryResponse(response) {
@@ -130,6 +125,21 @@
                                                                                                                 }
                                                                                 }
                                                                         });
+								var category_area = new google.visualization.ControlWrapper({
+                                                                                'controlType': 'CategoryFilter',
+                                                                                'containerId': 'filtro4',
+                                                                                'options': {
+                                                                                                'filterColumnLabel': 'ÁREA',
+                                                                                                                'ui': {
+                                                                                                                                'labelSeparator' : '',
+                                                                                                                                'label' : '',
+                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'allowMultiple': true,
+                                                                                                                                'allowTyping': false,
+                                                                                                                                'selectedValuesLayout': 'aside'
+                                                                                                                }
+                                                                                }
+                                                                        });
                                 
                                 var cssClassNames = {
                                         'headerRow': 'header_hide_style',
@@ -157,15 +167,20 @@
                                 var column_fase = 7;
                                 var column_finfase = 8;
                                 var column_area = 11;
-                                
+                                var cadena_format;
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
+										cadena_format = data.getValue(row, column_estado);
+										cadena_format = cadena_format.substring(2);
+										cadena_format = cadena_format.trim();
                                         data.setCell(row, column_nombre, data.getValue(row, column_nombre), data.getFormattedValue(row, column_nombre), {'className': 'cell_left_style'});
                                         data.setCell(row, column_anio, data.getValue(row, column_anio), data.getFormattedValue(row, column_anio), {'className': 'cell_style bold_style cell_width_60'});
                                         data.setCell(row, column_lider, data.getValue(row, column_lider), data.getFormattedValue(row, column_lider), {'className': 'cell_style cell_width_120'});
-                                        data.setCell(row, column_estado, data.getValue(row, column_estado), data.getFormattedValue(row, column_estado), {'className': 'cell_style bold_style cell_width_100'});
-                                        data.setCell(row, column_fase, data.getValue(row, column_fase), data.getFormattedValue(row, column_fase), {'className': 'cell_style bold_style cell_width_120'});
+                                        data.setCell(row, column_estado, data.getValue(row, column_estado), cadena_format, {'className': 'cell_style bold_style cell_width_100'});
+                                        cadena_format = data.getValue(row, column_fase);
+										cadena_format = cadena_format.substring(2);
+										cadena_format = cadena_format.trim();
+										data.setCell(row, column_fase, data.getValue(row, column_fase), cadena_format, {'className': 'cell_style bold_style cell_width_120'});
                                         data.setCell(row, column_finfase, data.getValue(row, column_finfase), data.getFormattedValue(row, column_finfase), {'className': 'cell_style bold_style cell_width_70'});
-                                        
                                         data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'});
                                 }
                                 
@@ -173,15 +188,15 @@
                                 view.setColumns([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
                                 
                                 new google.visualization.Dashboard(document.getElementById('dashboard')).
-                                                bind([category_anio, category_estado, category_fase], table).
+                                                bind([category_anio, category_estado, category_fase, category_area], table).
                                                 draw(view);
 
                                 google.visualization.events.addListener(table, 'ready',
                                         function(event) {
-                                                //if ($("#table").height() >= 500) {
-                                                        //$("#headers_table").width($("#headers_table").width() - 3);
-                                                //}
-                                                
+                                                $('#contenido_tabla').perfectScrollbar({
+                                                  wheelSpeed: 20,
+                                                  wheelPropagation: false
+                                                });
                                                 $("#table table tbody tr:last-child td").each(function(index){
                                                         if ($("#w"+(index+1)).val() > $(this).width()) {
                                                                 $(this).width($("#w"+(index+1)).val());
@@ -194,7 +209,6 @@
                                                 $("#table table tbody tr:last-child td").each(function(index){
                                                         $("#h"+(index+1)).width($(this).width());
                                                 });
-                                                $("#contenido_tabla").scrollTop(0);
                                                 
                                 });
                                 
@@ -205,14 +219,16 @@
                         <table width="100%">
                                 <tr>
                                         <td width="5%" height="50px" style="text-align:right;" class="filtros_style">Año:</td>
-                                        <td width="20%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
-                                        <td width="5%" height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
-                                        <td width="20%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
+                                        <td width="13%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
+										<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
+										<td width="20%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
                                         <td width="8%" height="50px" style="text-align:right;" class="filtros_style">Última Fase:</td>
-                                        <td width="42%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
+                                        <td width="20%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
+										<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Area:</td>
+                                        <td width="24%" height="50px" class="filtros_style"><div id="filtro4"></div></td>
                                 </tr>
                                 <tr>
-                                        <td colspan="6">
+                                        <td colspan="8">
                                                 <table id="headers_table"  width="100%" height="35px" class="filtros_style">
                                                         <tr>
                                                                 <td id="h1" class="header_style"><input id="w1" type="hidden" value="56"/>NOMBRE</td>
