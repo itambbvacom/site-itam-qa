@@ -218,7 +218,7 @@
 					}
 				});
 				
-				$('.pagination li a').css('background-image', 'url(https://code.google.com/p/site-itam/source/browse/branches/img/pagination.png)');
+				$('.pagination li a').css('background-image', 'url(https://site-itam.googlecode.com/svn/branches/img/pagination.png)');
 			}
 		</script>
 		<div id="slides">
@@ -337,10 +337,10 @@
 				</div>
 			</div>
 			<a href="#" class="prev">
-				<img src="https://code.google.com/p/site-itam/source/browse/branches/img/arrow-prev.png" width="24" height="43" alt="Arrow Prev">
+				<img src="https://site-itam.googlecode.com/svn/branches/img/arrow-prev.png" width="24" height="43" alt="Arrow Prev">
 			</a>
 			<a href="#" class="next">
-				<img src="https://code.google.com/p/site-itam/source/browse/branches/img/arrow-next.png" width="24" height="43" alt="Arrow Next">
+				<img src="https://site-itam.googlecode.com/svn/branches/img/arrow-next.png" width="24" height="43" alt="Arrow Next">
 			</a>
 		</div>
 	]]>
