@@ -147,7 +147,7 @@
 			google.setOnLoadCallback(draw);
 			
 			function draw() {
-				var query = new google.visualization.Query('https://docs.google.com/spreadsheet/ccc?key=0AlJUz7_jawnXdHNXMldoRk82OFZJb0F2eXZ0U3NWWmc&usp=drive_web#gid=0');
+				var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dGZSQVkxNndLY1BLclV1akxMSUtGS3c&usp=drive_web#gid=0');
 				query.send(handleQueryResponse);
 			}
 			
