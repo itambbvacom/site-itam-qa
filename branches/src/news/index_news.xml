@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="Slides Noticia" /> 
+  <Content type="html">
+	<![CDATA[
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<style>
+			body {
+				font: normal 62.5%/1.5 Arial, sans-serif;
+				letter-spacing: 0;
+				background-color: #ffffff;
+				height: 300px;
+				padding: 0;
+				margin: 0;
+			}	 
+			/*
+				Slideshow
+			*/
+			#slides {
+				z-index: 100;
+			}
+			/*
+				Slides container
+				Important:
+				Set the width of your slides container
+				Set to display none, prevents content flash
+			*/
+			.slides_container {
+				width: 600px;
+				height: 300px;
+				overflow: hidden;
+				display: none;
+				margin: 0 auto;
+			}
+				 
+			/*
+				Each slide
+				Important:
+				Set the width of your slides
+				If height not specified height will be set by the slide content
+				Set to display block
+			*/
+			.slides_container div.slide {
+				width: 600px;
+				display: block;
+				height: 300px;
+			}
+			
+			/*
+				Next/prev buttons
+			*/
+			#slides .next,#slides .prev {
+				position: absolute;
+				top: 160px;
+				left: 60px;
+				width: 24px;
+				height: 43px;
+				display: block;
+				z-index: 101;
+				opacity: 0.5;
+			}	 
+			
+			#slides .next {
+				left: 540px;
+			}
+				 
+			/*
+				Pagination
+			*/
+			.pagination {
+				margin: 0px auto 0;
+				width: 100px;
+			}
+				 
+			.pagination li {
+				float: left;
+				margin: 0 1px;
+				list-style: none;
+			}
+				 
+			.pagination li a {
+				display: block;
+				width: 12px;
+				height: 0;
+				padding-top: 12px;
+				background-position: 0 0;
+				float: left;
+				overflow: hidden;
+			}
+				 
+			.pagination li.current a {
+				background-position: 0 -12px;
+			}
+				 
+			/*
+				Caption
+			*/
+			.caption {
+				z-index: 500;
+				position: absolute;
+				left: 0;
+				bottom: 50px;
+				height: auto;
+				padding: 5px 20px 10 20px;
+				background: #000;
+				background: rgba(0, 0, 0, 0.5);
+				width: 930px;
+				line-height: 1.33;
+				color: #b0f0d8;
+				border-top: 1px solid #000;
+				text-shadow: none;
+				font: normal 16px arial, helvetica;
+			}
+				 
+			a:link,a:visited {
+				color: #599100;
+				text-decoration: none;
+			}
+				 
+			a:hover,a:active {
+				color: #599100;
+				text-decoration: underline;
+			}
+				 
+			span.newsTitle {
+				font-size: 18px;
+				text-transform: uppercase;
+				font-weight: bold;
+				border-bottom: 1px solid #b0f0d8;
+			}
+			#fondo {
+				float:left;
+				position:relative;
+			}
+			#fondo .informacion {
+				width:320px;
+				position:absolute;
+				top:10px;
+				left:14px;
+			}
+		</style>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-1.10.2.min.js"></script>
+		<script src="https://site-itam.googlecode.com/svn/branches/lib/slides.min.jquery.js"></script>
+		<script type="text/javascript">
+			google.load('visualization', '1.1', {packages: ['controls']});
+			google.setOnLoadCallback(draw);
+			
+			function draw() {
+				var query = new google.visualization.Query('https://docs.google.com/spreadsheet/ccc?key=0AlJUz7_jawnXdHNXMldoRk82OFZJb0F2eXZ0U3NWWmc&usp=drive_web#gid=0');
+				query.send(handleQueryResponse);
+			}
+			
+			function handleQueryResponse(response) {
+				if (response.isError()) {
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+				for (var row = 0; row < data.getNumberOfRows(); row++) {
+				
+					$('#f' + (row + 1)).text('Fecha: ' + data.getFormattedValue(row, 0));
+					$('#h' + (row + 1)).text(cut_text(data.getValue(row, 1), 43));
+					$('#c' + (row + 1)).text(cut_text(data.getValue(row, 2), 450));
+					$('#a' + (row + 1)).text('Autor: ' + data.getValue(row, 3));
+					$('#l' + (row + 1)).attr('href', data.getValue(row, 4));
+					//alert(row);
+				}
+				slide_news();
+			
+			}
+			
+			function cut_text(text, size) {
+				if (text.length > size) {
+				   text = text.substring(0, size);
+				   var index = text.lastIndexOf(' ');
+				   if (index != -1) {
+					   text = text.substring(0, (index + 1));
+				   }
+				   text = text.trim();
+				   text = text + '...';
+				}
+				
+				return text;
+			}
+			
+			function slide_news() {
+				$('#slides').slides({
+					preload : true,
+					preloadImage : 'https://site-itam.googlecode.com/svn/branches/img/loading.gif',
+					play : 7000, //7000
+					pause : 3500,//3500
+					hoverPause : true,
+					animationStart : function(current) {
+						$('.caption').animate({
+							bottom : -35
+						}, 100);
+						if (window.console && console.log) {
+							// example return of current slide number
+							console.log('animationStart on slide: ', current);
+						}
+						;
+					},
+					animationComplete : function(current) {
+						$('.caption').animate({
+							bottom : 0
+						}, 200);
+						if (window.console && console.log) {
+							// example return of current slide number
+							console.log('animationComplete on slide: ', current);
+						}
+						;
+					},
+					slidesLoaded : function() {
+						$('.caption').animate({
+							bottom : 0
+						}, 200);
+					}
+				});
+				
+				$('.pagination li a').css('background-image', 'url(https://code.google.com/p/site-itam/source/browse/branches/img/pagination.png)');
+			}
+		</script>
+		<div id="slides">
+			<div class="slides_container">
+				<div class="slide">
+					<table>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h4 id="f1" style="color:#094FA4;" align="right">A</h4></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450" style="border-bottom:2px solid #094FA4;"><h1 id="h1" style="color:#094FA4;">A</h1></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h3 id="c1" style="color:#094FA4;">A</h3></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450">
+								</br>
+								<h4 id="a1" style="color:#094FA4;height:3px;" align="center">A</h4>
+								<a id='l1' href='#' target='_blank'><h4 style="color:#094FA4;height:3px;" align="left">Leer mas...</h4></a>
+							</td>
+							<td width="50"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="slide">
+					<table>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h4 id="f2" style="color:#094FA4;" align="right">B</h4></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450" style="border-bottom:2px solid #094FA4;"><h1 id="h2" style="color:#094FA4;">B</h1></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h3 id="c2" style="color:#094FA4;">B</h3></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450">
+								</br>
+								<h4 id="a2" style="color:#094FA4;height:3px;" align="center">B</h4>
+								<a id='l2' href='#' target='_blank'><h4 style="color:#094FA4;height:3px;" align="left">Leer mas...</h4></a>
+							</td>
+							<td width="50"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="slide">
+					<table>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h4 id="f3" style="color:#094FA4;" align="right">C</h4></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450" style="border-bottom:2px solid #094FA4;"><h1 id="h3" style="color:#094FA4;">C</h1></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h3 id="c3" style="color:#094FA4;">C</h3></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450">
+								</br>
+								<h4 id="a3" style="color:#094FA4;height:3px;" align="center">C</h4>
+								<a id='l3' href='#' target='_blank'><h4 style="color:#094FA4;height:3px;" align="left">Leer mas...</h4></a>
+							</td>
+							<td width="50"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="slide">
+					<table>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h4 id="f4" style="color:#094FA4;" align="right">D</h4></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450" style="border-bottom:2px solid #094FA4;"><h1 id="h4" style="color:#094FA4;">D</h1></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450"><h3 id="c4" style="color:#094FA4;">D</h3></td>
+							<td width="50"></td>
+						</tr>
+						<tr>
+							<td width="50"></td>
+							<td width="450">
+								</br>
+								<h4 id="a4" style="color:#094FA4;height:3px;" align="center">D</h4>
+								<a id='l4' href='#' target='_blank'><h4 style="color:#094FA4;height:3px;" align="left">Leer mas...</h4></a>
+							</td>
+							<td width="50"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<a href="#" class="prev">
+				<img src="https://code.google.com/p/site-itam/source/browse/branches/img/arrow-prev.png" width="24" height="43" alt="Arrow Prev">
+			</a>
+			<a href="#" class="next">
+				<img src="https://code.google.com/p/site-itam/source/browse/branches/img/arrow-next.png" width="24" height="43" alt="Arrow Next">
+			</a>
+		</div>
+	]]>
+  </Content> 
+</Module>
