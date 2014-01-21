@@ -180,7 +180,7 @@
 			}
 		</script>
 		<div id="slides">
-			<div class="slides_container">
+			<div class="slides_container" style="margin:0px;">
 				<div class="slide">
 					<table>
 						<tr>
