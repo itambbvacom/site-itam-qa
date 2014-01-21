@@ -125,7 +125,7 @@
                         
                         function draw() {
                                 alert('a');
-                                alert($body.width());
+                                alert(document.body.clientWidth);
                                 
                                 var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dGZSQVkxNndLY1BLclV1akxMSUtGS3c&usp=drive_web#gid=0');
                                 query.send(handleQueryResponse);
