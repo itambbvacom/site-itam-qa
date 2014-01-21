@@ -3,7 +3,7 @@
   <ModulePrefs title="Slides Noticia" /> 
   <Content type="html">
 	<![CDATA[
-		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <style>
                         div {
                                 font-family: Arial, sans-serif;
@@ -23,7 +23,7 @@
                                 Set to display none, prevents content flash
                         */
                         .slides_container {
-                                width: 590px;
+                                width: 500px;
                                 height: 300px;
                                 overflow: hidden;
                                 display: none;
@@ -38,7 +38,7 @@
                                 Set to display block
                         */
                         .slides_container div.slide {
-                                width: 590px;
+                                width: 500px;
                                 display: block;
                                 height: 300px;
                         }
@@ -58,7 +58,7 @@
                         }        
                         
                         #slides .next {
-                                left: 585px;
+                                left: 510px;
                         }
                                  
                         /*
@@ -179,33 +179,33 @@
                                 $('.pagination li a').css('background-image', 'url(https://site-itam.googlecode.com/svn/branches/img/pagination.png)');
                         }
                 </script>
-                <div id="slides" style="width:590;border:2px solid #00FF00;">
+                <div id="slides" style="width:500;border:2px solid #00FF00;">
                         <div class="slides_container" style="margin:0px; border:2px solid #FF0000;">
                                 <div class="slide">
                                         <table style="border: 2px solid #0000FF;">
                                                 <tr>
-                                                        <td width="30"></td>
-                                                        <td width="550"><h6 id="f1" style="color:#094FA4;" align="right"></h6></td>
-                                                        <td width="5"></td>
+                                                        <td width="25"></td>
+                                                        <td width="450"><h6 id="f1" style="color:#094FA4;" align="right"></h6></td>
+                                                        <td width="10"></td>
                                                 </tr>
                                                 <tr>
-                                                        <td width="30"></td>
-                                                        <td width="550" style="border-bottom:2px solid #094FA4;"><h3 id="h1" style="color:#094FA4; margin-bottom:2px;"></h3></td>
-                                                        <td width="5"></td>
+                                                        <td width="25"></td>
+                                                        <td width="450" style="border-bottom:2px solid #094FA4;"><h3 id="h1" style="color:#094FA4; margin-bottom:2px;"></h3></td>
+                                                        <td width="10"></td>
                                                 </tr>
                                                 <tr>
-                                                        <td width="30"></td>
-                                                        <td width="550"><h5 id="c1" style="color:#094FA4;margin-top:2px;"></h5></td>
-                                                        <td width="5"></td>
+                                                        <td width="25"></td>
+                                                        <td width="450"><h5 id="c1" style="color:#094FA4;margin-top:2px;"></h5></td>
+                                                        <td width="10"></td>
                                                 </tr>
                                                 <tr>
-                                                        <td width="30"></td>
-                                                        <td width="550">
+                                                        <td width="25"></td>
+                                                        <td width="450">
                                                                 </br>
                                                                 <h6 id="a1" style="color:#094FA4;height:3px;" align="center"></h6>
                                                                 <a id='l1' href='#' target='_blank'><h6 style="color:#094FA4;height:3px;" align="left">Leer mas...</h6></a>
                                                         </td>
-                                                        <td width="5"></td>
+                                                        <td width="10"></td>
                                                 </tr>
                                         </table>
                                 </div>
