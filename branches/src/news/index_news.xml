@@ -125,7 +125,7 @@
                         
                         function draw() {
                                 alert('a');
-                                alert(document.body.clientWidth);
+                                alert($('#slides').width());
                                 
                                 var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dGZSQVkxNndLY1BLclV1akxMSUtGS3c&usp=drive_web#gid=0');
                                 query.send(handleQueryResponse);
@@ -182,7 +182,7 @@
                                 $('.pagination li a').css('background-image', 'url(https://site-itam.googlecode.com/svn/branches/img/pagination.png)');
                         }
                 </script>
-                <div id="slides" style="width:500;border:2px solid #00FF00;">
+                <div id="slides" style="border:2px solid #00FF00;">
                         <div class="slides_container" style="margin:0px; border:2px solid #FF0000;">
                                 <div class="slide">
                                         <table style="border: 2px solid #0000FF;">
