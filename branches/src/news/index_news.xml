@@ -184,22 +184,22 @@
                                 <div class="slide">
                                         <table style="border: 2px solid #0000FF;">
                                                 <tr>
-                                                        <td width="15"></td>
+                                                        <td width="30"></td>
                                                         <td width="550"><h6 id="f1" style="color:#094FA4;" align="right"></h6></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
-                                                        <td width="15"></td>
+                                                        <td width="30"></td>
                                                         <td width="550" style="border-bottom:2px solid #094FA4;"><h3 id="h1" style="color:#094FA4; margin-bottom:2px;"></h3></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
-                                                        <td width="15"></td>
+                                                        <td width="30"></td>
                                                         <td width="550"><h5 id="c1" style="color:#094FA4;margin-top:2px;"></h5></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
-                                                        <td width="15"></td>
+                                                        <td width="30"></td>
                                                         <td width="550">
                                                                 </br>
                                                                 <h6 id="a1" style="color:#094FA4;height:3px;" align="center"></h6>
