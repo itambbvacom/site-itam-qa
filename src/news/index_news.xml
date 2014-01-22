@@ -124,9 +124,9 @@
                         function draw() {
 								var w = $('#slides').width();
 								$('.slides_container div.slide').width(w);
-								$('.contenido').width(w*0.60);
+								$('.contenido').width(w*0.90);
 								
-								w = $('.slide').width() - ((w*0.60) + 10);
+								w = $('.slide').width() - ((w*0.90) + 10);
 								w = w/2;
 								w = w - 20;
 								$('#slides .prev').css('left', w);
@@ -145,7 +145,7 @@
                         
                                 var data = response.getDataTable();
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
-                                        $('#f' + (row + 1)).text('Fecha1: ' + data.getFormattedValue(row, 0));
+                                        $('#f' + (row + 1)).text('Fecha2: ' + data.getFormattedValue(row, 0));
                                         $('#h' + (row + 1)).text(cut_text(data.getValue(row, 1), 43));
                                         $('#c' + (row + 1)).text(cut_text(data.getValue(row, 2), 650));
                                         $('#a' + (row + 1)).text('Autor: ' + data.getValue(row, 3));
