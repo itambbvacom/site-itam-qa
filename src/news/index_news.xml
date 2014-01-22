@@ -124,9 +124,9 @@
                         function draw() {
 								var w = $('#slides').width();
 								$('.slides_container div.slide').width(w);
-								$('.contenido').width(w*0.95);
+								$('.contenido').width(w*0.90);
 								
-								w = $('.slide').width() - ((w*0.95) + 10);
+								w = $('.slide').width() - ((w*0.90) + 10);
 								w = w/2;
 								w = w - 20;
 								$('#slides .prev').css('left', w);
