@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-  <ModulePrefs title="cartera_historica.xml" /> 
+  <ModulePrefs title="Slides Noticia" /> 
   <Content type="html">
-        <![CDATA[
+	<![CDATA[
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <style>
                         .header_hide_style {
@@ -86,7 +86,7 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
@@ -102,7 +102,7 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
@@ -118,14 +118,14 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
                                                                                                                 }
                                                                                 }
                                                                         });
-								var category_area = new google.visualization.ControlWrapper({
+                                                                var category_area = new google.visualization.ControlWrapper({
                                                                                 'controlType': 'CategoryFilter',
                                                                                 'containerId': 'filtro4',
                                                                                 'options': {
@@ -133,7 +133,7 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
@@ -169,17 +169,17 @@
                                 var column_area = 11;
                                 var cadena_format;
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
-										cadena_format = data.getValue(row, column_estado);
-										cadena_format = cadena_format.substring(2);
-										cadena_format = cadena_format.trim();
+                                                                                cadena_format = data.getValue(row, column_estado);
+                                                                                cadena_format = cadena_format.substring(2);
+                                                                                cadena_format = cadena_format.trim();
                                         data.setCell(row, column_nombre, data.getValue(row, column_nombre), data.getFormattedValue(row, column_nombre), {'className': 'cell_left_style'});
                                         data.setCell(row, column_anio, data.getValue(row, column_anio), data.getFormattedValue(row, column_anio), {'className': 'cell_style bold_style cell_width_60'});
                                         data.setCell(row, column_lider, data.getValue(row, column_lider), data.getFormattedValue(row, column_lider), {'className': 'cell_style cell_width_120'});
                                         data.setCell(row, column_estado, data.getValue(row, column_estado), cadena_format, {'className': 'cell_style bold_style cell_width_100'});
                                         cadena_format = data.getValue(row, column_fase);
-										cadena_format = cadena_format.substring(2);
-										cadena_format = cadena_format.trim();
-										data.setCell(row, column_fase, data.getValue(row, column_fase), cadena_format, {'className': 'cell_style bold_style cell_width_120'});
+                                                                                cadena_format = cadena_format.substring(2);
+                                                                                cadena_format = cadena_format.trim();
+                                                                                data.setCell(row, column_fase, data.getValue(row, column_fase), cadena_format, {'className': 'cell_style bold_style cell_width_120'});
                                         data.setCell(row, column_finfase, data.getValue(row, column_finfase), data.getFormattedValue(row, column_finfase), {'className': 'cell_style bold_style cell_width_70'});
                                         data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'});
                                 }
@@ -213,10 +213,37 @@
                                 });
                                 
                         }
+						function seleccionar(el) {
+							var body = document.body, range, sel;
+							if (document.createRange && window.getSelection) {
+								range = document.createRange();
+								sel = window.getSelection();
+								sel.removeAllRanges();
+								try {
+									range.selectNodeContents(el);
+									sel.addRange(range);
+								} catch (e) {
+									range.selectNode(el);
+									sel.addRange(range);
+								}
+							} else if (body.createTextRange) {
+								range = body.createTextRange();
+								range.moveToElementText(el);
+								range.select();
+							}
+							var x = 2;
+						}
                  
                 </script>
                 <div id="dashboard">
                         <table width="100%">
+								<tr>
+                                        <td colspan="8" style="text-align:right;">
+											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
+													<img src="https://site-itam.googlecode.com/svn/branches/img/btnSelecciona.png">
+											</a>
+                                        </td>
+                                </tr>
                                 <tr>
                                         <td width="5%" height="50px" style="text-align:right;" class="filtros_style">Año:</td>
                                         <td width="13%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
@@ -229,6 +256,7 @@
                                 </tr>
                                 <tr>
                                         <td colspan="8">
+												<div id="select_table">
                                                 <table id="headers_table"  width="100%" height="35px" class="filtros_style">
                                                         <tr>
                                                                 <td id="h1" class="header_style"><input id="w1" type="hidden" value="56"/>NOMBRE</td>
@@ -244,17 +272,18 @@
                                                                 <td id="h11" class="header_style"><input id="w11" type="hidden" value="35"/>ÁREA</td>
                                                         </tr>
                                                 </table>
+												<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
+														<table width="100%">
+																<tr>
+																		<td><div id="table"></div></td>
+																</tr>
+														</table>
+												</div>
+												</div>
                                         </td>
                                 </tr>
                         </table>
-                        <div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
-                                <table width="100%">
-                                        <tr>
-                                                <td><div id="table"></div></td>
-                                        </tr>
-                                </table>
-                        </div>
                 </div>
-        ]]>
+	]]>
   </Content> 
 </Module>
