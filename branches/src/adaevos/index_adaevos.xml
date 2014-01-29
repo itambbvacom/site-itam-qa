@@ -91,7 +91,7 @@
                         google.setOnLoadCallback(draw);
 
                         function draw() {
-                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjOaof4bFUTmdFM4LWhjLWJxbjh5NFhld1k5VUtFdEE&usp=drive_web#gid=0');
+                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&usp=sharing#gid=10');
 
                                 query.send(handleQueryResponse);
                                 
@@ -233,7 +233,7 @@
 										data.setCell(row, column_estado, data.getValue(row, column_estado), cadena_format, {'className': 'cell_style bold_style cell_width_100'});
 										
 										cadena_format = data.getValue(row, column_fase);
-                                        cadena_format = cadena_format.substring(5);
+                                        cadena_format = cadena_format.substring(2);
                                         cadena_format = cadena_format.trim();
                                         data.setCell(row, column_fase, data.getValue(row, column_fase), cadena_format, {'className': 'cell_style bold_style cell_width_120'});
                                         
