@@ -11,7 +11,7 @@
     function init() {
       // Hit the server, passing in a signed request (and OpenSocial ID), to see if we know who the user is.
       osapi.http.get({
-        'href' : 'http://yourserver.com',
+        'href' : 'https://mail.google.com',
         'format' : 'json',
         'authz' : 'signed'
       }).execute(handleLoadResponse);
@@ -52,7 +52,7 @@
         // user closed the popup.
         if (popup.closed) {
           osapi.http.get({
-            'href' : 'http://yourserver.com',
+            'href' : 'https://mail.google.com',
             'format' : 'json',
             'authz' : 'signed'
           }).execute(handleLoadResponse);
