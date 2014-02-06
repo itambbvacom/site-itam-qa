@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
   <ModulePrefs title="index_adaevos.xml" /> 
-  <Require feature="opensocial-0.9"/>
   <Content type="html">
         <![CDATA[
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -86,13 +85,14 @@
                 <script src="https://site-itam.googlecode.com/svn/branches/lib/perfect-scrollbar.js"></script>
 				<link href="https://site-itam.googlecode.com/svn/branches/lib/colorbox.css" rel="stylesheet" />
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery.colorbox.js"></script>
+            <script type="text/javascript" src="https://script.google.com/a/macros/bbva.com/s/AKfycbwW7KNaNdRQME7l_1PPZX7jpTvaJeMOLmEPXzHBFOTomTuqK30/exec?prefix=alert"></script>
                 <script type="text/javascript">
 						
                         google.load('visualization', '1.1', {packages: ['controls','table']});
                         google.setOnLoadCallback(draw);
 
                         function draw() {
-                                var x = opensocial.Email.Field.ADDRESS;
+                  
                                 var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&usp=sharing#gid=10');
 
                                 query.send(handleQueryResponse);
