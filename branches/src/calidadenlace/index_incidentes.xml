@@ -4,6 +4,7 @@
   <Content type="html">
         <![CDATA[
 
+                
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <style>
                         .header_hide_style {
@@ -114,8 +115,6 @@
 
                         function draw() {
 								var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjEF14TbSVXedEpVaXR1YlNkaEZlVVNqN1BoaTJqT1E&usp=drive_web#gid=0');
-                                //var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dDBiSEdMb0V0ZElxVHd1d1g4REZrWXc&usp=drive_web#gid=0');
-
                                 query.send(handleQueryResponse);
                                 
                         }
@@ -209,12 +208,6 @@
 								var formatter_fecha_compromiso = new google.visualization.DateFormat({pattern: 'dd-MMM-yy'});
                                 formatter_fecha_compromiso.format(data, 5);
                                 
-								//var formatter_incidencia = new google.visualization.PatternFormat('<p>{6}</p>');
-                                //formatter_incidencia.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8], 6);
-								
-								//var formatter_comentario = new google.visualization.PatternFormat('<p>{7}</p>');
-                                //formatter_comentario.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8], 7);
-								
 								var column_reporto = 0;
 								var column_aplicativo = 1;
 								var column_area = 2;
@@ -222,26 +215,23 @@
 								var column_estatus = 4;
 								var column_fechacompromiso = 5;
 								var column_incidencia = 6;
-								var column_comentario = 8;
 								var column_responsable = 7;
-								/*
-							
-								var stilo;
-                                var fecha_actual = new Date();
-                                fecha_actual = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate());						
-								var cadena_format;
-                                */
-                                
+								var column_comentario = 8;
+								
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
-									data.setCell(row, column_reporto, data.getValue(row, column_reporto), data.getFormattedValue(row, column_reporto), {'className': 'cell_style'});
-									data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style bold_style'});
-									data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style bold_style'});
-									data.setCell(row, column_fechareporte, data.getValue(row, column_fechareporte), data.getFormattedValue(row, column_fechareporte), {'className': 'cell_style bold_style'});
-									data.setCell(row, column_incidencia, data.getValue(row, column_incidencia), data.getFormattedValue(row, column_incidencia), {'className': 'cell_style_justify cell_width_100'});
-									data.setCell(row, column_estatus, data.getValue(row, column_estatus), data.getFormattedValue(row, column_estatus), {'className': 'cell_style'});
-									data.setCell(row, column_fechacompromiso, data.getValue(row, column_fechacompromiso), data.getFormattedValue(row, column_fechacompromiso), {'className': 'cell_style bold_style'});
-									data.setCell(row, column_comentario, data.getValue(row, column_comentario), data.getFormattedValue(row, column_comentario), {'className': 'cell_style_justify cell_width_200'});
-									data.setCell(row, column_responsable, data.getValue(row, column_responsable), data.getFormattedValue(row, column_responsable), {'className': 'cell_style'});
+									data.setCell(row, column_reporto, data.getValue(row, column_reporto), data.getFormattedValue(row, column_reporto), {'className': 'cell_style cell_width_100'});
+									data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style bold_style cell_width_120'});
+									data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style bold_style cell_width_120'});
+									
+									data.setCell(row, column_fechareporte, data.getValue(row, column_fechareporte), data.getFormattedValue(row, column_fechareporte), {'className': 'cell_style bold_style cell_width_85'});
+									data.setCell(row, column_estatus, data.getValue(row, column_estatus), data.getFormattedValue(row, column_estatus), {'className': 'cell_style cell_width_60'});
+									data.setCell(row, column_fechacompromiso, data.getValue(row, column_fechacompromiso), data.getFormattedValue(row, column_fechacompromiso), {'className': 'cell_style bold_style cell_width_85'});
+									
+									data.setCell(row, column_incidencia, data.getValue(row, column_incidencia), data.getFormattedValue(row, column_incidencia), {'className': 'cell_style_justify'});
+									
+									data.setCell(row, column_responsable, data.getValue(row, column_responsable), data.getFormattedValue(row, column_responsable), {'className': 'cell_style cell_width_100'});
+									data.setCell(row, column_comentario, data.getValue(row, column_comentario), data.getFormattedValue(row, column_comentario), {'className': 'cell_style_justify'});
+									
                                 }
                                 
                                 var view = new google.visualization.DataView(data);
@@ -345,6 +335,7 @@
 					</table>
 					
                 </div>
+
        ]]>
   </Content> 
 </Module>
