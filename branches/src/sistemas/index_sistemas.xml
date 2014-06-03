@@ -7,10 +7,15 @@
 				<style>
 					body {
 						min-width: 520px;
-						font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+						font-family: Arial, sans-serif;
 						font-size: 62.5%;
 					}
-					tr.border_bottom td {
+					.cols {
+						min-width: 520px;
+						font-family: Arial, sans-serif;
+						font-size: 62.5%;
+					}
+					td.border_bottom {
 						border-bottom:1pt solid #3d85c6;
 					}
 					.column {
@@ -819,7 +824,7 @@
 					/* Component containers
 					----------------------------------*/
 					.ui-widget {
-						font-family: Verdana,Arial,sans-serif;
+						font-family: Arial, sans-serif;
 						font-size: 1.1em;
 					}
 					.ui-widget .ui-widget {
@@ -829,22 +834,23 @@
 					.ui-widget select,
 					.ui-widget textarea,
 					.ui-widget button {
-						font-family: Verdana,Arial,sans-serif;
+						font-family: Arial, sans-serif;
 						font-size: 1em;
 					}
 					.ui-widget-content {
-						border: 1px solid #aaaaaa;
-						background: #ffffff url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
-						color: #222222;
+						border: 1px solid #006EC1;
+						background: #FFFFFF url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+						color: #FFFFFF;
 					}
 					.ui-widget-content a {
 						color: #222222;
 					}
 					.ui-widget-header {
-						border: 1px solid #aaaaaa;
-						background: #cccccc url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
-						color: #222222;
+						border: 1px solid #006EC1;
+						background: #006EC1 url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+						color: #FFFFFF;
 						font-weight: bold;
+						font-size: 1.5em;
 					}
 					.ui-widget-header a {
 						color: #222222;
@@ -891,10 +897,11 @@
 					.ui-state-active,
 					.ui-widget-content .ui-state-active,
 					.ui-widget-header .ui-state-active {
-						border: 1px solid #aaaaaa;
+						border: 1px solid #006EC1;
 						background: #ffffff url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
-						font-weight: normal;
-						color: #212121;
+						font-weight: bold;
+						font-size: 1.5em;
+						color: #FFFFFF;
 					}
 					.ui-state-active a,
 					.ui-state-active a:link,
@@ -1236,7 +1243,7 @@
 						Change the following styles to modify the appearance of Colorbox.  They are
 						ordered & tabbed in a way that represents the nesting of the generated HTML.
 					*/
-					#cboxOverlay{background:#000;}
+					#cboxOverlay{background:#C3C3C3;}
 					#colorbox{outline:0;}
 					#cboxContent{margin-top:20px;background:#000;}
 					.cboxIframe{background:#fff;}
@@ -1260,13 +1267,79 @@
 					#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url('https://site-itam.googlecode.com/svn/branches/img/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
 					#cboxClose:hover{background-position:bottom center;}
 				/*****************************END COLORBOX*****************************************/
+				/*****************************TABS*****************************************/
+					#tabs {
+						overflow: hidden;
+						width: 100%;
+						margin: 0;
+						padding: 0;
+						list-style: none;
+					}
+					#tabs li {
+						float: left;
+						margin: 0 -15px 0 0;
+					}
+					#tabs a {
+						float: left;
+						position: relative;
+						padding: 0 40px;
+						height: 0;
+						line-height: 30px;
+						font-family: Arial, sans-serif;
+						font-size: 1.5em;
+						font-weight : bold;
+						/*text-transform: uppercase;*/
+						text-decoration: none;
+						color: #fff;
+						border-right: 30px solid transparent;
+						border-bottom: 30px solid #094FA4;
+						border-bottom-color: #777\9;
+						opacity: .3;
+						filter: alpha(opacity=30);
+					}
+					#tabs a:hover,  #tabs a:focus {
+						border-bottom-color: #2ac7e1;
+						opacity: 1;
+						filter: alpha(opacity=100);
+					}
+					#tabs a:focus {
+						outline: 0;
+					}
+					#tabs #current {
+						z-index: 3;
+						border-bottom-color: #094FA4;
+						opacity: 1;
+						filter: alpha(opacity=100);
+					}
+					/* ----------- */
+					#content {
+						background: #fff;
+						border-top: 2px solid #094FA4;
+						padding: 2em;/*height: 220px;*/
+					}
+					#content h2,  #content h3,  #content p {
+						margin: 0 0 15px 0;
+					}
+					/* Demo page only */
+					#about {
+						color: #999;
+						text-align: center;
+						font-family: Arial, sans-serif;
+						font-size: 1.5em;
+						font-weight : bold;
+						/*font: 0.9em Arial, Helvetica;*/
+					}
+					#about a {
+						color: #777;
+					}
+				/*****************************END TABS*****************************************/
 				</style>
 				<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-1.10.2.min.js"></script>
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-ui.js"></script>
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery.colorbox.js"></script>
 				<script type="text/javascript">
-					var data, dataManuals;
+					var data, dataManuals, count;
 					//columnas
 					var col_aplicativo = 0;
 					var col_funcionalidad = 1;
@@ -1292,6 +1365,11 @@
 					var col_recibe = 21;
 					var col_conexion = 22;
 					var col_observaciones = 23;
+					//
+					var myUrl = window.location.href; //get URL
+					var myUrlTab = myUrl.substring(myUrl.indexOf("#")); // For localhost/tabs.html#tab2, myUrlTab = #tab2     
+					var myUrlTabName = myUrlTab.substring(0,4);
+					//
 					if(typeof String.prototype.trim !== 'function') {
 					  String.prototype.trim = function() {
 						return this.replace(/^\s+|\s+$/g, ''); 
@@ -1344,7 +1422,8 @@
 							data_matrix.push(data_array);
 						}
 						
-						var html_text, count = 1;
+						var html_text;
+						count = 1;
 						var col1 = Math.round(total / 3);
 						var col2 = Math.round((total - col1)/ 2) + col1;
 						for (var i in data_matrix) {
@@ -1375,6 +1454,7 @@
 						}
 						makeportlets();
 						$(".inline").colorbox({inline:true, width:"70%", height:"95%"});
+						//tabs_load();
 					}
 					function makeportlets() {
 						$( ".column" ).sortable({
@@ -1399,6 +1479,9 @@
 						
 					}
 					function getData(elemento) {
+						$('#content-tab1').remove();
+						$('#content-tab2').remove();
+						$('#content-tab3').remove();
 						for (var row = 3; row < data.getNumberOfRows(); row++) {
 							if (elemento.text == data.getValue(row, col_aplicativo)) {
 								$("#id_aplicativo").text(data.getValue(row, col_aplicativo));
@@ -1446,6 +1529,7 @@
 						var html_mf = '';
 						var html_mt = '';
 						var html_faq = '';
+						
 						var countMF = 1, countMT = 1, countFAQ = 1;
 						for (var rowM = 1; rowM < dataManuals.getNumberOfRows(); rowM++) {
 							if (elemento.text == dataManuals.getValue(rowM, col_aplicativoM)) {
@@ -1472,64 +1556,123 @@
 								}
 							}
 						}
+						
 						if (html_mf.length > 0) {
-							$('#tabs-1').append('<table width="100%">' + html_mf + '</table>');
+							$('#tab1').append('<div id="content-tab1"><table width="100%">' + html_mf + '</table></div>');
 						}
 						if (html_mt.length > 0) {
-							$('#tabs-2').append('<table width="100%">' + html_mt + '</table>');
+							$('#tab2').append('<div id="content-tab2"><table width="100%">' + html_mt + '</table></div>');
 						}
 						if (html_faq.length > 0) {
-							$('#tabs-3').append(html_faq);
+							$('#tab3').append('<div id="content-tab3">' + html_faq + '</div>');
 						}
+					
 						$( "#accordion" ).accordion({
 						  heightStyle: "content"
 						});
+						tabs_load();
+					}
+					
+					function tabs_load() {
+						$("#content > div").hide(); 
+						$("#tabs li:first a").attr("id","current"); 
+						$("#content > div:first").fadeToggle(1000); 
 						
-						
-						$( "#tabs" ).tabs({
-						  event: "mouseover"
+						$("#tabs a").on("click",function(e) {
+							
+							e.preventDefault();
+							if ($(this).attr("id") == "current"){ 
+							 return       
+							}
+							else{             
+							resetTabs();
+							$(this).attr("id","current");
+							$($(this).attr('name')).fadeToggle(1000);
+							}
 						});
+					}
+					function resetTabs(){
+						$("#content > div").hide(); 
+						$("#tabs a").attr("id","");
+					}
+					function mostrarocultar() {
+						var cadena, indplus, indminus, countp = 0, countm = 0;
+						
+						for (var j = 0; j < count-1; j++) {
+							cadena = $(".portlet-toggle").eq(j)[0].className;
+							indplus = cadena.search("plusthick");
+							indminus = cadena.search("minusthick");
+							if (indplus != -1) {
+								countp++;
+							}
+							if (indminus != -1) {
+								countm++;
+							}
+						}
+						for (var j = 0; j < count-1; j++) {
+							cadena = $(".portlet-toggle").eq(j)[0].className;
+							indplus = cadena.search("plusthick");
+							indminus = cadena.search("minusthick");
+							if (countp > countm) {
+								if (indplus != -1)
+									$(".portlet-toggle").eq(j).trigger('click');
+							} else {
+								if (indminus != -1)
+									$(".portlet-toggle").eq(j).trigger('click');
+							}
+							
+						}
 						
 					}
 				</script>
+				<table width="100%">
+					<tr>
+						<td style="text-align:right;padding-right: 5px;">
+							<a href="#" onclick="mostrarocultar();">
+								<img src="https://site-itam.googlecode.com/svn/branches/img/btnMostrarOcultar.png">
+							</a>
+						</td>
+					</tr>
+				</table>
+				</br>
 				<div id="column1" class="column"></div>
 				<div id="column2" class="column"></div>
 				<div id="column3" class="column"></div>
-					
+				
 				<div style="display:none">
 					<div id="inline_content" style="padding:10px; background:#fff;">
-						<h1 id="id_aplicativo">Decalog</h1>
+						<h1 style="color:006EC1;"id="id_aplicativo">Titulo</h1>
 						
 						<div id="accordion">
 							<h3>Descripci&oacuten T&eacutecnica</h3>
 							<div>
 								<table width="100%">
-									<tr class="border_bottom">
-										<td width="25%">Funcionalidad</td>
-										<td id="id_funcionalidad"></td>
-									</tr>
-									<tr class="border_bottom">
-										<td width="25%">Equipo</td>
-										<td id="id_equipo"></td>
-									</tr>
-									<tr class="border_bottom">
-										<td width="25%">Herramienta Desarrollo</td>
-										<td id="id_herramienta"></td>
-									</tr>
-									<tr class="border_bottom">
-										<td width="25%">Base de Datos</td>
-										<td id="id_basedatos"></td>
-									</tr>
-									<tr class="border_bottom">
-										<td width="25%">Sistema Operativo</td>
-										<td id="id_sistema"></td>
-									</tr>
-									<tr class="border_bottom">
-										<td width="25%">Proveedor</td>
-										<td id="id_proveedor"></td>
+									<tr>
+										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Funcionalidad</td>
+										<td class="border_bottom" id="id_funcionalidad"></td>
 									</tr>
 									<tr>
-										<td width="25%"><input type="checkbox" id="id_global">Aplicativo Global</td>
+										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Equipo</td>
+										<td class="border_bottom" id="id_equipo"></td>
+									</tr>
+									<tr>
+										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Herramienta Desarrollo</td>
+										<td class="border_bottom" id="id_herramienta"></br></td>
+									</tr>
+									<tr>
+										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Base de Datos</td>
+										<td class="border_bottom" id="id_basedatos"></td>
+									</tr>
+									<tr>
+										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Sistema Operativo</td>
+										<td class="border_bottom" id="id_sistema"></td>
+									</tr>
+									<tr>
+										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Proveedor</td>
+										<td class="border_bottom" id="id_proveedor"></td>
+									</tr>
+									<tr>
+										<td width="30%"><input type="checkbox" id="id_global">Aplicativo Global</td>
 										<td></td>
 									</tr>
 								</table>
@@ -1595,19 +1738,16 @@
 								<p id="id_observaciones"></p>
 							</div>
 						</div>
-						
-						<div id="tabs">
-							<ul>
-								<li><a href="#tabs-1">Manuales Funcionales</a></li>
-								<li><a href="#tabs-2">Manuales T&eacutecnicos</a></li>
-								<li><a href="#tabs-3">FAQ</a></li>
-							</ul>
-							<div id="tabs-1">
-							</div>
-							<div id="tabs-2">
-							</div>
-							<div id="tabs-3">
-							</div>
+						</br>
+						<ul id="tabs">
+							<li><a href="#" name="#tab1">Manuales Funcionales</a></li>
+							<li><a href="#" name="#tab2">Manuales T&eacutecnicos</a></li>
+							<li><a href="#" name="#tab3" >FAQ</a></li>
+						</ul>
+						<div id="content">
+							<div id="tab1"><div id="content-tab1"></div></div>
+							<div id="tab2"><div id="content-tab2"></div></div>
+							<div id="tab3"><div id="content-tab3"></div></div>
 						</div>
 					</div>
 				</div>
