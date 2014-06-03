@@ -1570,6 +1570,7 @@
 						$( "#accordion" ).accordion({
 						  heightStyle: "content"
 						});
+						resetTabs();
 						tabs_load();
 					}
 					
