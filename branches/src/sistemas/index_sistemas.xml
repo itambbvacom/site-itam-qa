@@ -3,7 +3,7 @@
 	<ModulePrefs title="index_sistemas.xml" /> 
 	<Content type="html">
         <![CDATA[				
-				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style>
 					body {
 						min-width: 520px;
@@ -1248,7 +1248,7 @@
 					#cboxContent{margin-top:20px;background:#000;}
 					.cboxIframe{background:#fff;}
 					#cboxError{padding:50px; border:1px solid #ccc;}
-					#cboxLoadedContent{border:5px solid #000; background:#fff;}
+					#cboxLoadedContent{border:5px solid #fff; background:#fff;}
 					#cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
 					#cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
 					#cboxLoadingGraphic{background:url('https://site-itam.googlecode.com/svn/branches/img/loadingcbx.gif') no-repeat center center;}
@@ -1264,7 +1264,7 @@
 					#cboxPrevious:hover{background-position:bottom left;}
 					#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url('https://site-itam.googlecode.com/svn/branches/img/controlscbx.png') no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
 					#cboxNext:hover{background-position:bottom right;}
-					#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url('https://site-itam.googlecode.com/svn/branches/img/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+					#cboxClose{position:absolute; top:0px; right:97%; display:block; background:url('https://site-itam.googlecode.com/svn/branches/img/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
 					#cboxClose:hover{background-position:bottom center;}
 				/*****************************END COLORBOX*****************************************/
 				/*****************************TABS*****************************************/
@@ -1454,7 +1454,7 @@
 						}
 						makeportlets();
 						$(".inline").colorbox({inline:true, width:"70%", height:"100%"});
-						//tabs_load();
+						mostrarocultar();
 					}
 					function makeportlets() {
 						$( ".column" ).sortable({
