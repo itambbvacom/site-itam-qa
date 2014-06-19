@@ -1343,7 +1343,6 @@
 				<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-1.10.2.min.js"></script>
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-ui.js"></script>
-				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-ui-1.8.13.custom.min.js"></script>
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery.multi-accordion-1.5.3.js"></script>
 				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery.colorbox.js"></script>
 				<script type="text/javascript">
