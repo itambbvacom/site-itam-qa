@@ -4,7 +4,7 @@
 	<Content type="html">
         <![CDATA[				
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-				<!--style>
+				<style>
 					body {
 						min-width: 520px;
 						font-family: Arial, sans-serif;
@@ -1870,8 +1870,7 @@
 							<div id="tab4"><div id="content-tab4"></div></div>
 						</div>
 					</div>
-				</div-->
-				<iframe allowtransparency="true" id="player" scrolling="no" width="640" frameborder="0" src="https://uvue.de/ilemi1.php?vw=640&vh=480" height="500"></iframe>
-        ]]>
+				</div>
+				]]>
 	</Content> 
 </Module>
