@@ -1871,7 +1871,7 @@
 						</div>
 					</div>
 				</div-->
-				<iframe allowtransparency="true" id="player" scrolling="no" width="640" frameborder="0" src="http://uvue.de/ilemi1.php?vw=640&vh=480" height="500"></iframe>
+				<iframe allowtransparency="true" id="player" scrolling="no" width="640" frameborder="0" src="https://uvue.de/ilemi1.php?vw=640&vh=480" height="500"></iframe>
         ]]>
 	</Content> 
 </Module>
