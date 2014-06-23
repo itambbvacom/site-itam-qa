@@ -3,7 +3,7 @@
 	<ModulePrefs title="index_sistemas.xml" /> 
 	<Content type="html">
         <![CDATA[				
-				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+								<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style>
 					body {
 						min-width: 520px;
@@ -1251,7 +1251,7 @@
 					*/
 					#cboxOverlay{background:#C3C3C3;}
 					#colorbox{outline:0;}
-					#cboxContent{margin-top:20px;background:#000;}
+					#cboxContent{margin-top:20px;background:#C3C3C3;}
 					.cboxIframe{background:#fff;}
 					#cboxError{padding:50px; border:1px solid #ccc;}
 					#cboxLoadedContent{border:5px solid #fff; background:#fff;}
@@ -1477,7 +1477,7 @@
 							count++;
 						}
 						makeportlets();
-						$(".inline").colorbox({inline:true, width:"75%", height:"100%"});
+						$(".inline").colorbox({inline:true, width:"85%", height:"100%"});
 						mostrarocultar();
 					}
 					function makeportlets() {
@@ -1725,7 +1725,7 @@
 					<tr>
 						<td style="text-align:right;padding-right: 5px;">
 							<a href="#" onclick="mostrarocultar();">
-								<img src="https://site-itam.googlecode.com/svn/branches/img/btnMostrarOcultar.png">
+								<img src="https://site-itam.googlecode.com/svn/branches/img/btnMostrarOcultar2.png" width="10%">
 							</a>
 						</td>
 					</tr>
@@ -1739,7 +1739,7 @@
 					<div id="inline_content" style="padding:10px; background:#fff;">
 						<div align="right">
 							<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
-								<img src="https://site-itam.googlecode.com/svn/branches/img/btnMostrarOcultar.png" width="10%">
+								<img src="https://site-itam.googlecode.com/svn/branches/img/btnMostrarOcultar2.png" width="10%">
 							</a>
 						</div>
 						<h1 style="color:#006EC1;" id="id_aplicativo">Titulo</h1>
@@ -1751,7 +1751,7 @@
 						<div id="multiAccordion">
 							<h3 id="id_header01">Funcionalidad</h3>
 							<div id="id_content01">
-								<p id="id_funcionalidad"></p>
+								<p id="id_funcionalidad" style="font-weight:normal;font-size:1.3em;"></p>
 							</div>
 							<h3 id="id_header02">Negocio y Mercado</h3>
 							<div id="id_content02">
@@ -1854,9 +1854,11 @@
 								</table>
 							</div>
 						</div>
-						</br>
-						</br>
-						</br>
+						<table width="100%">
+							<tr>
+								<td height="30"></td>
+							</tr>
+						</table>
 						<ul id="tabs">
 							<li><a href="#" name="#tab1">Manuales Funcionales</a></li>
 							<li><a href="#" name="#tab2">Manuales T&eacutecnicos</a></li>
