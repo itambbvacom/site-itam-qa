@@ -1506,6 +1506,7 @@
 						$('#content-tab1').remove();
 						$('#content-tab2').remove();
 						$('#content-tab3').remove();
+						$('#content-tab4').remove();
 						row_selected = null;
 						for (var row = 3; row < data.getNumberOfRows(); row++) {
 							if (elemento.text == data.getValue(row, col_aplicativo)) {
@@ -1592,7 +1593,7 @@
 									html_rutas = html_rutas + '<h3 style="margin: 0;">' + dataManuals.getValue(rowM, col_tituloM) + '</h3><p>' + dataManuals.getValue(rowM, col_datoM) + '</p>';
 								}
 								if (dataManuals.getValue(rowM, col_clasificacionM) == "FAQ") {
-									html_faq = html_faq + '<h3>' + dataManuals.getValue(rowM, col_tituloM) + '</h3><p>' + dataManuals.getValue(rowM, col_datoM) + '</p>';
+									html_faq = html_faq + '<h3 style="margin: 0;">' + dataManuals.getValue(rowM, col_tituloM) + '</h3><p>' + dataManuals.getValue(rowM, col_datoM) + '</p>';
 								}
 							}
 						}
@@ -1686,18 +1687,18 @@
 					function load_data(tipo_data) {
 						if (tipo_data == 'PR') {
 							$("#id_qa").css("font-weight", "normal");
-							$("#id_qa").css("font-size", "1.3em");
+							$("#id_qa").css("font-size", "1.6em");
 							$("#id_pr").css("font-weight", "bold");
-							$("#id_pr").css("font-size", "1.5em");
+							$("#id_pr").css("font-size", "2em");
 							
 							$("#id_equipo").text(data.getValue(row_selected, col_equipo_pr) != null ? data.getValue(row_selected, col_equipo_pr) : '');
 							$("#id_basedatos").text(data.getValue(row_selected, col_basedatos_pr) != null ? data.getValue(row_selected, col_basedatos_pr) : '');
 							
 						} else {
 							$("#id_pr").css("font-weight", "normal");
-							$("#id_pr").css("font-size", "1.3em");
+							$("#id_pr").css("font-size", "1.6em");
 							$("#id_qa").css("font-weight", "bold");
-							$("#id_qa").css("font-size", "1.5em");
+							$("#id_qa").css("font-size", "2em");
 							
 							$("#id_equipo").text(data.getValue(row_selected, col_equipo_qa) != null ? data.getValue(row_selected, col_equipo_qa) : '');
 							$("#id_basedatos").text(data.getValue(row_selected, col_basedatos_qa) != null ? data.getValue(row_selected, col_basedatos_qa) : '');
@@ -1744,15 +1745,20 @@
 				
 				<div style="display:none">
 					<div id="inline_content" style="padding:10px; background:#fff;">
-						<h1 style="color:#006EC1;" id="id_aplicativo">Titulo</h1>
-						
-						<div align="right" style="color:#006EC1;font-size:1em;">
-							<a href="#" id="id_qa" onclick="load_data('QA')" style="font-weight:bold;font-size:1.2em;">QA</a>
-							<a href="#" id="id_pr" onclick="load_data('PR')" style="font-weight:normal;font-size:1em;">PR</a>
-						</div>
 						<table width="100%">
 							<tr>
-								<td height="5"></td>
+								<td width="50%" style="vertical-align:middle;">
+									<label style="color:#006EC1;font-size:2em;font-weight:bold;" id="id_aplicativo">Titulo</label>
+								</td>
+								<td width="50%">
+									<div align="right" style="color:#006EC1;">
+										<a href="#" id="id_qa" onclick="load_data('QA')" style="font-weight:bold;font-size:2em;">QA</a>
+										<a href="#" id="id_pr" onclick="load_data('PR')" style="font-weight:normal;font-size:1.6em;">PR</a>
+									</div>
+								</td>
+								<tr>
+									<td height="5"></td>
+								</tr>
 							</tr>
 						</table>
 						<div align="right">
