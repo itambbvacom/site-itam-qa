@@ -1750,7 +1750,11 @@
 							<a href="#" id="id_qa" onclick="load_data('QA')" style="font-weight:bold;font-size:1.2em;">QA</a>
 							<a href="#" id="id_pr" onclick="load_data('PR')" style="font-weight:normal;font-size:1em;">PR</a>
 						</div>
-						</br>
+						<table width="100%">
+							<tr>
+								<td height="5"></td>
+							</tr>
+						</table>
 						<div align="right">
 							<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
 								<img src="https://site-itam.googlecode.com/svn/branches/img/btnMostrarOcultar2.png" width="10%">
