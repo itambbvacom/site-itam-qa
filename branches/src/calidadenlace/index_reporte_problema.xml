@@ -356,13 +356,13 @@
                                     data.setCell(row, column_fechaalta, data.getValue(row, column_fechaalta), data.getFormattedValue(row, column_fechaalta), {'className': 'cell_style bold_style cell_width_60'});
                                     data.setCell(row, column_solucionador, data.getValue(row, column_solucionador), data.getFormattedValue(row, column_solucionador), {'className': 'cell_style cell_width_75'});
                                     
-									data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style bold_style cell_width_60'});
+									data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style cell_width_60'});
                                     data.setCell(row, column_estatus, data.getValue(row, column_estatus), data.getFormattedValue(row, column_estatus), {'className': 'cell_style bold_style cell_width_60'});
-									data.setCell(row, column_atendidopor, data.getValue(row, column_atendidopor), data.getFormattedValue(row, column_atendidopor), {'className': 'cell_style bold_style cell_width_75'});
+									data.setCell(row, column_atendidopor, data.getValue(row, column_atendidopor), data.getFormattedValue(row, column_atendidopor), {'className': 'cell_style cell_width_75'});
 									data.setCell(row, column_fechacompromiso, data.getValue(row, column_fechacompromiso), data.getFormattedValue(row, column_fechacompromiso), {'className': 'cell_style bold_style cell_width_60'});
 									data.setCell(row, column_fechacierre, data.getValue(row, column_fechacierre), data.getFormattedValue(row, column_fechacierre), {'className': 'cell_style bold_style cell_width_60'});
 									
-									data.setCell(row, column_severidad, data.getValue(row, column_severidad), data.getFormattedValue(row, column_severidad), {'className': 'cell_style bold_style cell_width_100'});
+									data.setCell(row, column_severidad, data.getValue(row, column_severidad), data.getFormattedValue(row, column_severidad), {'className': 'cell_style cell_width_100'});
 									
 									comentario = data.getValue(row, column_comentario);
 									if (comentario != null) {
