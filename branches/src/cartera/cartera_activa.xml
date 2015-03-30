@@ -471,7 +471,7 @@
                 <div id="dashboard">
 					<table width="100%">
 						<tr>
-							<td style="text-align:right;" class="filtros_style">Champion:</td>
+							<td style="text-align:right;" class="filtros_style">Champions:</td>
 							<td class="filtros_style"><div id="filtro1"></div></td>
 							<td style="text-align:right;" class="filtros_style">Líder:</td>
 							<td class="filtros_style"><div id="filtro2"></div></td>
