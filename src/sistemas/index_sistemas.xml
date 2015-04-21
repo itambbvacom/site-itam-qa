@@ -1396,8 +1396,9 @@
 					var col_riesgos = 38;
 					var col_ics = 39;
 					var col_back = 40;
-					var col_funcionalidades = 41;
-					var col_mapaintegracion = 42;
+					var col_control = 41;
+					var col_funcionalidades = 42;
+					var col_mapaintegracion = 43;
 					var html_gp = '';
 					//
 					var myUrl = window.location.href;
@@ -1570,6 +1571,7 @@
 								data.getValue(row, col_back) == 'SI' ? $("#id_back").attr('checked', true) : $("#id_back").attr('checked', false);
 								data.getValue(row, col_producto) == 'SI' ? $("#id_producto").attr('checked', true) : $("#id_producto").attr('checked', false);
 								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").attr('checked', true) : $("#id_ics").attr('checked', false);
+								data.getValue(row, col_control) == 'SI' ? $("#id_control").attr('checked', true) : $("#id_control").attr('checked', false);
 								
 								//DESCRIPCION TECNICA
 								$("#id_proveedor").text(data.getValue(row, col_proveedor) != null ? data.getValue(row, col_proveedor) : '');
@@ -1951,6 +1953,9 @@
 												</tr>
 												<tr>
 													<td><input type="checkbox" disabled="disabled" id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
 												</tr>
 											</table>
 										</td>
