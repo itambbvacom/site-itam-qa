@@ -159,7 +159,7 @@
 										html_content = html_content_temp.slice(0, index);
 										html_content = html_content + '</h5>';
 										html_content = html_content + html_content_temp.slice(index);
-										alert(html_content);
+
                                         $('#f' + (row + 1)).text('Fecha: ' + data.getFormattedValue(row, 0));
                                         $('#h' + (row + 1)).text(cut_text(data.getValue(row, 1), 43));
 										$('#c' + (row + 1)).append(html_content);
@@ -246,10 +246,12 @@
                 <div id="slides">
                         <div class="slides_container">
                                 <div class="slide">
+										<a id="l1" href="#" target="_blank">
                                         <table style="margin:auto;">
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido"><h6 id="f1" style="color:#094FA4;margin:10;" align="right"></h6></td>
+                                                        <td class="contenido"><h6 id="f1" style="color:#094FA4;margin:10;" align="right"></h6>
+																			  <h6 id="a1" style="color:#094FA4;margin:0;" align="right"></h6></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
@@ -259,10 +261,10 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c1"></div></td>
+                                                        <td class="contenido" height="180" style="vertical-align:top;"><div id="c1"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
-                                                <tr>
+                                                <!--tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
                                                                                                                                 </br>
@@ -270,14 +272,17 @@
                                                                 <a id="l1" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
                                                         <td width="5"></td>
-                                                </tr>
+                                                </tr-->
                                         </table>
+										</a>
                                 </div>
                                 <div class="slide">
+										<a id="l2" href="#" target="_blank">
                                         <table style="margin:auto;">
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido"><h6 id="f2" style="color:#094FA4;margin:10;" align="right"></h6></td>
+                                                        <td class="contenido"><h6 id="f2" style="color:#094FA4;margin:10;" align="right"></h6>
+																			  <h6 id="a2" style="color:#094FA4;margin:0;" align="right"></h6></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
@@ -287,10 +292,10 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c2"></div></td>
+                                                        <td class="contenido" height="180" style="vertical-align:top;"><div id="c2"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
-                                                <tr>
+                                                <!--tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
                                                                                                                                 </br>
@@ -298,14 +303,17 @@
                                                                 <a id="l2" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
                                                         <td width="5"></td>
-                                                </tr>
+                                                </tr-->
                                         </table>
+										</a>
                                 </div>
                                 <div class="slide">
+										<a id="l3" href="#" target="_blank">
                                         <table style="margin:auto;">
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido"><h6 id="f3" style="color:#094FA4;margin:10;" align="right"></h6></td>
+                                                        <td class="contenido"><h6 id="f3" style="color:#094FA4;margin:10;" align="right"></h6>
+																			  <h6 id="a3" style="color:#094FA4;margin:0;" align="right"></h6></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
@@ -315,10 +323,10 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c3"></div></td>
+                                                        <td class="contenido" height="180" style="vertical-align:top;"><div id="c3"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
-                                                <tr>
+                                                <!--tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
                                                                                                                                 </br>
@@ -326,14 +334,17 @@
                                                                 <a id="l3" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
                                                         <td width="5"></td>
-                                                </tr>
+                                                </tr-->
                                         </table>
+										</a>
                                 </div>
                                 <div class="slide">
+										<a id="l4" href="#" target="_blank">
                                         <table style="margin:auto;">
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido"><h6 id="f4" style="color:#094FA4;margin:10;" align="right"></h6></td>
+                                                        <td class="contenido"><h6 id="f4" style="color:#094FA4;margin:10;" align="right"></h6>
+																			  <h6 id="a4" style="color:#094FA4;margin:0;" align="right"></h6></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
@@ -343,10 +354,10 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c4"></div></td>
+                                                        <td class="contenido" height="180" style="vertical-align:top;"><div id="c4"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
-                                                <tr>
+                                                <!--tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
                                                                                                                                 </br>
@@ -354,8 +365,9 @@
                                                                 <a id="l4" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
                                                         <td width="5"></td>
-                                                </tr>
+                                                </tr-->
                                         </table>
+										</a>
                                 </div>
                         </div>
                         <a href="#" class="prev">
