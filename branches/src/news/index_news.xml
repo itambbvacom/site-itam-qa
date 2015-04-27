@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-  <ModulePrefs title="Slides Noticia" /> 
+  <ModulePrefs title="index_news.xml" /> 
   <Content type="html">
-	<![CDATA[
+        <![CDATA[
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <style>
                         div {
@@ -122,18 +122,18 @@
                         google.setOnLoadCallback(draw);
                         
                         function draw() {
-								var w = $('#slides').width();
-								$('.slides_container div.slide').width(w);
-								$('.contenido').width(w*0.85);
-								
-								w = $('.slide').width() - ((w*0.85) + 10);
-								w = w/2;
-								w = w - 20;
-								$('#slides .prev').css('left', w);
-								w = $('.slide').width() - w - 10;
-								$('#slides .next').css('left', w);
+                                                                var w = $('#slides').width();
+                                                                $('.slides_container div.slide').width(w);
+                                                                $('.contenido').width(w*0.85);
+                                                                
+                                                                w = $('.slide').width() - ((w*0.85) + 10);
+                                                                w = w/2;
+                                                                w = w - 20;
+                                                                $('#slides .prev').css('left', w);
+                                                                w = $('.slide').width() - w - 10;
+                                                                $('#slides .next').css('left', w);
 
-                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dGZSQVkxNndLY1BLclV1akxMSUtGS3c&usp=drive_web#gid=0');
+                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1nb9ogvBm4aA3n1bYwSszZ3EbjZu76QrkWudNJNIe7Ko&usp=drive_web#gid=0');
                                 query.send(handleQueryResponse);
                         }
                         
@@ -144,10 +144,25 @@
                                 }
                         
                                 var data = response.getDataTable();
+								var html_content, html_content_temp, index;
+								
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
+										html_content_temp = data.getValue(row, 2);
+										html_content_temp = removespansfonts(html_content_temp);
+										index = html_content_temp.indexOf('<td');
+										index = html_content_temp.indexOf('>', index);
+										html_content = html_content_temp.slice(0, index + 1);
+										html_content = html_content + '<h5 style="color:#094FA4;margin:0;">';
+										html_content = html_content + html_content_temp.slice(index + 1);
+										html_content_temp = html_content;
+										index = html_content_temp.lastIndexOf('</td>');
+										html_content = html_content_temp.slice(0, index);
+										html_content = html_content + '</h5>';
+										html_content = html_content + html_content_temp.slice(index);
+										alert(html_content);
                                         $('#f' + (row + 1)).text('Fecha: ' + data.getFormattedValue(row, 0));
                                         $('#h' + (row + 1)).text(cut_text(data.getValue(row, 1), 43));
-                                        $('#c' + (row + 1)).text(cut_text(data.getValue(row, 2), 650));
+										$('#c' + (row + 1)).append(html_content);
                                         $('#a' + (row + 1)).text('Autor: ' + data.getValue(row, 3));
                                         $('#l' + (row + 1)).attr('href', data.getValue(row, 4));
                                 }
@@ -155,7 +170,47 @@
                                 slide_news();
                         
                         }
-                        
+                        function removespansfonts(html_text) {
+							var index_class = html_text.indexOf("<span");
+							var html_res;
+							while (index_class != -1) {
+								html_res = html_text.slice(0, index_class);
+								index_class = html_text.indexOf(">", index_class + 5);
+								html_res =  html_res + html_text.slice(index_class + 1);
+								html_text = html_res;
+								index_class = html_text.indexOf("<span");
+							}
+							index_class = html_text.indexOf("</span");
+							while (index_class != -1) {
+								html_res = html_text.slice(0, index_class);
+								index_class = html_text.indexOf(">", index_class + 6);
+								html_res =  html_res + html_text.slice(index_class + 1);
+								html_text = html_res;
+								index_class = html_text.indexOf("</span");
+							}
+							
+							index_class = html_text.indexOf("<font");
+							while (index_class != -1) {
+								html_res = html_text.slice(0, index_class);
+								index_class = html_text.indexOf(">", index_class + 5);
+								html_res =  html_res + html_text.slice(index_class + 1);
+								html_text = html_res;
+								index_class = html_text.indexOf("<font");
+							}
+							
+							index_class = html_text.indexOf("</font");
+							while (index_class != -1) {
+								html_res = html_text.slice(0, index_class);
+								index_class = html_text.indexOf(">", index_class + 6);
+								html_res =  html_res + html_text.slice(index_class + 1);
+								html_text = html_res;
+								index_class = html_text.indexOf("</font");
+							}
+							//
+						
+							return html_text;
+							
+						}
                         function cut_text(text, size) {
                                 if (text.length > size) {
                                    text = text.substring(0, size);
@@ -204,13 +259,13 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><h5 id="c1" style="color:#094FA4;margin:0;"></h5></td>
+                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c1"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
-																</br>
+                                                                                                                                </br>
                                                                 <h6 id="a1" style="color:#094FA4;margin:0;" align="center"></h6>
                                                                 <a id="l1" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
@@ -232,13 +287,13 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><h5 id="c2" style="color:#094FA4;margin:0;"></h5></td>
+                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c2"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
-																</br>
+                                                                                                                                </br>
                                                                 <h6 id="a2" style="color:#094FA4;margin:0;" align="center"></h6>
                                                                 <a id="l2" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
@@ -260,13 +315,13 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><h5 id="c3" style="color:#094FA4;margin:0;"></h5></td>
+                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c3"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
-																</br>
+                                                                                                                                </br>
                                                                 <h6 id="a3" style="color:#094FA4;margin:0;" align="center"></h6>
                                                                 <a id="l3" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
@@ -288,13 +343,13 @@
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
-                                                        <td class="contenido" height="170" style="vertical-align:top;"><h5 id="c4" style="color:#094FA4;margin:0;"></h5></td>
+                                                        <td class="contenido" height="170" style="vertical-align:top;"><div id="c4"></div></td>
                                                         <td width="5"></td>
                                                 </tr>
                                                 <tr>
                                                         <td width="5"></td>
                                                         <td class="contenido">
-																</br>
+                                                                                                                                </br>
                                                                 <h6 id="a4" style="color:#094FA4;margin:0;" align="center"></h6>
                                                                 <a id="l4" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
@@ -311,6 +366,6 @@
                         </a>
                 </div>
 
-	]]>
+        ]]>
   </Content> 
 </Module>
