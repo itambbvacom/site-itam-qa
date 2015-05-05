@@ -1414,7 +1414,7 @@
 					google.load('visualization', '1.1', {packages: ['controls','table']});
 					
 					function getdata() {
-						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM=1');
+						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=1');
 						query.send(handleQueryResponse);
 						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=48');
 						queryManuals.send(handleQueryResponseManuals);
