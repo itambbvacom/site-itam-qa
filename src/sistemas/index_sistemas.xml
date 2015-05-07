@@ -1551,27 +1551,28 @@
 								$("#id_funcionalidad").text(data.getValue(row, col_funcionalidad));
 								
 								//NEGOCIO
-								data.getValue(row, col_fondosmutuos) == 'SI' ? $("#id_fondosmutuos").attr('checked', true) : $("#id_fondosmutuos").attr('checked', false);
-								data.getValue(row, col_porvenir) == 'SI' ? $("#id_porvenir").attr('checked', true) : $("#id_porvenir").attr('checked', false);
-								data.getValue(row, col_seguros) == 'SI' ? $("#id_seguros").attr('checked', true) : $("#id_seguros").attr('checked', false);
-								data.getValue(row, col_terceros) == 'SI' ? $("#id_terceros").attr('checked', true) : $("#id_terceros").attr('checked', false);
-								data.getValue(row, col_fideicomisos) == 'SI' ? $("#id_fideicomisos").attr('checked', true) : $("#id_fideicomisos").attr('checked', false);
-								data.getValue(row, col_prevision) == 'SI' ? $("#id_prevision").attr('checked', true) : $("#id_prevision").attr('checked', false);
+								data.getValue(row, col_fondosmutuos) == 'SI' ? $("#id_fondosmutuos").prop('checked', true) : $("#id_fondosmutuos").prop('checked', false);
+								data.getValue(row, col_porvenir) == 'SI' ? $("#id_porvenir").prop('checked', true) : $("#id_porvenir").prop('checked', false);
+								data.getValue(row, col_seguros) == 'SI' ? $("#id_seguros").prop('checked', true) : $("#id_seguros").prop('checked', false);
+								data.getValue(row, col_terceros) == 'SI' ? $("#id_terceros").prop('checked', true) : $("#id_terceros").prop('checked', false);
+								data.getValue(row, col_fideicomisos) == 'SI' ? $("#id_fideicomisos").prop('checked', true) : $("#id_fideicomisos").prop('checked', false);
+								data.getValue(row, col_prevision) == 'SI' ? $("#id_prevision").prop('checked', true) : $("#id_prevision").prop('checked', false);
 								//MERCADO
-								data.getValue(row, col_fija) == 'SI' ? $("#id_fija").attr('checked', true) : $("#id_fija").attr('checked', false);
-								data.getValue(row, col_variable) == 'SI' ? $("#id_variable").attr('checked', true) : $("#id_variable").attr('checked', false);
-								data.getValue(row, col_fondofondos) == 'SI' ? $("#id_fondofondos").attr('checked', true) : $("#id_fondofondos").attr('checked', false);
-								data.getValue(row, col_listados) == 'SI' ? $("#id_listados").attr('checked', true) : $("#id_listados").attr('checked', false);
-								data.getValue(row, col_otc) == 'SI' ? $("#id_otc").attr('checked', true) : $("#id_otc").attr('checked', false);
+								data.getValue(row, col_fija) == 'SI' ? $("#id_fija").prop('checked', true) : $("#id_fija").prop('checked', false);
+								data.getValue(row, col_variable) == 'SI' ? $("#id_variable").prop('checked', true) : $("#id_variable").prop('checked', false);
+								data.getValue(row, col_fondofondos) == 'SI' ? $("#id_fondofondos").prop('checked', true) : $("#id_fondofondos").prop('checked', false);
+								data.getValue(row, col_listados) == 'SI' ? $("#id_listados").prop('checked', true) : $("#id_listados").prop('checked', false);
+								data.getValue(row, col_otc) == 'SI' ? $("#id_otc").prop('checked', true) : $("#id_otc").prop('checked', false);
 								//AREAS
-								data.getValue(row, col_front) == 'SI' ? $("#id_front").attr('checked', true) : $("#id_front").attr('checked', false);
-								data.getValue(row, col_ejecucion) == 'SI' ? $("#id_ejecucion").attr('checked', true) : $("#id_ejecucion").attr('checked', false);
-								data.getValue(row, col_middle) == 'SI' ? $("#id_middle").attr('checked', true) : $("#id_middle").attr('checked', false);
-								data.getValue(row, col_riesgos) == 'SI' ? $("#id_riesgos").attr('checked', true) : $("#id_riesgos").attr('checked', false);
-								data.getValue(row, col_back) == 'SI' ? $("#id_back").attr('checked', true) : $("#id_back").attr('checked', false);
-								data.getValue(row, col_producto) == 'SI' ? $("#id_producto").attr('checked', true) : $("#id_producto").attr('checked', false);
-								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").attr('checked', true) : $("#id_ics").attr('checked', false);
-								data.getValue(row, col_control) == 'SI' ? $("#id_control").attr('checked', true) : $("#id_control").attr('checked', false);
+								
+								data.getValue(row, col_front) == 'SI' ? $("#id_front").prop('checked', true) : $("#id_front").prop('checked', false);
+								data.getValue(row, col_ejecucion) == 'SI' ? $("#id_ejecucion").prop('checked', true) : $("#id_ejecucion").prop('checked', false);
+								data.getValue(row, col_middle) == 'SI' ? $("#id_middle").prop('checked', true) : $("#id_middle").prop('checked', false);
+								data.getValue(row, col_riesgos) == 'SI' ? $("#id_riesgos").prop('checked', true) : $("#id_riesgos").prop('checked', false);
+								data.getValue(row, col_back) == 'SI' ? $("#id_back").prop('checked', true) : $("#id_back").prop('checked', false);
+								data.getValue(row, col_producto) == 'SI' ? $("#id_producto").prop('checked', true) : $("#id_producto").prop('checked', false);
+								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").prop('checked', true) : $("#id_ics").prop('checked', false);
+								data.getValue(row, col_control) == 'SI' ? $("#id_control").prop('checked', true) : $("#id_control").prop('checked', false);
 								
 								//DESCRIPCION TECNICA
 								$("#id_proveedor").text(data.getValue(row, col_proveedor) != null ? data.getValue(row, col_proveedor) : '');
@@ -1589,8 +1590,8 @@
 								$("#id_licenciasw").text(data.getValue(row, col_licenciasw_pr) != null ? data.getValue(row, col_licenciasw_pr) : '');
 								$("#id_licenciabd").text(data.getValue(row, col_licenciabd_pr) != null ? data.getValue(row, col_licenciabd_pr) : '');
 								
-								data.getValue(row, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
-								data.getValue(row, col_citrix_pr) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
+								data.getValue(row, col_equipovir_pr) == 'SI' ? $("#id_equipovir").prop('checked', true) : $("#id_equipovir").prop('checked', false);
+								data.getValue(row, col_citrix_pr) == 'SI' ? $("#id_citrix").prop('checked', true) : $("#id_citrix").prop('checked', false);
 						
 								funcionalidades = data.getValue(row, col_funcionalidades);
 								if (funcionalidades != null) {
@@ -1606,9 +1607,9 @@
 								
 								//INTERACCION DECALOG
 								/*
-								data.getValue(row, col_conexion) == 'SI' ? $("#id_conexion").attr('checked', true) : $("#id_conexion").attr('checked', false);
-								data.getValue(row, col_envia) == 'SI' ? $("#id_envia").attr('checked', true) : $("#id_envia").attr('checked', false);
-								data.getValue(row, col_recibe) == 'SI' ? $("#id_recibe").attr('checked', true) : $("#id_recibe").attr('checked', false);
+								data.getValue(row, col_conexion) == 'SI' ? $("#id_conexion").prop('checked', true) : $("#id_conexion").prop('checked', false);
+								data.getValue(row, col_envia) == 'SI' ? $("#id_envia").prop('checked', true) : $("#id_envia").prop('checked', false);
+								data.getValue(row, col_recibe) == 'SI' ? $("#id_recibe").prop('checked', true) : $("#id_recibe").prop('checked', false);
 								*/
 								//MAPA INTEGRACION (PRESENTACION)
 								if (data.getValue(row, col_mapaintegracion) != null) {
@@ -1618,10 +1619,6 @@
 									html_gp = html_gp + '<iframe src="https://docs.google.com/a/bbva.com/presentation/d/'+ data.getValue(row, col_mapaintegracion) + '/embed?start=false&loop=false&delayms=10000" frameborder="0" width="' + widthmapa + '" height="' + heightmapa + '" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
 									html_gp = html_gp + '</td></tr><tr><td>' + '</td></tr></table>';
 								}
-																
-								$('input:checkbox:not(:checked)').each(function() {
-									$("#" + ($(this)[0].id) + "l").css('color','#C3C3C3');
-								});
 								
 							}
 						}
@@ -1683,10 +1680,10 @@
 						for (var rowG = 1; rowG < dataGAPS.getNumberOfRows(); rowG++) {
 							if (elemento.text == dataGAPS.getValue(rowG, col_aplicativoG)) {
 								if (dataGAPS.getValue(rowG, col_clasificacionG) == "GF") {
-									html_gapf = html_gapf + '<input type="checkbox" disabled="disabled"><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
+									html_gapf = html_gapf + '<input type="checkbox" disabled><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
 								}
 								if (dataGAPS.getValue(rowG, col_clasificacionG) == "GT") {
-									html_gapt = html_gapt + '<input type="checkbox" disabled="disabled"><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
+									html_gapt = html_gapt + '<input type="checkbox" disabled><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
 								}
 	
 							}
@@ -1708,6 +1705,12 @@
 						resetTabs();
 						tabs_load();
 						load_data('PR');
+						$('input:checkbox(:checked)').each(function() {
+							$("#" + ($(this)[0].id) + "l").css('color','#000000');
+						});
+						$('input:checkbox:not(:checked)').each(function() {
+							$("#" + ($(this)[0].id) + "l").css('color','#C3C3C3');
+						});
 					}
 					function resetAccordion() {
 						for (var i = 1; i < 5; i++) {
@@ -1789,8 +1792,8 @@
 							$("#id_clientebd").text(data.getValue(row_selected, col_clientebd_pr) != null ? data.getValue(row_selected, col_clientebd_pr) : '');
 							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_pr) != null ? data.getValue(row_selected, col_licenciasw_pr) : '');
 							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_pr) != null ? data.getValue(row_selected, col_licenciabd_pr) : '');
-							data.getValue(row_selected, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
-							data.getValue(row_selected, col_citrix_pr) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
+							data.getValue(row_selected, col_equipovir_pr) == 'SI' ? $("#id_equipovir").prop('checked', true) : $("#id_equipovir").prop('checked', false);
+							data.getValue(row_selected, col_citrix_pr) == 'SI' ? $("#id_citrix").prop('checked', true) : $("#id_citrix").prop('checked', false);
 						} else {
 							$("#id_pr").css("font-weight", "normal");
 							$("#id_pr").css("font-size", "1.4em");
@@ -1804,8 +1807,8 @@
 							$("#id_clientebd").text(data.getValue(row_selected, col_clientebd_qa) != null ? data.getValue(row_selected, col_clientebd_qa) : '');
 							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_qa) != null ? data.getValue(row_selected, col_licenciasw_qa) : '');
 							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_qa) != null ? data.getValue(row_selected, col_licenciabd_qa) : '');
-							data.getValue(row_selected, col_equipovir_qa) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
-							data.getValue(row_selected, col_citrix_qa) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
+							data.getValue(row_selected, col_equipovir_qa) == 'SI' ? $("#id_equipovir").prop('checked', true) : $("#id_equipovir").prop('checked', false);
+							data.getValue(row_selected, col_citrix_qa) == 'SI' ? $("#id_citrix").prop('checked', true) : $("#id_citrix").prop('checked', false);
 						}
 						
 					}
@@ -1894,31 +1897,31 @@
 											
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fondosmutuos"><label id="id_fondosmutuosl">Fondos Mutuos</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_terceros"><label id="id_tercerosl">Terceros</label></td>
+													<td><input type="checkbox" disabled id="id_fondosmutuos"><label id="id_fondosmutuosl">Fondos Mutuos</label></td>
+													<td><input type="checkbox" disabled id="id_terceros"><label id="id_tercerosl">Terceros</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_porvenir"><label id="id_porvenirl">Porvenir</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_fideicomisos"><label id="id_fideicomisosl">Fideicomisos</label></td>
+													<td><input type="checkbox" disabled id="id_porvenir"><label id="id_porvenirl">Porvenir</label></td>
+													<td><input type="checkbox" disabled id="id_fideicomisos"><label id="id_fideicomisosl">Fideicomisos</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_seguros"><label id="id_segurosl">Seguros</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_prevision"><label id="id_previsionl">Fondos Previsión Social</label></td>
+													<td><input type="checkbox" disabled id="id_seguros"><label id="id_segurosl">Seguros</label></td>
+													<td><input type="checkbox" disabled id="id_prevision"><label id="id_previsionl">Fondos Previsión Social</label></td>
 												</tr>
 											</table>
 										</td>
 										<td width="50%">
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fija"><label id="id_fijal">Renta Fija</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_listados"><label id="id_listadosl">Derivados Listados</label></td>
+													<td><input type="checkbox" disabled id="id_fija"><label id="id_fijal">Renta Fija</label></td>
+													<td><input type="checkbox" disabled id="id_listados"><label id="id_listadosl">Derivados Listados</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_variable"><label id="id_variablel">Renta Variable</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_otc"><label id="id_otcl">Derivados OTC</label></td>
+													<td><input type="checkbox" disabled id="id_variable"><label id="id_variablel">Renta Variable</label></td>
+													<td><input type="checkbox" disabled id="id_otc"><label id="id_otcl">Derivados OTC</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fondofondos"><label id="id_fondofondosl">Fondos de Fondos</label></td>
+													<td><input type="checkbox" disabled id="id_fondofondos"><label id="id_fondofondosl">Fondos de Fondos</label></td>
 													<td></td>
 												</tr>
 											</table>
@@ -1934,28 +1937,28 @@
 										<td class="border_right" width="50%">
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_front"><label id="id_frontl">Front Office</label></td>
+													<td><input type="checkbox" disabled id="id_front"><label id="id_frontl">Front Office</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacuten</label></td>
+													<td><input type="checkbox" disabled id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacuten</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_middle"><label id="id_middlel">Middle Office</label></td>
+													<td><input type="checkbox" disabled id="id_middle"><label id="id_middlel">Middle Office</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_producto"><label id="id_productol">Producto</label></td>
+													<td><input type="checkbox" disabled id="id_producto"><label id="id_productol">Producto</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_riesgos"><label id="id_riesgosl">Riesgos</label></td>
+													<td><input type="checkbox" disabled id="id_riesgos"><label id="id_riesgosl">Riesgos</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_ics"><label id="id_icsl">I & C Sales</label></td>
+													<td><input type="checkbox" disabled id="id_ics"><label id="id_icsl">I & C Sales</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
+													<td><input type="checkbox" disabled id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
+													<td><input type="checkbox" disabled id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
 												</tr>
 											</table>
 										</td>
@@ -2007,10 +2010,10 @@
 								</br>
 								<table width="100%">
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_equipovir"><label>Equipo Virtual</label></td>
+										<td><input type="checkbox" disabled id="id_equipovir"><label id="id_equipovirl">Equipo Virtual</label></td>
 									</tr>
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_citrix"><label>Citrix</label></td>
+										<td><input type="checkbox" disabled id="id_citrix"><label id="id_citrixl">Citrix</label></td>
 									</tr>
 								</table>
 								
