@@ -1547,8 +1547,6 @@
 					row_selected = null;
 					for (var row = 3; row < data.getNumberOfRows(); row++) {
 					    
-						alert('row:' + row + '' + data.getNumberOfRows());
-						
 						if (elemento.text == data.getValue(row, col_aplicativo)) {
 							row_selected = row;
 							$("#id_aplicativo").text(data.getValue(row, col_aplicativo));
