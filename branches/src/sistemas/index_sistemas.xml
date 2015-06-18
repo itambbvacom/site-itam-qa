@@ -1681,7 +1681,7 @@
 						$('#tab3').append('<div id="content-tab3">' + html_rutas + '</div>');
 					}
 					if (html_ba.length > 0) {
-						$('#tab5').append('<div id="content-tab5">' + html_ba + '</div>');
+						$('#tab5').append('<div id="content-tab5"><table width="100%">' + html_ba + '</table></div>');
 					}
 					
 					var col_aplicativoG = 0;
@@ -2079,7 +2079,6 @@
 											</div>
 										</td>
 									</tr>
-									
 								</table>
 							</div>
 						</div>
