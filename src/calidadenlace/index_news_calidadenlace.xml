@@ -145,7 +145,7 @@
                         
                                 var data = response.getDataTable();
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
-                                        $('#f' + (row + 1)).text('Fecha: ' + data.getFormattedValue(row, 0));
+                                        $('#f' + (row + 1)).text('FFFFFFecha: ' + data.getFormattedValue(row, 0));
                                         $('#h' + (row + 1)).text(cut_text(data.getValue(row, 1), 43));
                                         $('#c' + (row + 1)).text(cut_text(data.getValue(row, 2), 650));
                                         $('#a' + (row + 1)).text('Autor: ' + data.getValue(row, 3));
