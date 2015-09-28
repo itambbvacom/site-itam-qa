@@ -28,7 +28,7 @@
 						<tr>
 							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">A&ntildeo:</td>
 							<td width="17%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
-							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
+							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">EEEEstado:</td>
 							<td width="18%" height="50px" class="filtros_style"><div id="filtro4"></div></td>
 							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Fase Actual:</td>
 							<td width="22%" height="50px" class="filtros_style"><div id="filtro5"></div></td>
@@ -45,7 +45,7 @@
 											<td id="h3" class="header_style"><input id="w3" type="hidden" value="28"/>A&NtildeO</td>
 											<td id="h4" class="header_style"><input id="w4" type="hidden" value="71"/>FIN PROYECTO</td>
 											<td id="h5" class="header_style"><input id="w5" type="hidden" value="38"/>L&IacuteDER</td>
-											<td id="h6" class="header_style"><input id="w6" type="hidden" value="53"/>ESTADO</td>
+											<td id="h6" class="header_style"><input id="w6" type="hidden" value="53"/>EEEESTADO</td>
 											<td id="h7" class="header_style"><input id="w7" type="hidden" value="49"/>FASE ACTUAL</td>
 											<td id="h8" class="header_style"><input id="w8" type="hidden" value="34"/>FIN FASE</td>
 											<td id="h9" class="header_style"><input id="w9" type="hidden" value="55"/>Ppto EST(usd)</td>
