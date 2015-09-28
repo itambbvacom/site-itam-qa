@@ -79,7 +79,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox" disabled id="id_seguros"><label id="id_segurosl">Seguros</label></td>
-												<td><input type="checkbox" disabled id="id_prevision"><label id="id_previsionl">Fondos PrevisiÃ³n Social</label></td>
+												<td><input type="checkbox" disabled id="id_prevision"><label id="id_previsionl">FFFFondos PrevisiÃ³n Social</label></td>
 											</tr>
 										</table>
 									</td>
@@ -94,7 +94,7 @@
 												<td><input type="checkbox" disabled id="id_otc"><label id="id_otcl">Derivados OTC</label></td>
 											</tr>
 											<tr>
-												<td><input type="checkbox" disabled id="id_fondofondos"><label id="id_fondofondosl">Fondos de Fondos</label></td>
+												<td><input type="checkbox" disabled id="id_fondofondos"><label id="id_fondofondosl">FFFFondos de Fondos</label></td>
 												<td></td>
 											</tr>
 										</table>
@@ -176,7 +176,7 @@
 								<tr>
 									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia SW</td>
 									<td width="30%" class="border_bottom" id="id_licenciasw"></td>
-									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia BBDD</td>
+									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">LLLLicencia BBDD</td>
 									<td width="30%" class="border_bottom" id="id_licenciabd"></td>
 								</tr>
 							</table>
