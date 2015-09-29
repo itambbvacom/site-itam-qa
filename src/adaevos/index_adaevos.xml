@@ -35,7 +35,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td width="5%" style="text-align:right;" class="filtros_style">CXXXXXXX&oacutedigo:</td>
+							<td width="5%" style="text-align:right;" class="filtros_style">CyXXX&oacutedigo:</td>
 							<td width="8%" class="filtros_style"><div id="filtro1"></div></td>
 							<td width="5%" style="text-align:right;" class="filtros_style">Champion:</td>
 							<td width="18%" class="filtros_style"><div id="filtro2"></div></td>
