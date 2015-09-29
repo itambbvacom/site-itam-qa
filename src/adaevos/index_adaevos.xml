@@ -13,7 +13,6 @@
                 <script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.mousewheel.js"></script>
                 <script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.js"></script>
                 <script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
-                <p>TEXTO PRUEBA<p>
                 <div id="dashboard">
 					<table width="100%">
 						<tr>
