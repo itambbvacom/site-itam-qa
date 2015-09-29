@@ -2,6 +2,7 @@
 <Module>
 	<ModulePrefs title="index_adaevos.xml" /> 
 	<Content type="html">
+	<p>Data Test</p>
         <![CDATA[
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <link href="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.css" rel="stylesheet">
