@@ -57,7 +57,7 @@
 						<h3 id="id_header01">Funcionalidad</h3>
 						<div id="id_content01">
 							<p id="id_funcionalidad" style="font-weight:normal;font-size:1.3em;"></p>
-						</div>
+						</div>  
 						<h3 id="id_header02">Cobertura Funcional</h3>
 						<div id="id_content02">
 							<table width="100%">
