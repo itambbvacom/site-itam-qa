@@ -18,7 +18,7 @@
 				<tr>
 					<td style="text-align:right;padding-right: 5px;">
 						<a href="#" onclick="mostrarocultar();">
-							<img src="https://github.com/itambbvacom/site-itam-qa/blob/master/img/btnMostrarOcultar2.png" width="10%">
+							<img src="https://raw.githubusercontent.com/itambbvacom/site-itam-qa/master/img/btnMostrarOcultar2.png" width="10%">
 						</a>
 					</td>
 				</tr>
@@ -41,7 +41,7 @@
 						<tr>
 							<td width="50%" style="align:left;">
 								<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
-									<img src="https://github.com/itambbvacom/site-itam-qa/blob/master/img/btnArrows02.png" height="20%" width="5%">
+									<img src="https://raw.githubusercontent.com/itambbvacom/site-itam-qa/master/img/btnArrows02.png" height="20%" width="5%">
 								</a>
 							</td>
 							<td width="50%">
@@ -57,7 +57,7 @@
 						<h3 id="id_header01">Funcionalidad</h3>
 						<div id="id_content01">
 							<p id="id_funcionalidad" style="font-weight:normal;font-size:1.3em;"></p>
-						</div>  
+						</div>
 						<h3 id="id_header02">Cobertura Funcional</h3>
 						<div id="id_content02">
 							<table width="100%">
