@@ -5,9 +5,9 @@
 		<![CDATA[
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.css" rel="stylesheet">
-				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox01.css" rel="stylesheet">
+				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
 				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles01.css" rel="stylesheet">
-                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
 				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.mousewheel.js"></script>
 				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.js"></script>
