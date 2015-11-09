@@ -4,9 +4,9 @@
   <Content type="html">
         <![CDATA[
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-		<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_news.css" rel="stylesheet">
+				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_news.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_news.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/news/index_news.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/slides.min.jquery.js"></script>
                 <script type="text/javascript">
@@ -37,7 +37,7 @@
                                                         <td class="contenido">
                                                                                                                                 </br>
                                                                 <h6 id="a1" style="color:#094FA4;margin:0;" align="center"></h6>
-                                                                <a id="l1" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">LLLLeer mas...</h6></a>
+                                                                <a id="l1" href="#" target="_blank"><h6 style="color:#094FA4;margin:0;" align="left">Leer mas...</h6></a>
                                                         </td>
                                                         <td width="5"></td>
                                                 </tr-->
