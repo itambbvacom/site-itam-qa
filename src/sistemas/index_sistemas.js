@@ -1,4 +1,4 @@
-				var data, dataManuals, dataGAPS, count; 
+				var data, dataManuals, dataGAPS, count;
 				//columnas
 				var row_selected;
 				var col_aplicativo = 0;
@@ -60,12 +60,47 @@
 				google.load('visualization', '1.1', {packages: ['controls','table']});
 				
 				function getdata() {
-					var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=1');
-					query.send(handleQueryResponse);
-					var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=48');
-					queryManuals.send(handleQueryResponseManuals);
-					var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=1441491815');
-					queryGAPS.send(handleQueryResponseGAPS);
+				
+					/* LAB
+						https://drive.google.com/open?id=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y
+						https://docs.google.com/spreadsheets/d/1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y/edit#gid=1
+						https://docs.google.com/spreadsheets/d/1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y/edit#gid=48
+						https://docs.google.com/spreadsheets/d/1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y/edit#gid=1441491815
+
+						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y&gid=1');
+						query.send(handleQueryResponse);
+						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y&gid=48');
+						queryManuals.send(handleQueryResponseManuals);
+						var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y&gid=1441491815');
+						queryGAPS.send(handleQueryResponseGAPS);
+					*/
+					/* QA
+						https://drive.google.com/open?id=16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU
+						https://docs.google.com/spreadsheets/d/16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU/edit#gid=1
+						https://docs.google.com/spreadsheets/d/16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU/edit#gid=48
+						https://docs.google.com/spreadsheets/d/16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU/edit#gid=1441491815
+					*/
+
+						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU&gid=1');
+						query.send(handleQueryResponse);
+						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU&gid=48');
+						queryManuals.send(handleQueryResponseManuals);
+						var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU&gid=1441491815');
+						queryGAPS.send(handleQueryResponseGAPS);
+
+					/* PROD 
+						https://drive.google.com/open?id=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM
+						https://docs.google.com/spreadsheets/d/1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM/edit#gid=1
+						https://docs.google.com/spreadsheets/d/1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM/edit#gid=48
+						https://docs.google.com/spreadsheets/d/1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM/edit#gid=1441491815
+						
+						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=1');
+						query.send(handleQueryResponse);
+						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=48');
+						queryManuals.send(handleQueryResponseManuals);
+						var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1B0mDSVnN0Z0dv4wrDINx-J9ym66eKT6zdd4F5CweyjM&gid=1441491815');
+						queryGAPS.send(handleQueryResponseGAPS);
+					*/
 				}
 				function handleQueryResponseGAPS(response) {
 					if (response.isError()) {
@@ -512,6 +547,6 @@
 					cadena = $("#id_header04")[0].className;
 					if (cadena.search("ui-state-active") != -1) {
 						$("#id_header04").trigger('click');
-					}
+					} 
 					
 				}
