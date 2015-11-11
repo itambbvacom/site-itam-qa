@@ -4,14 +4,12 @@
 	<Content type="html">
         <![CDATA[
 			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox_index_sistemas.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
-			
-			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_sistemas.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/src/sistemas/index_sistemas.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-ui.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/tabs.css" rel="stylesheet">
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_sistemas.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/sistemas/index_sistemas.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-ui.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.multi-accordion-1.5.3.js"></script>
@@ -64,7 +62,7 @@
 						<div id="id_content02">
 							<table width="100%">
 								<tr>
-									<td><h4 style="color:#006EC1;" align="center">Tipolog&iacutea Carteras Gestionadas</h4></td>
+									<td><h4 style="color:#006EC1;" align="center">Tipolog&iacute;a Carteras Gestionadas</h4></td>
 									<td><h4 style="color:#006EC1;" align="center">Mercado</h4></td>
 								</tr>
 								<tr>
@@ -105,7 +103,7 @@
 								<tr height="20">
 								</tr>
 								<tr>
-									<td><h4 style="color:#006EC1;" align="center">&Aacutembito Negocio</h4></td>
+									<td><h4 style="color:#006EC1;" align="center">&Aacute;mbito Negocio</h4></td>
 									<td><h4 style="color:#006EC1;" align="center">Principales Procesos y Funcionalidades de Negocio</h4></td>
 								</tr>
 								<tr>
@@ -115,7 +113,7 @@
 												<td><input type="checkbox" disabled id="id_front"><label id="id_frontl">Front Office</label></td>
 											</tr>
 											<tr>
-												<td><input type="checkbox" disabled id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacuten</label></td>
+												<td><input type="checkbox" disabled id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacute;n</label></td>
 											</tr>
 											<tr>
 												<td><input type="checkbox" disabled id="id_middle"><label id="id_middlel">Middle Office</label></td>
@@ -133,7 +131,7 @@
 												<td><input type="checkbox" disabled id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
 											</tr>
 											<tr>
-												<td><input type="checkbox" disabled id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
+												<td><input type="checkbox" disabled id="id_control"><label id="id_controll">Control de Gesti&oacute;n</label></td>
 											</tr>
 										</table>
 									</td>
@@ -148,19 +146,19 @@
 							</table>
 						</div>
 						
-						<h3 id="id_header03">Caracter&iacutesticas T&eacutecnicas</h3>
+						<h3 id="id_header03">Caracter&iacute;sticas T&eacute;cnicas</h3>
 						<div id="id_content03">
 							<table width="100%">
 								<tr>
 									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Proveedor</td>
 									<td width="30%" class="border_bottom" id="id_proveedor"></td>
-									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Versi&oacuten Producto</td>
+									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Versi&oacute;n Producto</td>
 									<td width="30%" class="border_bottom" id="id_version"></td>
 								</tr>
 								<tr>
 									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Equipo / IP</td>
 									<td width="30%" class="border_bottom" id="id_equipo"></td>
-									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Ubicaci&oacuten Equipo</td>
+									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Ubicaci&oacute;n Equipo</td>
 									<td width="30%" class="border_bottom" id="id_ubicacioneq"></td>
 								</tr>
 								<tr>
@@ -178,7 +176,7 @@
 								<tr>
 									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia SW</td>
 									<td width="30%" class="border_bottom" id="id_licenciasw"></td>
-									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">LLLLicencia BBDD</td>
+									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia BBDD</td>
 									<td width="30%" class="border_bottom" id="id_licenciabd"></td>
 								</tr>
 							</table>
@@ -193,7 +191,7 @@
 							</table>
 							
 						</div>
-						<h3 id="id_header04">Mapa de Integraci&oacuten</h3>
+						<h3 id="id_header04">Mapa de Integraci&oacute;n</h3>
 						<div id="id_content04">
 							<div id="id_content04_mapa">
 							</div>
@@ -206,7 +204,7 @@
 					</table>
 					<ul id="tabs">
 						<li><a href="#" name="#tab1">Manuales Funcionales</a></li>
-						<li><a href="#" name="#tab2">Manuales T&eacutecnicos</a></li>
+						<li><a href="#" name="#tab2">Manuales T&eacute;cnicos</a></li>
 						<li><a href="#" name="#tab3">RUTAS</a></li>
 						<li><a href="#" name="#tab4">GAPS</a></li>
 						<li><a href="#" name="#tab5">BATCH</a></li>
@@ -226,7 +224,7 @@
 								<table width="100%">
 									<tr>
 										<td><h4 style="color:#006EC1;" align="center">Funcionales</h4></td>
-										<td><h4 style="color:#006EC1;" align="center">T&eacutecnicos</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">T&eacute;cnicos</h4></td>
 									</tr>
 									<tr>
 										<td class="border_right" width="50%" style="vertical-align:text-top;">
