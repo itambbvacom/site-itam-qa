@@ -134,4 +134,4 @@ function slide_news() {
 	});
 	
 	$('.pagination li a').css('background-image', 'url(https://rawgit.com/itambbvacom/site-itam-qa/master/img/pagination.png)');
-}
+} 
