@@ -20,9 +20,23 @@
 								<table align="right">
 									<tr>
 										<td style="text-align:right;">
-											<a class = "iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AuL8XqqgbAI4dGxXZnk3djR5WGtGbGhvdnlwQ1VHYUE&output=html&pubredirect=true&widget=true" >
+											<!--  LAB											https://drive.google.com/open?id=1YkVcEFtZWDFM60Fi-gqkqZeMPGzgbHzsP16qcbxLcT0
+											<a class = "iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=1YkVcEFtZWDFM60Fi-gqkqZeMPGzgbHzsP16qcbxLcT0&output=html&pubredirect=true&widget=true" >
 												<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnGraficos2.png">
 											</a>
+											-->
+											<!--  QA https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AuL8XqqgbAI4dGxXZnk3djR5WGtGbGhvdnlwQ1VHYUE
+											-->
+											<a class = "iframe" https://drive.google.com/open?id=1bHmg2TQw1lsN05cDDAo0vSgvNVb-tdjY8boaO-mSTPQhref="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AuL8XqqgbAI4dGxXZnk3djR5WGtGbGhvdnlwQ1VHYUE&output=html&pubredirect=true&widget=true" >
+												<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnGraficos2.png">
+											</a>
+											<!--  PROD 
+											https://drive.google.com/open?id=1bHmg2TQw1lsN05cDDAo0vSgvNVb-tdjY8boaO-mSTPQ
+											https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=1bHmg2TQw1lsN05cDDAo0vSgvNVb-tdjY8boaO-mSTPQ
+											<a class = "iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=1bHmg2TQw1lsN05cDDAo0vSgvNVb-tdjY8boaO-mSTPQ&output=html&pubredirect=true&widget=true" >
+												<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnGraficos2.png">
+											</a>
+											-->
 										</td>
 										<td style="text-align:right;">
 											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
@@ -87,9 +101,30 @@
 						</tr>
 						<tr>
 							<td colspan="9" style="text-align:right;padding-right: 5px;">
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AuL8XqqgbAI4dERuUkR4dkQxTHFzaWYtaXpMNFJjVEE&fmcmd=420">
+
+								<!-- LAB
+								https://drive.google.com/open?id=1cgAmgH217UKNSKG3G-GOLjLrq6klfo7ssXmOMVkoBvE
+								
+								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1cgAmgH217UKNSKG3G-GOLjLrq6klfo7ssXmOMVkoBvE&fmcmd=420">
 									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
 								</a>
+								-->
+
+								<!-- QA
+								https://drive.google.com/open?id=1TR0_1uMrad39DAqMZXjhXfKqJncllAnQVtr7bwkWCA4
+								-->
+								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1TR0_1uMrad39DAqMZXjhXfKqJncllAnQVtr7bwkWCA4&fmcmd=420">
+									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
+								</a>
+
+								<!-- PROD
+								https://drive.google.com/open?id=1eYPplhzkxh6LWS-JotUXIHx5YJGJZfEuIgeFD5JTZSY
+								
+								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1eYPplhzkxh6LWS-JotUXIHx5YJGJZfEuIgeFD5JTZSY&fmcmd=420">
+									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
+								</a>
+								-->
+								
 							</td>
 						</tr>
 					</table>
