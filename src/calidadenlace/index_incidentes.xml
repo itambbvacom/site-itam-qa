@@ -12,7 +12,7 @@
 				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.mousewheel.js"></script>
 				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.js"></script>
 				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
-				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_incidentes.js"></script>
+				<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/calidadenlace/index_incidentes.js"></script>
                 <div id="dashboard">
 					<table border="0" width="100%">
 						<tr>
