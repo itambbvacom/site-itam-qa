@@ -6,7 +6,7 @@
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
                 <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.css" rel="stylesheet">
-		<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles.css" rel="stylesheet">
+                <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/sistemas/index_liberaciones.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
@@ -65,7 +65,7 @@
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
 							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Mes:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro4"></div></td>
-							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">a&ntildeo:</td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">A&ntildeo:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro5"></div></td>
 						</tr>
 						<tr>
