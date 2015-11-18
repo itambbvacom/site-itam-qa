@@ -95,7 +95,6 @@ google.setOnLoadCallback(draw);
 
 function draw() {
 	
-	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet + '&usp=drive_web#gid=0');
 	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet + '&usp=drive_web#gid=' + keySheetGIDResp);
 	query.send(handleQueryResponse);
 	
