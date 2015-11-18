@@ -34,7 +34,7 @@
 											https://drive.google.com/open?id=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM
 											https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
 											
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&usp=drive_web#gid=0"><button>Editar</button></a>
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&usp=drive_web#gid=818855330"><button>Editar</button></a>
 											-->
 
 											<!-- QA
@@ -42,13 +42,13 @@
 											https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
 											
 											-->
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&usp=drive_web#gid=0"><button>Editar</button></a>
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&usp=drive_web#gid=1478430670"><button>Editar</button></a>
 
 											<!-- PROD 
 											https://drive.google.com/open?id=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ
 											https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
 											
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&usp=drive_web#gid=0"><button>Editar</button></a>
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&usp=drive_web#gid=297742010"><button>Editar</button></a>
 											-->
 											
 										</td>
@@ -306,6 +306,6 @@
 					</div>
 				</div>
 ]]>
-	</Content>  
+	</Content> 
 </Module>
 
