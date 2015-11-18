@@ -3,10 +3,10 @@
 	<ModulePrefs title="index_liberaciones.xml" /> 
 	<Content type="html">
 		<![CDATA[
-				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
                 <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.css" rel="stylesheet">
-				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles.css" rel="stylesheet">
+		<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/sistemas/index_liberaciones.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
@@ -308,3 +308,4 @@
 ]]>
 	</Content> 
 </Module>
+
