@@ -1,5 +1,5 @@
 var data, dataOpciones;
-var msgError = ""
+var msgError = "";
 var column1 = 1;
 var column2 = 2;
 var column3 = 3;
