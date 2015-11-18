@@ -14,22 +14,33 @@ var column10 = 10;
 var column15 = 15;
 var column_extra = 9;
 /* LAB 
+
+
+Formulario: https://docs.google.com/a/bbva.com/forms/d/15ni4yE2ZM1f3LnuulNT0Ju70fbfvBN0nE020Dd_ZI1Y/edit#
+Respuestas: https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
+
 https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=2045532491
-https://docs.google.com/a/bbva.com/forms/d/15ni4yE2ZM1f3LnuulNT0Ju70fbfvBN0nE020Dd_ZI1Y/edit#
+
 var keysheet = "1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM"
 var keySheetForm = "15ni4yE2ZM1f3LnuulNT0Ju70fbfvBN0nE020Dd_ZI1Y"
 */
 
 /* QA 
+
+Formulario: https://docs.google.com/a/bbva.com/forms/d/1iiWoKJC4ClhIubn4G36vJZxh0D17uanzCfzHw27g_ZM/edit#
+Respuestas: https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
+
 https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=2045532491 
-https://docs.google.com/a/bbva.com/forms/d/1iiWoKJC4ClhIubn4G36vJZxh0D17uanzCfzHw27g_ZM/edit#
 */
 var keysheet = "1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w"
 var keySheetForm = "1iiWoKJC4ClhIubn4G36vJZxh0D17uanzCfzHw27g_ZM"
 
 /* PROD 
 https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=2045532491
-https://docs.google.com/a/bbva.com/forms/d/1kCPOgOLcu1-2_bGfKjM1e47t-C_HoDIpN59zFPJmC58/edit#
+
+Formulario: https://docs.google.com/a/bbva.com/forms/d/1kCPOgOLcu1-2_bGfKjM1e47t-C_HoDIpN59zFPJmC58/edit#
+Respuestas: https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
+
 var keysheet = "1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ"
 var keySheetForm = "1kCPOgOLcu1-2_bGfKjM1e47t-C_HoDIpN59zFPJmC58"
 */
