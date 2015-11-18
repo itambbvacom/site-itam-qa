@@ -3,10 +3,10 @@
 	<ModulePrefs title="index_liberaciones.xml" /> 
 	<Content type="html">
 		<![CDATA[
-				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
                 <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.css" rel="stylesheet">
-				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles.css" rel="stylesheet">
+		<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/sistemas/index_liberaciones.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
@@ -32,17 +32,23 @@
 
 											<!-- LAB
 											https://drive.google.com/open?id=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&usp=drive_web#gid=0"><button>Editar</button></a>
+											https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
+											
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&usp=drive_web#gid=818855330"><button>Editar</button></a>
 											-->
 
 											<!-- QA
 											https://drive.google.com/open?id=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w
+											https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
+											
 											-->
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&usp=drive_web#gid=0"><button>Editar</button></a>
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&usp=drive_web#gid=1478430670"><button>Editar</button></a>
 
 											<!-- PROD 
 											https://drive.google.com/open?id=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&usp=drive_web#gid=0"><button>Editar</button></a>
+											https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
+											
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&usp=drive_web#gid=297742010"><button>Editar</button></a>
 											-->
 											
 										</td>
@@ -93,18 +99,24 @@
 							<td colspan="9" style="text-align:right;padding-right: 5px;">
 								<!-- LAB 
 								https://drive.google.com/open?id=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM
+								https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
+								
 								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&fmcmd=420">
 									<img src="https://rawgit.com/itambbvacom/site-itam-lab/master/img/btnDescarga2.png">
 								</a>
 								-->
 								<!-- QA 
 								https://drive.google.com/open?id=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w
+								https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
+								
 								-->
 								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&fmcmd=420">
 									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
 								</a>
 								<!-- PROD 
 								https://drive.google.com/open?id=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ 
+								https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
+								
 								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&fmcmd=420">
 									<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnDescarga2.png">
 								</a>
