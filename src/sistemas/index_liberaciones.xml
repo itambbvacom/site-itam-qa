@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
-<Module>
 	<ModulePrefs title="index_liberaciones.xml" /> 
 	<Content type="html">
 		<![CDATA[
-                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-                <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
-                <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.css" rel="stylesheet">
-                <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles.css" rel="stylesheet">
+				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                <link href="file:///C:/Development/Sites/QA/lib/colorbox.css" rel="stylesheet">
+                <link href="file:///C:/Development/Sites/QA/lib/perfect-scrollbar.css" rel="stylesheet">
+				<link href="file:///C:/Development/Sites/QA/lib/common_styles01.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/sistemas/index_liberaciones.js"></script>
+                <script src="file:///C:/Development/Sites/QA/sistemas/index_liberaciones.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.mousewheel.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.js"></script>
@@ -29,28 +28,7 @@
 											<a class="inline" href="#form_content" onclick="llenarTodosContrls()"><button>Nuevo</button></a>
 										</td>
 										<td>
-
-											<!-- LAB
-											https://drive.google.com/open?id=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM
-											https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
-											
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&usp=drive_web#gid=818855330"><button>Editar</button></a>
-											-->
-
-											<!-- QA
-											https://drive.google.com/open?id=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w
-											https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
-											
-											-->
 											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&usp=drive_web#gid=1478430670"><button>Editar</button></a>
-
-											<!-- PROD 
-											https://drive.google.com/open?id=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ
-											https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
-											
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&usp=drive_web#gid=297742010"><button>Editar</button></a>
-											-->
-											
 										</td>
 									</tr>
 								</table>
@@ -63,9 +41,9 @@
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
 							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Fecha Instalaci&oacuten:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
-							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Mes:</td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Mes de Registro:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro4"></div></td>
-							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">A&ntildeo:</td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">A&ntildeo de Registro:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro5"></div></td>
 						</tr>
 						<tr>
@@ -81,8 +59,8 @@
 											<td id="h6" class="header_style"><input id="w6" type="hidden" value="40"/>Tipo de Plan</td>
 											<td id="h7" class="header_style"><input id="w7" type="hidden" value="110"/>Tipo de Proyecto</td>
 											<td id="h8" class="header_style"><input id="w8" type="hidden" value="160"/>Fecha Producci&oacuten</td>
-											<td id="h9" class="header_style"><input id="w9" type="hidden" value="40"/>Mes</td>
-											<td id="h10" class="header_style"><input id="w10" type="hidden" value="40"/>A&ntildeo</td>
+											<td id="h9" class="header_style"><input id="w9" type="hidden" value="40"/>Mes de Registro</td>
+											<td id="h10" class="header_style"><input id="w10" type="hidden" value="40"/>A&ntildeo de Registro</td>
 										</tr>
 									</table>
 									<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
@@ -97,30 +75,9 @@
 						</tr>
 						<tr>
 							<td colspan="9" style="text-align:right;padding-right: 5px;">
-								<!-- LAB 
-								https://drive.google.com/open?id=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM
-								https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
-								
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&fmcmd=420">
-									<img src="https://rawgit.com/itambbvacom/site-itam-lab/master/img/btnDescarga2.png">
-								</a>
-								-->
-								<!-- QA 
-								https://drive.google.com/open?id=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w
-								https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
-								
-								-->
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&fmcmd=420">
+								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&fmcmd=420">
 									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
 								</a>
-								<!-- PROD 
-								https://drive.google.com/open?id=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ 
-								https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
-								
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&fmcmd=420">
-									<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnDescarga2.png">
-								</a>
-								-->
 							</td>
 						</tr>
 					</table>
@@ -148,7 +105,7 @@
 								<td class="header_style">Fecha Producci&oacuten</td>
 								<td class="header_style">Tipo de Plan</td>
 								<td class="header_style">Tipo de Proyecto</td>
-								<td class="header_style">Sem&aacuteforo</td>
+								<!--<td class="header_style">Sem&aacuteforo</td>-->
 								<td class="header_style">Comentarios a FU</td>
 								<td class="header_style">No. de Componentes</td>
 							</tr>
