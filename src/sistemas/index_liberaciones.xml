@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
 	<ModulePrefs title="index_liberaciones.xml" /> 
 	<Content type="html">
@@ -26,26 +25,10 @@
 											</a>
 										</td>
 										<td>
-											<a class="inline" href="#form_content" onclick="llenarTodosContrls()"><button>Nuevo</button></a>
+											<a class="inline" href="#form_content" onclick="llenarTodosContrls()"><img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnNuevo.png"></a>
 										</td>
 										<td>
-                                            <!-- LAB
-											https://drive.google.com/open?id=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM
-											https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&usp=drive_web#gid=818855330"><button>Editar</button></a>
-											-->
-
-											<!-- QA
-											https://drive.google.com/open?id=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w
-											https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
-											-->
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&usp=drive_web#gid=1478430670"><button>Editar</button></a>
-
-											<!-- PROD 
-											https://drive.google.com/open?id=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ
-											https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
-											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&usp=drive_web#gid=297742010"><button>Editar</button></a>
-											-->
+											<a href="#" onclick="javascript:procSubmit('EDICION')"><img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnEditar.png"></a>
 										</td>
 									</tr>
 								</table>
@@ -92,30 +75,9 @@
 						</tr>
 						<tr>
 							<td colspan="9" style="text-align:right;padding-right: 5px;">
-                                <!-- LAB 
-								https://drive.google.com/open?id=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM
-								https://docs.google.com/spreadsheets/d/1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM/edit#gid=818855330
-								
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1ffUP24fddrOvGrE4SjAnFVvHaaC9t9XhtI5EyL9PlAM&fmcmd=420">
-									<img src="https://rawgit.com/itambbvacom/site-itam-lab/master/img/btnDescarga2.png">
-								</a>
-								-->
-								<!-- QA 
-								https://drive.google.com/open?id=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w
-								https://docs.google.com/spreadsheets/d/1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w/edit#gid=1478430670
-								
-								-->
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1kjF-W-k2OLSGpDMXgSJDIv2gRSeVx8aUf-1o1X82A9w&fmcmd=420">
+								<a href="#" onclick="javascript:procSubmit('DESCARGA')">
 									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
 								</a>
-								<!-- PROD 
-								https://drive.google.com/open?id=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ 
-								https://docs.google.com/spreadsheets/d/1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ/edit#gid=297742010
-								
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&fmcmd=420">
-									<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnDescarga2.png">
-								</a>
-								-->
 							</td>
 						</tr>
 					</table>
@@ -128,6 +90,7 @@
 								<td class="header_style">Nivel 1 Sistemas</td>
 								<td class="header_style">Nivel 2 Sistemas</td>
 								<td class="header_style">Nivel 3 Sistemas</td>
+								<td class="header_style">Subdirector</td>
 								<td class="header_style">L&iacuteder Promotor</td>
 								<td class="header_style">Aplicaci&oacuten</td>
 								<td class="header_style">Nombre del Cambio</td>
@@ -139,75 +102,96 @@
 								<td class="header_style">Inicio instalaci&oacuten</td>
 								<td class="header_style">C&oacutedigo Plan de Trabajo</td>
 								<td class="header_style">Plan de Trabajo</td>
+								<td class="header_style">C&oacutedigo Entregable</td>
+								<td class="header_style">Servidor</td>
+								<td class="header_style">Participante o L&iacuteder</td>
+								<td class="header_style">F&oacutelio DyD</td>
 								<td class="header_style">Fecha Fin Plan de Trabajo</td>
-								<td class="header_style">Fecha Producci&oacuten</td>
+								<td class="header_style">Instalaci&oacuten Faseada</td>
+								<td class="header_style">Fase actual del proyecto</td>
+								<td class="header_style">Fecha Puesta en Producci&oacuten</td>
 								<td class="header_style">Tipo de Plan</td>
 								<td class="header_style">Tipo de Proyecto</td>
-								<!--<td class="header_style">Sem&aacuteforo</td>-->
 								<td class="header_style">Comentarios a FU</td>
 								<td class="header_style">No. de Componentes</td>
+								<td class="header_style">Comentarios a DyD</td>
 							</tr>
 						</table>
 					</div>
 				</div>
 				<div style="display:none">
-					<div id="form_content" style="padding:10px; background:#fff;">
+					<div id="form_content" style="padding:2px; background:#fff;">
 						<br>
-						<table id="consltRegstr" width="100%" border=1 cellpadding="4%">
+						<table id="consltRegstr" width="100%" border=1 cellpadding="2%">
 							<tr>
 								<td>
-									<table width="100%">
+									<table width="100%">	<!--RENGLON 1-->
 										<tr>
 											<td width="25%" class="header_style">Nivel 1 Sistemas</td>
 											<td width="25%" class="header_style">Nivel 2 Sistemas</td>
 											<td width="25%" class="header_style">Nivel 3 Sistemas</td>
-											<td width="25%" class="header_style">L&iacuteder Promotor</td>
+											<td width="25%" class="header_style">Subdirector</td>
 										</tr>
 										<tr>
 											<td width="25%" align="center" class="cell_style"><select name="nivl1Sistms" id="nivl1Sistms"></td>
 											<td width="25%" align="center" class="cell_style"><select name="nivl2Sistms" id="nivl2Sistms"></td>
 											<td width="25%" align="center" class="cell_style"><select name="nivl3Sistms" id="nivl3Sistms"></td>
-											<td width="25%" align="center" class="cell_style"><select name="lidrPromtr" id="lidrPromtr"></td>
+											<td width="25%" align="center" class="cell_style"><select name="subdrctr" id="subdrctr"></td>
 										</tr>
 									</table>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<table width="100%">
+									<table width="100%">	<!--RENGLON 2-->
 										<tr>
-											<td width="25%" class="header_style">Aplicaci&oacuten</td>
-											<td width="25%" class="header_style">Nombre del Cambio</td>
-											<td width="25%" class="header_style">Objetivo</td>
-											<td width="25%" class="header_style">Plataforma</td>
+											<td width="20%" class="header_style">L&iacuteder Promotor</td>
+											<td width="20%" class="header_style">Aplicaci&oacuten</td>
+											<td width="30%" class="header_style">Nombre del Cambio</td>
+											<td width="30%" class="header_style">Objetivo</td>
 										</tr>
 										<tr>
-											<td width="25%" align="center" class="cell_style"><select name="aplccn" id="aplccn"></td>
-											<td width="25%" align="center" class="cell_style"><input type="text" name="nombrCamb" id="nombrCamb"></td>
-											<td width="25%" align="center" class="cell_style"><input type="text" name="objetivo" id="objetivo"></td>
-											<td width="25%" align="center" class="cell_style"><select name="platfrm" id="platfrm"></td>
+											<td width="20%" align="center" class="cell_style"><select name="lidrPromtr" id="lidrPromtr"></td>
+											<td width="20%" align="center" class="cell_style"><select name="aplccn" id="aplccn"></td>
+											<td width="30%" align="center" class="cell_style"><textarea name="nombrCamb" id="nombrCamb" cols=40 rows=1 style="font-family: Arial; font-size:12px;"></textarea></td>
+											<td width="30%" align="center" class="cell_style"><textarea name="objetivo" id="objetivo" cols=40 rows=1 style="font-family: Arial; font-size:12px;"></textarea></td>
 										</tr>	
 									</table>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<table width="100%">
+									<table width="100%">	<!--RENGLON 3-->
 										<tr>
+											<td width="25%" class="header_style">Plataforma</td>
 											<td width="25%" class="header_style">Tipo de Cambio</td>
 											<td width="25%" class="header_style">No. de Cambio (CRQ)</td>
 											<td width="25%" class="header_style">Ventana de Congelamiento</td>
-											<td width="25%" class="header_style">Fecha Inicio de Instalaci&oacuten</td>
 										</tr>
 										<tr>
+											<td width="20%" align="center" class="cell_style"><select name="platfrm" id="platfrm"></td>
 											<td width="25%" align="center" class="cell_style"><select name="tipoCamb" id="tipoCamb"></td>
 											<td width="25%" align="center" class="cell_style"><input type="text" name="CRQ" id="CRQ"></td>
 											<td width="25%" align="center" class="cell_style">
-												<input type="radio" name="ventnConRadio" id="ventnConRadioSi" value="Si" onclick="insrtValr(this)">Si<br>
-												<input type="radio" name="ventnConRadio" id="ventnConRadioNo" value="No" onclick="insrtValr(this)">No
+												<input type="radio" name="ventnConRadio" id="ventnConRadioSi" value="Si" onclick="insrtValr(this, 'ventnCon')">Si<br>
+												<input type="radio" name="ventnConRadio" id="ventnConRadioNo" value="No" onclick="insrtValr(this, 'ventnCon')">No
 												<input type="hidden" name="ventnCon" id="ventnCon">
 											</td>
-											<td width="25%" align="center" class="cell_style">
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%">	<!--RENGLON 4-->
+										<tr>
+											<td width="25%" class="header_style">Fecha Inicio de Instalaci&oacuten</td>
+											<td width="25%" class="header_style">C&oacutedigo plan de trabajo</td>
+											<td width="25%" class="header_style">Plan de trabajo</td>
+											<td width="25%" class="header_style">Codigo Entregable</td>
+										</tr>
+										<tr>
+											<td width="25%" align="center">
 												<table>
 													<tr>
 														<td>D&iacutea</td>
@@ -221,23 +205,27 @@
 													</tr>
 												</table>
 											</td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="cdgPlnTrabj" id="cdgPlnTrabj"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="planTrbj" id="planTrbj"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="cdgEntrgbl" id="cdgEntrgbl"></td>
 										</tr>
 									</table>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<table width="100%">
+									<table width="100%">	<!--RENGLON 5-->
 										<tr>
-											<td width="25%" class="header_style">C&oacutedigo plan de trabajo</td>
-											<td width="25%" class="header_style">Plan de trabajo</td>
-											<td width="25%" class="header_style">Fecha fin de Plan de Trabajo</td>
-											<td width="25%" class="header_style">Fecha Puesta en producci&oacuten</td>
+											<td width="25%" class="header_style">Servidor</td>
+											<td width="25%" class="header_style">Participante o Lider</td>
+											<td width="25%" class="header_style">Folio DyD</td>
+											<td width="25%" class="header_style">Fecha fin Plan de Trabajo</td>
 										</tr>
 										<tr>
-											<td width="25%" align="center" class="cell_style"><input type="text" name="cdgPlnTrabj" id="cdgPlnTrabj"></td>
-											<td width="25%" align="center" class="cell_style"><input type="text" name="planTrbj" id="planTrbj"></td>
-											<td width="25%" align="center" class="cell_style">
+											<td width="25%" align="center" class="cell_style"><input type="text" name="servdr" id="servdr"></td>
+											<td width="25%" align="center" class="cell_style"><select name="prtcpntLdr" id="prtcpntLdr"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="folioDyD" id="folioDyD"></td>
+											<td width="25%" align="center">
 												<table>
 													<tr>
 														<td>D&iacutea</td>
@@ -251,7 +239,27 @@
 													</tr>
 												</table>
 											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%">	<!--RENGLON 6-->
+										<tr>
+											<td width="25%" class="header_style">Instalacion Faseada</td>
+											<td width="25%" class="header_style">Fase Actual del Proyecto</td>
+											<td width="25%" class="header_style">Fecha Puesta en producci&oacuten</td>
+											<td width="25%" class="header_style">Tipo de Plan</td>
+										</tr>
+										<tr>
 											<td width="25%" align="center" class="cell_style">
+												<input type="radio" name="instlcnFasdRadio" id="instlcnFasdRadioSi" value="Si" onclick="insrtValr(this, 'instlcnFasd')" checked>Si<br>
+												<input type="radio" name="instlcnFasdRadio" id="instlcnFasdRadioNo" value="No" onclick="insrtValr(this, 'instlcnFasd')">No
+												<input type="hidden" name="instlcnFasd" id="instlcnFasd">
+											</td>
+											<td width="25%" align="center" class="cell_style"><select name="FasActlProyct" id="FasActlProyct"></td>
+											<td width="25%" align="center">
 												<table>
 													<tr>
 														<td>D&iacutea</td>
@@ -265,24 +273,25 @@
 													</tr>
 												</table>
 											</td>
+											<td width="25%" align="center" class="cell_style"><select name="tipoPlan" id="tipoPlan"></td>
 										</tr>
 									</table>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<table width="100%">
+									<table width="100%">	<!--RENGLON 7-->
 										<tr>
-											<td width="25%" class="header_style">Tipo de Plan</td>
-											<td width="25%" class="header_style">Tipo de Proyecto</td>
-											<td width="25%" class="header_style">Comentarios a FU</td>
-											<td width="25%" class="header_style">N&uacutemero de componentes</td>
+											<td width="20%" class="header_style">Tipo de Proyecto</td>
+											<td width="35%" class="header_style">Comentarios a FU</td>
+											<td width="20%" class="header_style">N&uacutemero de componentes</td>
+											<td width="35%" class="header_style">Comentarios a DyD</td>
 										</tr>
 										<tr>
-											<td width="25%" align="center" class="cell_style"><select name="tipoPlan" id="tipoPlan"></td>
-											<td width="25%" align="center" class="cell_style"><select name="tipProyct" id="tipProyct"></td>
-											<td width="25%" align="center" class="cell_style"><input type="text" name="comntrsFU" id="comntrsFU"></td>
-											<td width="25%" align="center" class="cell_style"><input type="text" name="numrCompnnts" id="numrCompnnts"></td>
+											<td width="20%" align="center" class="cell_style"><select name="tipProyct" id="tipProyct"></td>
+											<td width="35%" align="center" class="cell_style"><textarea name="comntrsFU" id="comntrsFU" cols=50 rows=1 style="font-family: Arial; font-size:12px;"></textarea></td>
+											<td width="20%" align="center" class="cell_style"><input type="text" name="numrCompnnts" id="numrCompnnts"></td>
+											<td width="35%" align="center" class="cell_style"><textarea name="comntrsDYD" id="comntrsDYD" cols=50 rows=1 style="font-family: Arial; font-size:12px;"></textarea></td>
 										</tr>
 									</table>
 									<input type="hidden" name="anhoProcs" id="anhoProcs">
@@ -303,4 +312,3 @@
 ]]>
 	</Content> 
 </Module>
-
