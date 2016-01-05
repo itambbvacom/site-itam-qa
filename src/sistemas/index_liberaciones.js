@@ -31,19 +31,18 @@ var keySheetForm = "1kCPOgOLcu1-2_bGfKjM1e47t-C_HoDIpN59zFPJmC58";
 
 var data, dataOpciones;
 var msgError = ""
-var column1 = 10;			//Numero de columna EN EL SPREADSHEET
-var column2 = 4;			//Numero de columna EN EL SPREADSHEET
-var column3 = 12;			//Numero de columna EN EL SPREADSHEET
-var column4 = 6;			//Numero de columna EN EL SPREADSHEET
-var column5 = 5;			//Numero de columna EN EL SPREADSHEET
-var column6 = 17;			//Numero de columna EN EL SPREADSHEET
-var column7 = 18;			//Numero de columna EN EL SPREADSHEET
-var column8 = 16;			//Numero de columna EN EL SPREADSHEET
-var columnMes = 22;			//Numero de columna EN EL SPREADSHEET
-var columnAnho = 21;		//Numero de columna EN EL SPREADSHEET
-var column10 = 10;			//Numero de columna EN EL SPREADSHEET
-var column15 = 15;			//Numero de columna EN EL SPREADSHEET
-var column_extra = 9;		//Numero de columna EN EL SPREADSHEET
+var column1 = 11;			//Numero de columna EN EL SPREADSHEET (No de Cambio)
+var column2 = 5;			//Numero de columna EN EL SPREADSHEET (Lider promotor)
+var column3 = 13;			//Numero de columna EN EL SPREADSHEET (Fecha Inicio instalacion)
+var column4 = 7;			//Numero de columna EN EL SPREADSHEET (Nombre del cambio)
+var column5 = 6;			//Numero de columna EN EL SPREADSHEET (Aplicacion)
+var column6 = 24;			//Numero de columna EN EL SPREADSHEET (Tipo de plan)
+var column7 = 25;			//Numero de columna EN EL SPREADSHEET (Tipo de proyecto)
+var column8 = 23;			//Numero de columna EN EL SPREADSHEET (Fecha puesta en produccion)
+var columnMes = 30;			//Numero de columna EN EL SPREADSHEET (Columna del mes)
+var columnAnho = 29;		//Numero de columna EN EL SPREADSHEET (Columna del anho)
+var columnPK = 11;			//Numero de columna EN EL SPREADSHEET (No de Cambio)
+var column_extra = 10;		//Numero de columna EN EL SPREADSHEET
 
 //  arrayVariables = 	0)Nombre de ID en HTML (archivo identificado por tener extensión XML)(este texto puede cambiar dependiendo del ID del control en el HTML)
 //						1)Nombre de ID en HTML del formulario (este nombre debe ser el mismo que está definido dentro del HTML del formulario, cambia dependiendo del formulario en google)
@@ -54,6 +53,7 @@ var column_extra = 9;		//Numero de columna EN EL SPREADSHEET
 var arrayVariables = [["nivl1Sistms","entry.525199900","Nivel 1 Sistemas","TEXTO","","NIVEL1SISTEMAS"],
 					  ["nivl2Sistms","entry.1508970526","Nivel 2 Sistemas","TEXTO","","NIVEL2SISTEMAS"],
 					  ["nivl3Sistms","entry.616136887","Nivel 3 Sistemas","TEXTO","","NIVEL3SISTEMAS"],
+					  ["subdrctr","entry.1132274491","Subdirector","TEXTO","","SUBDIRECTOR"],
 					  ["lidrPromtr","entry.1956820680","L\u00edder promotor","TEXTO","","LIDERPROMOTOR"],
 					  ["aplccn","entry.1242859388","Aplicaci\u00f3n","TEXTO","","APLICACION"],
 					  ["nombrCamb","entry.516981761","Nombre de Cambio","TEXTO","","NOMBRECAMBIO"],
@@ -65,12 +65,19 @@ var arrayVariables = [["nivl1Sistms","entry.525199900","Nivel 1 Sistemas","TEXTO
 					  ["fchIniInst01","entry.611655675_day","Fecha Inicio de Instalaci\u00f3n","FECHA","","FECHAINICIOINSTALACION"],
 					  ["cdgPlnTrabj","entry.115995904","C\u00f3digo Plan de Trabajo","TEXTO","","CODIGOPLANTRABAJO"],
 					  ["planTrbj","entry.758402360","Plan de Trabajo","TEXTO","","PLANTRABAJO"],
+					  ["cdgEntrgbl","entry.1875396515","C\u00f3digo Entregable (IN)","TEXTO","","CODIGOENTREGABLE"],
+					  ["servdr","entry.1580670647","Servidor","TEXTO","","SERVIDOR"],
+					  ["prtcpntLdr","entry.2055894973","Participante o Lider","TEXTO","","PARTICIPANTELIDER"],
+					  ["folioDyD","entry.1847130248","Folio DyD","TEXTO","","FOLIODYD"],
 					  ["fchPlnTrbj01","entry.1303593104_day","Fecha Plan de Trabajo","FECHA","","FECHAFINPLANTRABAJO"],
+					  ["instlcnFasd","entry.1665085289","Instalaci\u00f3n Faseada","TEXTO","","INSTALACIONFASEADA"],
+					  ["FasActlProyct","entry.1308767878","Fase actual del Proyecto","TEXTO","","FASEACTUALPROYECTO"],
 					  ["fchPstPrd01","entry.850554363_day","Fecha Puesta en Producci\u00f3n","FECHA","","FECHAPUESTAPRODUCCION"],
 					  ["tipoPlan","entry.1231302035","Tipo de Plan","TEXTO","","TIPOPLAN"],
 					  ["tipProyct","entry.1241056301","Tipo de Proyecto","TEXTO","","TIPOPROYECTO"],
 					  ["comntrsFU","entry.2006234014","Comentarios a FU","TEXTO","","COMENTARIOSFU"],
 					  ["numrCompnnts","entry.491907284","N\u00famero de Componentes","ENTERO","","NUMEROCOMPONENTES"],
+					  ["comntrsDYD","entry.988835814","Comentarios a DyD","TEXTO","","COMENTARIOSDYD"],
 					  ["fchIniInst02","entry.611655675_month","Mes de Fecha Inicio de Instalaci\u00f3n","TEXTO","FUENTEMESPROCS","FECHAINICIOINSTALACION_MES"],
 					  ["fchIniInst03","entry.611655675_year","Anho de Fecha Inicio de Instalaci\u00f3n","TEXTO","FUENTEANHOPROCS","FECHAINICIOINSTALACION_ANHO"],
 					  ["fchPlnTrbj02","entry.1303593104_month","Mes de Fecha Plan de Trabajo","TEXTO","","FECHAFINPLANTRABAJO_MES"],
@@ -83,6 +90,7 @@ var arrayVariables = [["nivl1Sistms","entry.525199900","Nivel 1 Sistemas","TEXTO
 var nmrCntrlArray00 = locCntrlIDEnArray("NIVEL1SISTEMAS")
 var nmrCntrlArray01 = locCntrlIDEnArray("NIVEL2SISTEMAS")
 var nmrCntrlArray02 = locCntrlIDEnArray("NIVEL3SISTEMAS")
+var nmrCntrlArray021 = locCntrlIDEnArray("SUBDIRECTOR")
 var nmrCntrlArray03 = locCntrlIDEnArray("LIDERPROMOTOR")
 var nmrCntrlArray04 = locCntrlIDEnArray("APLICACION")
 var nmrCntrlArray05 = locCntrlIDEnArray("NOMBRECAMBIO")
@@ -96,9 +104,15 @@ var nmrCntrlArray12 = locCntrlIDEnArray("FECHAINICIOINSTALACION_MES")
 var nmrCntrlArray13 = locCntrlIDEnArray("FECHAINICIOINSTALACION_ANHO")
 var nmrCntrlArray14 = locCntrlIDEnArray("CODIGOPLANTRABAJO")
 var nmrCntrlArray15 = locCntrlIDEnArray("PLANTRABAJO")
+var nmrCntrlArray151 = locCntrlIDEnArray("CODIGOENTREGABLE")
+var nmrCntrlArray152 = locCntrlIDEnArray("SERVIDOR")
+var nmrCntrlArray153 = locCntrlIDEnArray("PARTICIPANTELIDER")
+var nmrCntrlArray154 = locCntrlIDEnArray("FOLIODYD")
 var nmrCntrlArray16 = locCntrlIDEnArray("FECHAFINPLANTRABAJO")
 var nmrCntrlArray17 = locCntrlIDEnArray("FECHAFINPLANTRABAJO_MES")
 var nmrCntrlArray18 = locCntrlIDEnArray("FECHAFINPLANTRABAJO_ANHO")
+var nmrCntrlArray181 = locCntrlIDEnArray("INSTALACIONFASEADA")
+var nmrCntrlArray182 = locCntrlIDEnArray("FASEACTUALPROYECTO")
 var nmrCntrlArray19 = locCntrlIDEnArray("FECHAPUESTAPRODUCCION")
 var nmrCntrlArray20 = locCntrlIDEnArray("FECHAPUESTAPRODUCCION_MES")
 var nmrCntrlArray21 = locCntrlIDEnArray("FECHAPUESTAPRODUCCION_ANHO")
@@ -106,9 +120,11 @@ var nmrCntrlArray22 = locCntrlIDEnArray("TIPOPLAN")
 var nmrCntrlArray23 = locCntrlIDEnArray("TIPOPROYECTO")
 var nmrCntrlArray24 = locCntrlIDEnArray("COMENTARIOSFU")
 var nmrCntrlArray25 = locCntrlIDEnArray("NUMEROCOMPONENTES")
+var nmrCntrlArray251 = locCntrlIDEnArray("COMENTARIOSDYD")
 
 var monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ags", "Sep", "Oct", "Nov", "Dic"];
-
+var anhoInicial = 2013
+var anhoFinal = 2025
 
 if(typeof String.prototype.trim !== 'function') {
   String.prototype.trim = function() {
@@ -120,6 +136,7 @@ google.setOnLoadCallback(draw);
 
 function draw() {
 	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet + '&usp=drive_web#gid=' + keySheetGIDResp);
+	//query.setQuery('select column, sum(column) group by column');
 	query.send(handleQueryResponse);
 	
 	var queryOpciones = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=' + keysheet + '&gid=' + keySheetGIDOpt);
@@ -243,13 +260,13 @@ function handleQueryResponse(response) {
 		
 		for (var row = 0; row < data.getNumberOfRows(); row++) {
 			data.setCell(row, column1, data.getValue(row, column1), data.getFormattedValue(row, column1), {'className': 'cell_style cell_width_60'});
-			data.setCell(row, column2, data.getValue(row, column2), data.getFormattedValue(row, column2), {'className': 'cell_style cell_width_120'});
-			data.setCell(row, column3, data.getValue(row, column3), data.getFormattedValue(row, column3), {'className': 'cell_style cell_width_120'});
-			data.setCell(row, column4, data.getValue(row, column4), data.getFormattedValue(row, column4), {'className': 'cell_style cell_width_85'});
+			data.setCell(row, column2, data.getValue(row, column2), data.getFormattedValue(row, column2), {'className': 'cell_style cell_width_60'});
+			data.setCell(row, column3, data.getValue(row, column3), data.getFormattedValue(row, column3), {'className': 'cell_style cell_width_60'});
+			data.setCell(row, column4, data.getValue(row, column4), data.getFormattedValue(row, column4), {'className': 'cell_style cell_width_120'});
 			data.setCell(row, column5, data.getValue(row, column5), data.getFormattedValue(row, column5), {'className': 'cell_style cell_width_60'});
 			data.setCell(row, column6, data.getValue(row, column6), data.getFormattedValue(row, column6), {'className': 'cell_style cell_width_85'});
 			data.setCell(row, column7, data.getValue(row, column7), data.getFormattedValue(row, column7), {'className': 'cell_style cell_width_60'});
-			data.setCell(row, column8, data.getValue(row, column8), data.getFormattedValue(row, column8), {'className': 'cell_style cell_width_100'});    
+			data.setCell(row, column8, data.getValue(row, column8), data.getFormattedValue(row, column8), {'className': 'cell_style cell_width_60'});    
 
 			data.setCell(row, columnMes, data.getValue(row, columnMes), data.getFormattedValue(row, columnMes), {'className': 'cell_style cell_width_60'});
 			data.setCell(row, columnAnho, data.getValue(row, columnAnho), data.getFormattedValue(row, columnAnho), {'className': 'cell_style cell_width_60'});                                                                        
@@ -260,7 +277,7 @@ function handleQueryResponse(response) {
 			extra = extra.split('"').join('&#34');
 			data.setCell(row, column_extra, extra, extra, {'className': ''});
 		}
-
+	
 		var hrefIframe = "https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=" + keysheet + "&usp=drive_web"
 
 		var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getDatosExtra(this);">{0}</a><div class="iframe" style="display:none"></div>');
@@ -275,7 +292,7 @@ function handleQueryResponse(response) {
 
 		google.visualization.events.addListener(table, 'ready',
 				function(event) {
-						$(".inline").colorbox({inline:true, width:"90%", height:"90%"});
+						$(".inline").colorbox({inline:true, width:"85%", height:"85%"});
 						$('#contenido_tabla').perfectScrollbar({
 							wheelSpeed: 20,
 							wheelPropagation: false
@@ -293,9 +310,9 @@ function handleQueryResponse(response) {
 						$("#table table tbody tr:last-child td").each(function(index){
 							$("#h"+(index+1)).width($(this).width());
 						});
-						
-						
 		});
+		
+		//$('a').click( function() { your_code_here; return false; } );
 }
 
 function locCntrlIDEnArray(nombrFijoCamp){
@@ -312,26 +329,32 @@ function locCntrlIDEnArray(nombrFijoCamp){
 }
 
 function getDatosExtra(elemento) {
-	for (var row = 0; row < data.getNumberOfRows(); row++) {
-		if (elemento.text == data.getValue(row, column10)) {
-			var table = document.getElementById('consltRegstr');
-			if (table.rows.length > 1) {
-				deleteRow(table.id)
-			}
-			var elemntsTabl = [];
-			for (var col = 1; col < data.getNumberOfColumns(); col++) {
-				if(arrayVariables[col - 1][3] == "FECHA"){
-					fechaAct = data.getValue(row, col)
-					datoAct = formatoFecha(fechaAct)
-				}else{
-					datoAct = data.getValue(row, col)
+	try{
+		data.setCell(0, 4, "valorPrueba")
+		
+		for (var row = 0; row < data.getNumberOfRows(); row++) {
+			if (elemento.text == data.getValue(row, columnPK)) {
+				var table = document.getElementById('consltRegstr');
+				if (table.rows.length > 1) {
+					deleteRow(table.id)
 				}
-				if (col < data.getNumberOfColumns() - 6){
-					elemntsTabl.push(datoAct);
+				var elemntsTabl = [];
+				for (var col = 1; col < data.getNumberOfColumns(); col++) {
+					if(arrayVariables[col - 1][3] == "FECHA"){
+						fechaAct = data.getValue(row, col)
+						datoAct = formatoFecha(fechaAct)
+					}else{
+						datoAct = data.getValue(row, col)
+					}
+					if (col < data.getNumberOfColumns() - 6){
+						elemntsTabl.push(datoAct);
+					}
 				}
+				addRow(table.id, elemntsTabl)
 			}
-			addRow(table.id, elemntsTabl)
 		}
+	}catch(err){
+		alert(err)
 	}
 }
 
@@ -435,8 +458,8 @@ function llenarDropDownFecha(dropDownId, opcionFecha) {
 			cntdrFin = 12
 			break
 		case 'ANHOS':
-			cntdrIni = 2013
-			cntdrFin = 2025
+			cntdrIni = anhoInicial
+			cntdrFin = anhoFinal
 			break
 	}
 	for(var contdr = cntdrFin; contdr >= cntdrIni; contdr--){
@@ -447,30 +470,41 @@ function llenarDropDownFecha(dropDownId, opcionFecha) {
 }
 
 function llenarTodosContrls(){
+	var fechaHoy = new Date();
+	var diaAct = fechaHoy.getDate()
+	var mesAct = fechaHoy.getMonth()
+	var anhoAct = fechaHoy.getFullYear()
+	var eleSelectListAnhos = anhoAct - anhoInicial
+
 	//Nivel 1 Sistemas
 	llenarDropDown(arrayVariables[nmrCntrlArray00][0], 0);
 	SortOptions(arrayVariables[nmrCntrlArray00][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray00][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray00][0], 0);
 	
 	//Nivel 2 Sistemas
 	llenarDropDown(arrayVariables[nmrCntrlArray01][0], 1);
 	SortOptions(arrayVariables[nmrCntrlArray01][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray01][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray01][0], 0);
 	
 	//Nivel 3 Sistemas
 	llenarDropDown(arrayVariables[nmrCntrlArray02][0], 2);
 	SortOptions(arrayVariables[nmrCntrlArray02][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray02][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray02][0], 0);
 	
+	//Subdirector
+	llenarDropDown(arrayVariables[nmrCntrlArray021][0], 9);
+	SortOptions(arrayVariables[nmrCntrlArray021][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray021][0], 0);
+
 	//Lider promotor
 	llenarDropDown(arrayVariables[nmrCntrlArray03][0], 3);
 	SortOptions(arrayVariables[nmrCntrlArray03][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray03][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray03][0], 0);
 	
 	//Aplicacion
 	llenarDropDown(arrayVariables[nmrCntrlArray04][0], 4);
 	SortOptions(arrayVariables[nmrCntrlArray04][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray04][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray04][0], 0);
 
 	//Nombre de cambio
 	limpiaControl(arrayVariables[nmrCntrlArray05][0]);
@@ -481,12 +515,12 @@ function llenarTodosContrls(){
 	//Plataforma
 	llenarDropDown(arrayVariables[nmrCntrlArray07][0], 5);
 	SortOptions(arrayVariables[nmrCntrlArray07][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray07][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray07][0], 0);
 
 	//Tipo de cambio
 	llenarDropDown(arrayVariables[nmrCntrlArray08][0], 6);
 	SortOptions(arrayVariables[nmrCntrlArray08][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray08][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray08][0], 0);
 
 	//No. de Cambio (CRQ)
 	limpiaControl(arrayVariables[nmrCntrlArray09][0]);
@@ -494,15 +528,15 @@ function llenarTodosContrls(){
 	//Ventana de Congelamiento
 	var ventnConRadioSi = document.getElementById("ventnConRadioSi")
 	ventnConRadioSi.checked = true;
-	insrtValr(ventnConRadioSi)
+	insrtValr(ventnConRadioSi, "ventnCon")
 
 	//Fecha de Inicio de Instalacion
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray11][0], 'DIAS');
-	prepDrowDown(arrayVariables[nmrCntrlArray11][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray11][0], diaAct - 1)
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray12][0], 'MESES');
-	prepDrowDown(arrayVariables[nmrCntrlArray12][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray12][0], mesAct)
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray13][0], 'ANHOS');
-	prepDrowDown(arrayVariables[nmrCntrlArray13][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray13][0], eleSelectListAnhos)
 
 	//Codigo plan de trabajo
 	limpiaControl(arrayVariables[nmrCntrlArray14][0]);
@@ -510,44 +544,80 @@ function llenarTodosContrls(){
 	//Plan de trabajo
 	limpiaControl(arrayVariables[nmrCntrlArray15][0]);
 
+	//Codigo entregable
+	limpiaControl(arrayVariables[nmrCntrlArray151][0]);
+	
+	//Servidor
+	limpiaControl(arrayVariables[nmrCntrlArray152][0]);
+
+	//Participante o lider
+	llenarDropDown(arrayVariables[nmrCntrlArray153][0], 10);
+	SortOptions(arrayVariables[nmrCntrlArray153][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray153][0], 0);
+
+	//Folio DyD
+	limpiaControl(arrayVariables[nmrCntrlArray154][0]);
+
 	//Fecha fin de Plan de Trabajo
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray16][0], 'DIAS');
-	prepDrowDown(arrayVariables[nmrCntrlArray16][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray16][0], diaAct - 1)
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray17][0], 'MESES');
-	prepDrowDown(arrayVariables[nmrCntrlArray17][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray17][0], mesAct)
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray18][0], 'ANHOS');
-	prepDrowDown(arrayVariables[nmrCntrlArray18][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray18][0], eleSelectListAnhos)
+
+	//Istalacion faseada
+	var instlcnFasdRadioSi = document.getElementById("instlcnFasdRadioSi")
+	instlcnFasdRadioSi.checked = true;
+	insrtValr(instlcnFasdRadioSi, 'instlcnFasd')
+	
+	//Fase actual del proyecto
+	llenarDropDown(arrayVariables[nmrCntrlArray182][0], 11);
+	SortOptions(arrayVariables[nmrCntrlArray182][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray182][0], 0);
 
 	//Fecha Puesta en produccion
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray19][0], 'DIAS');
-	prepDrowDown(arrayVariables[nmrCntrlArray19][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray19][0], diaAct - 1)
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray20][0], 'MESES');
-	prepDrowDown(arrayVariables[nmrCntrlArray20][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray20][0], mesAct)
 	llenarDropDownFecha(arrayVariables[nmrCntrlArray21][0], 'ANHOS');
-	prepDrowDown(arrayVariables[nmrCntrlArray21][0])
+	prepDrowDown(arrayVariables[nmrCntrlArray21][0], eleSelectListAnhos)
 
 	//Tipo de plan
 	llenarDropDown(arrayVariables[nmrCntrlArray22][0], 7);
 	SortOptions(arrayVariables[nmrCntrlArray22][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray22][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray22][0], 0);
 
 	//Tipo de proyecto
 	llenarDropDown(arrayVariables[nmrCntrlArray23][0], 8);
 	SortOptions(arrayVariables[nmrCntrlArray23][0]);
-	prepDrowDown(arrayVariables[nmrCntrlArray23][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray23][0], 0);
 
 	//Comentarios a FU
 	limpiaControl(arrayVariables[nmrCntrlArray24][0]);
 	
 	//Numero de componentes
 	limpiaControl(arrayVariables[nmrCntrlArray25][0]);
+
+	//Comentarios a DyD
+	limpiaControl(arrayVariables[nmrCntrlArray251][0]);
 }
 
 function enviaDatosAForm(){
 	var cdnSumbit = ""
 	var cdnAct = ""
 	var enviaDatos
-	if(procValdcn([0,1,2,3,4,5,6,7,8,9,10,12,13,16,17,18,19], "NOVACIO") && procValdcn([11,20,21,14,22,23,15,24,25], "FECHAVALIDA") && procValdcn([19], "NUMEROENTERO")){
+	var cmpsVldcnNoVacio = [nmrCntrlArray00, nmrCntrlArray01, nmrCntrlArray02, nmrCntrlArray021, nmrCntrlArray03, nmrCntrlArray04, nmrCntrlArray05, 
+							nmrCntrlArray06, nmrCntrlArray07, nmrCntrlArray08, nmrCntrlArray09, nmrCntrlArray14, nmrCntrlArray15, nmrCntrlArray151, 
+							nmrCntrlArray152, nmrCntrlArray153, nmrCntrlArray154, nmrCntrlArray182, nmrCntrlArray22, nmrCntrlArray23, nmrCntrlArray24, 
+							nmrCntrlArray25, nmrCntrlArray251]
+	var cmpsVldcnFechaValida = [nmrCntrlArray11, nmrCntrlArray12, nmrCntrlArray13,
+								nmrCntrlArray16, nmrCntrlArray17, nmrCntrlArray18,
+								nmrCntrlArray19, nmrCntrlArray20, nmrCntrlArray21]
+	var cmpsVldcnNumEntero = [nmrCntrlArray25]
+
+	if(procValdcn(cmpsVldcnNoVacio, "NOVACIO") && procValdcn(cmpsVldcnFechaValida, "FECHAVALIDA") && procValdcn(cmpsVldcnNumEntero, "NUMEROENTERO")){
 		enviaDatos = true
 	}
 	if(enviaDatos){
@@ -568,7 +638,7 @@ function enviaDatosAForm(){
 			}
 			submitFinal = 'https://docs.google.com/a/bbva.com/forms/d/' + keySheetForm + '/formResponse?ifq&' + cdnSumbit + '&submit=Submit&hl=es'
 			abrirVentana(submitFinal)
-			window.setTimeout(terminarProceso,5000)
+			window.setTimeout(terminarProceso,2000)
 		}else{
 			alert('La configuracion de los campos es incorrecta. Porfavor verifiquela y vuelvalo a intentar.')
 		}
@@ -644,9 +714,13 @@ function SortOptions(id) {
     );
 }
 
-function prepDrowDown(dropDownId) {
+function prepDrowDown(dropDownId, NoElemento) {
 	var dropDownObj = document.getElementById(dropDownId);
-	dropDownObj.selectedIndex = 0
+	if(NoElemento < 2000){
+		dropDownObj.selectedIndex = NoElemento
+	}else{
+		dropDownObj.selectedIndex = 3
+	}
 }
 
 function limpiaControl(objId){
@@ -684,9 +758,9 @@ function formatoFecha(dato){
 	return (day + '/' + monthNames[monthIndex] + '/' + year);
 }
 
-function insrtValr(objRadio){
-	ventnCon = document.getElementById(arrayVariables[nmrCntrlArray10][0])
-	ventnCon.value = objRadio.value
+function insrtValr(objRadio, nmbrObj){
+	var objTextoDestino = document.getElementById(nmbrObj)
+	objTextoDestino.value = objRadio.value
 }
 
 function esEntero(numero){
@@ -715,11 +789,46 @@ function obtenMesAnhoProcs(){
 }
 
 function abrirVentana(submitFinal){
-	//guardo la referencia de la ventana para poder utilizarla luego
 	ventana_secundaria = window.open(submitFinal,"miventana","width=500,height=600,menubar=no")
 }
 
 function cerrarVentana(){
-	//la referencia de la ventana es el objeto window del popup. Lo utilizo para acceder al método close
 	ventana_secundaria.close()
 } 
+
+function procSubmit(strProceso){
+	var strSubmit = ''
+	if(strProceso == 'EDICION'){
+		strSubmit = 'https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet + '&usp=drive_web#gid=' + keySheetGIDResp
+	}else if(strProceso == 'DESCARGA'){
+		strSubmit = 'https://docs.google.com/a/bbva.com/spreadsheet/fm?key=' + keysheet + '&fmcmd=420'
+	}
+	location.href = strSubmit
+}
+
+function add_text(message) {
+
+    //url = 'https://spreadsheets.google.com/feeds/cells/' + keysheet + '/default/private/basic/R2C4?access_token=' + token;
+	url = 'https://spreadsheets.google.com/feeds/cells/' + keysheet + '/default/private/basic/R2C4'
+
+    function constructAtomXML(message){
+        var atom = ["<?xml version='1.0' encoding='UTF-8'?>",
+            '<entry xmlns="http://www.w3.org/2005/Atom" xmlns:gs="http://schemas.google.com/spreadsheets/2006">',
+            '<id>https://spreadsheets.google.com/feeds/cells/key/private/basic/R2C4</id>',
+            '<link rel="edit" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/cells/key/default/private/basic/R2C4"/>',
+            '<gs:cell row="2" col="4" inputValue="' + message + '"/>',
+            '</entry>'].join('');
+        return atom;
+    };
+
+    var params = constructAtomXML(message);
+
+    var z = new XMLHttpRequest();
+    z.open("PUT", url);
+    z.setRequestHeader("Content-type", "application/atom+xml");
+    z.setRequestHeader("GData-Version", "3.0");
+    z.setRequestHeader("Authorization", "GoogleLogin");
+    z.setRequestHeader("If-Match", "*");
+    z.send(params);
+
+}
