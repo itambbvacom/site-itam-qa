@@ -74,3 +74,27 @@
                         .bold_style {
 							font-weight: bold;
                         }
+			.row_cell_header{
+				font: 18px Tahoma, Helvetica, Arial, Sans-Serif;
+				font-weight: bolder;
+				color: white;
+				background-color: blue;
+				font-weight: bold;
+				text-align: center;
+				height: 60%
+			}
+			.row_cell_title{
+				font: 15px Tahoma, Helvetica, Arial, Sans-Serif;
+				font-weight: bold;
+				text-align: center;
+				color: white;
+				background-color: #009EE5;
+				height: 60%
+			}
+			.row_cell_content{
+				font: 13px Tahoma, Helvetica, Arial, Sans-Serif;
+				font-weight: normal;
+			text-align: center;
+				background-color: white;
+				height: 60%
+			}
