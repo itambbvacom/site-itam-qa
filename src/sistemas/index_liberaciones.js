@@ -311,7 +311,6 @@ function handleQueryResponse(response) {
 							$("#h"+(index+1)).width($(this).width());
 						});
 		});
-		
 		//$('a').click( function() { your_code_here; return false; } );
 }
 
@@ -328,16 +327,24 @@ function locCntrlIDEnArray(nombrFijoCamp){
 	}
 }
 
-function getDatosExtra(elemento) {
+function cambia_detalle() {
+	$(".inline").each(function(index, elemento){
+		if ($('#chk_editar').prop('checked')) {
+			$(".iframe").show();
+			$(".inline").hide();
+			//$.colorbox.remove();
+		} else {
+			$(".inline").show();
+			$(".iframe").hide();
+			//$(".inline").colorbox({iframe:true, width:"100%", height:"95%"});
+		}
+	});
+}
+
+function getDatosParaEdicion(elemento) {
 	try{
-		data.setCell(0, 4, "valorPrueba")
-		
 		for (var row = 0; row < data.getNumberOfRows(); row++) {
 			if (elemento.text == data.getValue(row, columnPK)) {
-				var table = document.getElementById('consltRegstr');
-				if (table.rows.length > 1) {
-					deleteRow(table.id)
-				}
 				var elemntsTabl = [];
 				for (var col = 1; col < data.getNumberOfColumns(); col++) {
 					if(arrayVariables[col - 1][3] == "FECHA"){
@@ -350,7 +357,77 @@ function getDatosExtra(elemento) {
 						elemntsTabl.push(datoAct);
 					}
 				}
-				addRow(table.id, elemntsTabl)
+			}
+		}
+		return elemntsTabl
+	}catch(err){
+		alert(err)
+	}
+}
+
+function getDatosExtra(elemento) {
+	try{
+		chk_editar = document.getElementById("chk_editar")
+		if(chk_editar.checked == true){
+			elemento.href = '#form_content'
+
+			llenarTodosContrlsParaEdicion(getDatosParaEdicion(elemento))
+		}else{
+			elemento.href = '#inline_content'
+			
+			var table = document.getElementById('consltRegstr');
+			for (var row = 0; row < data.getNumberOfRows(); row++) {
+				if (elemento.text == data.getValue(row, columnPK)) {
+					if (table.rows.length > 0) {
+						deleteRow(table.id)
+					}
+
+					var renglnsTblXRenglnsArr = 3						//Numero de renglones en la tabla HTML por cada renglon (o registro) en el arreglo tablaConsulta
+					var elemntsTabl = [];
+					var tablaConsulta = [['ESTRUCTURA','1','2','3','4','5','6'],
+										 ['INFORMACION FRENTE UNICO','7','8','9','10','11','12','13','14','15'],
+										 ['OTRA INFORMACION','16','17','18','19'],
+										 ['DATOS DEL PLAN DE TRABAJO REGISTRADO EN LA PMO','20','21','22','23','24','25'],
+										 ['RESULTADO DEL COMITE','26','27','28','29']]
+
+					for(var renglnActual = 0; renglnActual < tablaConsulta.length; renglnActual++){
+						var estiloRengln = ''
+						var ElmntActual = 0
+						elemntsTabl.push(tablaConsulta[renglnActual][ElmntActual]);
+						addRow(table.id, elemntsTabl, 'row_cell_header')
+						elemntsTabl.length = 0
+						for(var procsAct = 1; procsAct <=2; procsAct++){
+							for(ElmntActual = 1; ElmntActual < tablaConsulta[renglnActual].length; ElmntActual++){				//Comienza desde 1 porque el elemento numero 0 corresponde al titulo
+								var colmnADesplgr
+								if (isNaN(tablaConsulta[renglnActual][ElmntActual]) == false) {
+									colmnADesplgr = parseInt(tablaConsulta[renglnActual][ElmntActual])
+									var datoAct
+									var fechaAct
+									if(procsAct == 1){
+										datoAct = data.getColumnLabel(colmnADesplgr)
+										estiloRengln = 'row_cell_title'
+									}else{
+										if(arrayVariables[colmnADesplgr - 1][3] == 'FECHA'){
+											fechaAct = data.getValue(row, colmnADesplgr)
+											datoAct = formatoFecha(fechaAct)
+										}else{
+											datoAct = data.getValue(row, colmnADesplgr)
+										}
+										estiloRengln = 'row_cell_content'
+									}
+									if (datoAct == null){
+										datoAct = '&nbsp;'
+									}
+									elemntsTabl.push(datoAct)
+								}
+							}
+							addRow(table.id, elemntsTabl, estiloRengln)
+							elemntsTabl.length = 0
+						}
+						var evalcnDeRengln = renglnActual * renglnsTblXRenglnsArr
+						document.getElementById(table.id).rows[evalcnDeRengln].cells[0].colSpan = tablaConsulta[renglnActual].length - 1
+					}
+				}
 			}
 		}
 	}catch(err){
@@ -379,35 +456,21 @@ function seleccionar(el) {
 	}
 }
 
-function cambia_detalle() {
-	$(".inline").each(function(index, elemento){
-		if ($('#chk_editar').prop('checked')) {
-			$(".iframe").show();
-			$(".inline").hide();
-			//$.colorbox.remove();
-		} else {
-			$(".inline").show();
-			$(".iframe").hide();
-			//$(".inline").colorbox({iframe:true, width:"100%", height:"95%"});
-		}
-	});
-}
-
-function addRow(tableID, arrayEtiqts) {
+function addRow(tableID, arrayEtiqts, cellClass) {
 	var table = document.getElementById(tableID);
 	var rowCount = table.rows.length;
 	var row = table.insertRow(rowCount);
 	for(var cellAct=0; cellAct < arrayEtiqts.length; cellAct++){
 		var cell = row.insertCell(cellAct);
 		cell.innerHTML = arrayEtiqts[cellAct];
-		cell.className = "cell_style"
+		cell.className = cellClass
 	}
 }
 
 function deleteRow(tableID) {
 	try {
 		var table = document.getElementById(tableID);
-		while (table.rows.length > 1){
+		while (table.rows.length > 0){
 			lastRow = table.rows.length - 1
 			table.deleteRow(lastRow);
 		}
@@ -469,7 +532,180 @@ function llenarDropDownFecha(dropDownId, opcionFecha) {
 	}
 }
 
-function llenarTodosContrls(){
+function llenarTodosContrlsParaEdicion(elemntsConValr){
+	var objTemp
+	var fechaHoy = new Date();
+	var diaAct = fechaHoy.getDate()
+	var mesAct = fechaHoy.getMonth()
+	var anhoAct = fechaHoy.getFullYear()
+	var eleSelectListAnhos = anhoAct - anhoInicial
+
+	//Nivel 1 Sistemas
+	llenarDropDown(arrayVariables[nmrCntrlArray00][0], 0);
+	SortOptions(arrayVariables[nmrCntrlArray00][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray00][0], buscaEnDropDown(arrayVariables[nmrCntrlArray00][0], elemntsConValr[nmrCntrlArray00]));
+	
+	//Nivel 2 Sistemas
+	llenarDropDown(arrayVariables[nmrCntrlArray01][0], 1);
+	SortOptions(arrayVariables[nmrCntrlArray01][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray01][0], buscaEnDropDown(arrayVariables[nmrCntrlArray01][0], elemntsConValr[nmrCntrlArray01]));
+	
+	//Nivel 3 Sistemas
+	llenarDropDown(arrayVariables[nmrCntrlArray02][0], 2);
+	SortOptions(arrayVariables[nmrCntrlArray02][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray02][0], buscaEnDropDown(arrayVariables[nmrCntrlArray02][0], elemntsConValr[nmrCntrlArray02]));
+	
+	//Subdirector
+	llenarDropDown(arrayVariables[nmrCntrlArray021][0], 9);
+	SortOptions(arrayVariables[nmrCntrlArray021][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray021][0], buscaEnDropDown(arrayVariables[nmrCntrlArray021][0], elemntsConValr[nmrCntrlArray021]));
+
+	//Lider promotor
+	llenarDropDown(arrayVariables[nmrCntrlArray03][0], 3);
+	SortOptions(arrayVariables[nmrCntrlArray03][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray03][0], buscaEnDropDown(arrayVariables[nmrCntrlArray03][0], elemntsConValr[nmrCntrlArray03]));
+	
+	//Aplicacion
+	llenarDropDown(arrayVariables[nmrCntrlArray04][0], 4);
+	SortOptions(arrayVariables[nmrCntrlArray04][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray04][0], buscaEnDropDown(arrayVariables[nmrCntrlArray04][0], elemntsConValr[nmrCntrlArray04]));
+
+	//Nombre de cambio
+	limpiaControl(arrayVariables[nmrCntrlArray05][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray05][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray05]
+	
+	//Objetivo
+	limpiaControl(arrayVariables[nmrCntrlArray06][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray06][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray06]
+	
+	//Plataforma
+	llenarDropDown(arrayVariables[nmrCntrlArray07][0], 5);
+	SortOptions(arrayVariables[nmrCntrlArray07][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray07][0], buscaEnDropDown(arrayVariables[nmrCntrlArray07][0], elemntsConValr[nmrCntrlArray07]));
+
+	//Tipo de cambio
+	llenarDropDown(arrayVariables[nmrCntrlArray08][0], 6);
+	SortOptions(arrayVariables[nmrCntrlArray08][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray08][0], buscaEnDropDown(arrayVariables[nmrCntrlArray08][0], elemntsConValr[nmrCntrlArray08]));
+
+	//No. de Cambio (CRQ)
+	limpiaControl(arrayVariables[nmrCntrlArray09][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray09][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray09]
+	
+	//Ventana de Congelamiento
+	var nombrObj
+	var valrActl = elemntsConValr[nmrCntrlArray10]
+	if(valrActl === null) valrActl = ''
+	if(valrActl.toUpperCase() == 'SI'){
+		nombrObj = "ventnConRadioSi"
+	}else{
+		nombrObj = "ventnConRadioNo"
+	}
+	var ventnConRadio = document.getElementById(nombrObj)
+	ventnConRadio.checked = true;
+	insrtValr(ventnConRadio, "ventnCon")
+
+	//Fecha de Inicio de Instalacion
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray11][0], 'DIAS');
+	prepDrowDown(arrayVariables[nmrCntrlArray11][0], descmpnFecha(elemntsConValr[nmrCntrlArray11], 'DIA') - 1)
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray12][0], 'MESES');
+	prepDrowDown(arrayVariables[nmrCntrlArray12][0], descmpnFecha(elemntsConValr[nmrCntrlArray11], 'MES') - 1)
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray13][0], 'ANHOS');
+	prepDrowDown(arrayVariables[nmrCntrlArray13][0], descmpnFecha(elemntsConValr[nmrCntrlArray11], 'ANHO'))
+
+	//Codigo plan de trabajo
+	limpiaControl(arrayVariables[nmrCntrlArray14][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray14][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray14]
+	
+	//Plan de trabajo
+	limpiaControl(arrayVariables[nmrCntrlArray15][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray15][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray15]
+
+	//Codigo entregable
+	limpiaControl(arrayVariables[nmrCntrlArray151][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray151][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray151]
+	
+	//Servidor
+	limpiaControl(arrayVariables[nmrCntrlArray152][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray152][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray152]
+
+	//Participante o lider
+	llenarDropDown(arrayVariables[nmrCntrlArray153][0], 10);
+	SortOptions(arrayVariables[nmrCntrlArray153][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray153][0], buscaEnDropDown(arrayVariables[nmrCntrlArray153][0], elemntsConValr[nmrCntrlArray153]));
+
+	//Folio DyD
+	limpiaControl(arrayVariables[nmrCntrlArray154][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray154][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray154]
+
+	//Fecha fin de Plan de Trabajo
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray16][0], 'DIAS');
+	prepDrowDown(arrayVariables[nmrCntrlArray16][0], descmpnFecha(elemntsConValr[nmrCntrlArray16], 'DIA') - 1)
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray17][0], 'MESES');
+	prepDrowDown(arrayVariables[nmrCntrlArray17][0], descmpnFecha(elemntsConValr[nmrCntrlArray16], 'MES') - 1)
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray18][0], 'ANHOS');
+	prepDrowDown(arrayVariables[nmrCntrlArray18][0], descmpnFecha(elemntsConValr[nmrCntrlArray16], 'ANHO'))
+
+	//Istalacion faseada
+	valrActl = elemntsConValr[nmrCntrlArray181]
+	if(valrActl == null) valrActl = ''
+	if(valrActl.toUpperCase() == 'SI'){
+		nombrObj = "instlcnFasdRadioSi"
+	}else{
+		nombrObj = "instlcnFasdRadioNo"
+	}
+	var instlcnFasdRadio = document.getElementById(nombrObj)
+	instlcnFasdRadio.checked = true;
+	insrtValr(instlcnFasdRadio, 'instlcnFasd')
+	
+	//Fase actual del proyecto
+	llenarDropDown(arrayVariables[nmrCntrlArray182][0], 11);
+	SortOptions(arrayVariables[nmrCntrlArray182][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray182][0], buscaEnDropDown(arrayVariables[nmrCntrlArray182][0], elemntsConValr[nmrCntrlArray182]));
+
+	//Fecha Puesta en produccion
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray19][0], 'DIAS');
+	prepDrowDown(arrayVariables[nmrCntrlArray19][0], descmpnFecha(elemntsConValr[nmrCntrlArray19], 'DIA') - 1)
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray20][0], 'MESES');
+	prepDrowDown(arrayVariables[nmrCntrlArray20][0], descmpnFecha(elemntsConValr[nmrCntrlArray19], 'MES') - 1)
+	llenarDropDownFecha(arrayVariables[nmrCntrlArray21][0], 'ANHOS');
+	prepDrowDown(arrayVariables[nmrCntrlArray21][0], descmpnFecha(elemntsConValr[nmrCntrlArray19], 'ANHO'))
+
+	//Tipo de plan
+	llenarDropDown(arrayVariables[nmrCntrlArray22][0], 7);
+	SortOptions(arrayVariables[nmrCntrlArray22][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray22][0], buscaEnDropDown(arrayVariables[nmrCntrlArray22][0], elemntsConValr[nmrCntrlArray22]));
+
+	//Tipo de proyecto
+	llenarDropDown(arrayVariables[nmrCntrlArray23][0], 8);
+	SortOptions(arrayVariables[nmrCntrlArray23][0]);
+	prepDrowDown(arrayVariables[nmrCntrlArray23][0], buscaEnDropDown(arrayVariables[nmrCntrlArray23][0], elemntsConValr[nmrCntrlArray23]));
+
+	//Comentarios a FU
+	limpiaControl(arrayVariables[nmrCntrlArray24][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray24][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray24]
+	
+	//Numero de componentes
+	limpiaControl(arrayVariables[nmrCntrlArray25][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray25][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray25]
+
+	//Comentarios a DyD
+	limpiaControl(arrayVariables[nmrCntrlArray251][0]);
+	objTemp = document.getElementById(arrayVariables[nmrCntrlArray251][0])
+	objTemp.value = elemntsConValr[nmrCntrlArray251]
+}
+
+function llenarTodosContrlsParaAlta(){
 	var fechaHoy = new Date();
 	var diaAct = fechaHoy.getDate()
 	var mesAct = fechaHoy.getMonth()
@@ -714,12 +950,23 @@ function SortOptions(id) {
     );
 }
 
+function buscaEnDropDown(dropDownId, textoABuscar){
+	valrARegrsr = ''
+	var dropDownObj = document.getElementById(dropDownId);
+	for(i = dropDownObj.options.length - 1; i >= 0; i--) {
+		if(dropDownObj.options[i].text == textoABuscar){
+			valrARegrsr = i
+		}
+    }
+	return valrARegrsr
+}
+
 function prepDrowDown(dropDownId, NoElemento) {
 	var dropDownObj = document.getElementById(dropDownId);
 	if(NoElemento < 2000){
 		dropDownObj.selectedIndex = NoElemento
 	}else{
-		dropDownObj.selectedIndex = 3
+		dropDownObj.selectedIndex = NoElemento - anhoInicial
 	}
 }
 
@@ -732,7 +979,7 @@ function limpiaControl(objId){
 
 function removeOptions(selectbox) {
     var i;
-    for(i=selectbox.options.length-1; i>=0; i--) {
+   for(i=selectbox.options.length-1; i>=0; i--) {
         selectbox.remove(i);
     }
 }
@@ -756,6 +1003,35 @@ function formatoFecha(dato){
 	var year = date.getFullYear();
 
 	return (day + '/' + monthNames[monthIndex] + '/' + year);
+}
+
+function descmpnFecha(datoFecha, datoARegresar){
+	var dia = datoFecha.substring(0, 2)
+	var mes = datoFecha.substring(3, 6)
+	var anho = datoFecha.substring(7, 11)
+	var valrARegrsr = ''
+	switch (datoARegresar){
+		case 'DIA':
+			valrARegrsr = dia
+			break
+		case 'MES':
+			if(isNaN(mes)){
+				for (mesAct = 0; mesAct < monthNames.length; mesAct++){
+					if(monthNames[mesAct].toUpperCase() == mes.toUpperCase()){
+						valrARegrsr = mesAct + 1
+					}
+				}
+			}else{
+				valrARegrsr = mes
+			}
+			break
+		case 'ANHO':
+			valrARegrsr = anho
+			break
+		default:
+			valrARegrsr = ''
+	}
+	return valrARegrsr
 }
 
 function insrtValr(objRadio, nmbrObj){
@@ -789,7 +1065,10 @@ function obtenMesAnhoProcs(){
 }
 
 function abrirVentana(submitFinal){
-	ventana_secundaria = window.open(submitFinal,"miventana","width=500,height=600,menubar=no")
+	var strWindowFeatures = "width=250,height=150,left=150,0,top=200,status=0,"
+	ventana_secundaria = window.open(submitFinal,"nuevaVentana",strWindowFeatures)
+	ventana_secundaria.blur;
+	window.focus();
 }
 
 function cerrarVentana(){
@@ -830,5 +1109,9 @@ function add_text(message) {
     z.setRequestHeader("Authorization", "GoogleLogin");
     z.setRequestHeader("If-Match", "*");
     z.send(params);
+}
 
+function esEntero(str) {
+	var r = /^-?[0-9]*[1-9][0-9]*$/;
+	return r.test(str);
 }
