@@ -12,7 +12,6 @@
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.mousewheel.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
-				
                 <div id="dashboard">
 					<table width="100%">
 						<tr>
@@ -21,14 +20,17 @@
 									<tr>
 										<td style="text-align:right;">
 											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
-												<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnSelecciona2.png">
+												<img src="https://abdef65f-a-8e9718e0-s-sites.googlegroups.com/a/bbva.com/it-am-qa/files/btnSelecciona2.png?attachauth=ANoY7co9d8yyXptUT74qcsT0cXrRaud4m1MROsuex8uDmzyHRllmXK_UKarB042oejL6MXtO-47wwJSmPDBRVW2m3ELKkZC_CSTDx7xeTRZwCbc6aQ5XJ4-14jMR0qh8D95Y--QDgozwQkTPXEViocMM27Rlv2TWqDnf1jYO6ZgHL0UG8LUOXrn5Sw-O0zfxFfCC_8xhH5wgMUljUeiNbll4S4gk3cRMRw%3D%3D&attredirects=0">
 											</a>
 										</td>
 										<td>
-											<a class="inline" href="#form_content" onclick="llenarTodosContrls()"><img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnNuevo.png"></a>
+											<a class="inline" href="#form_content" onclick="llenarTodosContrlsParaAlta()"><img src="https://abdef65f-a-8e9718e0-s-sites.googlegroups.com/a/bbva.com/it-am-qa/files/btnNuevo.png?attachauth=ANoY7crMJW1yIV-Mxidz0-an-iP695Hl-b1N5YUPQeotS-1UTIaXUsj_PfgOMj4apEEN2degfTKwlsdEPP9MvYKJMKaEOEtscq9AJJj6x3b7j4a8zfTxlwfZ9Vl7x6wcwKDg4jzO0vGuE6nb8J3Rf8h0UsS7A2aMy6ch5Hslv1sj1XF-IFS9laqtWf-Ukrxj_fA0CzcFSPhs2_Lc1KcaWKE8IbCLwvr41A%3D%3D&attredirects=0"></a>
 										</td>
 										<td>
-											<a href="#" onclick="javascript:procSubmit('EDICION')"><img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnEditar.png"></a>
+											<a href="#" onclick="javascript:procSubmit('EDICION')"><img src="https://abdef65f-a-8e9718e0-s-sites.googlegroups.com/a/bbva.com/it-am-qa/files/btnEditar.png?attachauth=ANoY7cpyXtPTrKHwt_2ET7Ai1hjbOes6_cTujRZCYWztceNQqrI5DcrIf8CBSVXpXQ5NfCH-5J-T5Jyg4RqoUk9Nqv4XfVTSbZgtR25cWxg59lvUkLrYvCbXMife901LfVrVYyjbKIKgizR6NcMS2DgQQyJfBR5N5vyXZ-OL79FDBqD3w6Sl3UBIPIeToO8th0dIoilzfhCEjb_8AuHWJSO24ToxBiVyDg%3D%3D&attredirects=0"></a>
+										</td>
+										<td>
+											<input type="checkbox" hidden="true" id="chk_editar" value="Editar">
 										</td>
 									</tr>
 								</table>
@@ -76,7 +78,7 @@
 						<tr>
 							<td colspan="9" style="text-align:right;padding-right: 5px;">
 								<a href="#" onclick="javascript:procSubmit('DESCARGA')">
-									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
+									<img src="https://abdef65f-a-8e9718e0-s-sites.googlegroups.com/a/bbva.com/it-am-qa/files/btnDescarga2.png?attachauth=ANoY7co52Xwuo-_UZjLLleJwtWn3u7XsakMMhKsUb2ffv9EuoNgujowgbJj0_Jx4DKAuDj1NUsIi7lY7CNPuNRgrVCVDmHDxoLZk_OqJvZilUmoub33K03ObPBU1AUN6tBWYhVk8v9VMwWVJMmODZXk9M5WPdxSsOO4pY132EnmyTLePFEMlQZC5tCjj-Z63uedq8ZcesymosAEXR8Nq9I3QlmeOyJWUxQ%3D%3D&attredirects=0">
 								</a>
 							</td>
 						</tr>
@@ -85,44 +87,14 @@
 
 				<div style="display:none">
 					<div id="inline_content" style="padding:10px; background:#fff;">
-						<table id="consltRegstr" border = 1 width="300%">
-							<tr>
-								<td class="header_style">Nivel 1 Sistemas</td>
-								<td class="header_style">Nivel 2 Sistemas</td>
-								<td class="header_style">Nivel 3 Sistemas</td>
-								<td class="header_style">Subdirector</td>
-								<td class="header_style">L&iacuteder Promotor</td>
-								<td class="header_style">Aplicaci&oacuten</td>
-								<td class="header_style">Nombre del Cambio</td>
-								<td class="header_style">Objetivo</td>
-								<td class="header_style">Plataforma</td>
-								<td class="header_style">Tipo de Cambio</td>
-								<td class="header_style">No. de Cambio (CRQ)</td>
-								<td class="header_style">Ventana de Congelamiento</td>
-								<td class="header_style">Inicio instalaci&oacuten</td>
-								<td class="header_style">C&oacutedigo Plan de Trabajo</td>
-								<td class="header_style">Plan de Trabajo</td>
-								<td class="header_style">C&oacutedigo Entregable</td>
-								<td class="header_style">Servidor</td>
-								<td class="header_style">Participante o L&iacuteder</td>
-								<td class="header_style">F&oacutelio DyD</td>
-								<td class="header_style">Fecha Fin Plan de Trabajo</td>
-								<td class="header_style">Instalaci&oacuten Faseada</td>
-								<td class="header_style">Fase actual del proyecto</td>
-								<td class="header_style">Fecha Puesta en Producci&oacuten</td>
-								<td class="header_style">Tipo de Plan</td>
-								<td class="header_style">Tipo de Proyecto</td>
-								<td class="header_style">Comentarios a FU</td>
-								<td class="header_style">No. de Componentes</td>
-								<td class="header_style">Comentarios a DyD</td>
-							</tr>
+						<table id="consltRegstr" border="1" width="100%">
 						</table>
 					</div>
 				</div>
 				<div style="display:none">
 					<div id="form_content" style="padding:2px; background:#fff;">
 						<br>
-						<table id="consltRegstr" width="100%" border=1 cellpadding="2%">
+						<table id="consltRegstrAlta" width="100%" border=1 cellpadding="2%">
 							<tr>
 								<td>
 									<table width="100%">	<!--RENGLON 1-->
