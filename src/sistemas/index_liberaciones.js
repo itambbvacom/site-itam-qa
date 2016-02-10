@@ -997,12 +997,19 @@ function existeFecha(fecha){
 }
 
 function formatoFecha(dato){
-	var date = new Date(dato);
-	var day = date.getDate();
-	var monthIndex = date.getMonth();
-	var year = date.getFullYear();
+	//var date = new Date(dato);
+	//var day = date.getDate();
+	//var monthIndex = date.getMonth();
+	//var year = date.getFullYear();
+	var dia = dato.substring(0, 2)
+	var mes = dato.substring(3, 5)
+	var anho = dato.substring(6, 10)
 
-	return (day + '/' + monthNames[monthIndex] + '/' + year);
+	if(isNaN(dia) || isNaN(mes) || isNaN(anho)){
+		return (dato);
+	}else{
+		return (dia + '/' + mes + '/' + anho);
+	}
 }
 
 function descmpnFecha(datoFecha, datoARegresar){
