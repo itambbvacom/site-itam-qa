@@ -65,3 +65,54 @@
 .bold_style {
 		font-weight: bold;
 }
+.es-input {
+	width: 100%;
+	border-bottom: 2px solid #1E90FF;
+	border-right: 2px solid #1E90FF;
+	border-top: 0px;
+	border-left: 0px;
+}
+.input-style {
+	width: 100%;
+	border-bottom: 2px solid #1E90FF;
+	border-right: 2px solid #1E90FF;
+	border-top: 0px;
+	border-left: 0px;
+}
+.tabla-style td {
+	border: 1px solid #C8C8C8;
+	padding: 5px;
+}
+.tabla-style th {
+	border: 1px solid #FFFFFF;
+	padding: 5px;
+}
+.tabla-style tbody tr td {
+	background-color: #FFFFFF;
+	font-size: 12px;
+}
+
+.tabla-style thead tr th,
+.tabla-style thead tr td,
+.tabla-style tfoot tr th, 
+.tabla-style tfoot tr td {
+	background-color: #094FA4;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.divtabla-style {
+        height: 300px;
+		width: 1190px;
+		margin:0 auto;
+        overflow-x: auto;
+        overflow-y: auto;
+}
+
+.fht-table td {
+	vertical-align: middle;
+}
+
+.hcenter-row {
+	text-align: center;
+}
