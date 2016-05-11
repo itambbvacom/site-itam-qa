@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+	<ModulePrefs title="index_incidentes_diego.xml" /> 
+	<Content type="html">
+		<![CDATA[
+			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/bootstrap.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.editable-select.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/fixedheadertable.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_gral_itam.css" rel="stylesheet">
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.editable-select.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.fixedheadertable.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
+			<script src="index_incidentes_diego.js"></script>
+			<div id="dashboard">
+				
+				<table width="87%" align="center">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td height="50px" style="text-align:left;" class="filtros_style">Folio:</td>
+						<td><input type="text" class="input-style" id="sFolio"></td>
+					</tr>
+					<tr>
+						<td style="text-align:left;" class="filtros_style">&Aacuterea IT Responsable:</td>
+						<td id="cAreaResponsable"><input type="hidden" id="hAreaResponsable"><select id="sAreaResponsable" style="display: none;"></select></td>
+						<td></td>
+						<td style="text-align:left;" class="filtros_style">&Aacuterea Resolutoria:</td>
+						<td id="cAreaResolutoria"><input type="hidden" id="hAreaResolutoria"><select id="sAreaResolutoria" style="display: none;"></select></td>
+						<td></td>
+						<td style="text-align:left;" class="filtros_style">Aplicativo:</td>
+						<td height="50px" id="cAplicativo"><input type="hidden" id="hAplicativo"><select id="sAplicativo" style="display: none;"></select></td>
+					</tr>
+					<tr>
+						<td width="13%" height="50px" style="text-align:left;" class="filtros_style">Usuario Afectado:</td>
+						<td width="23%" id="cUsuarioAfectado"><input type="hidden" id="hUsuarioAfectado"><select id="sUsuarioAfectado" style="display: none;"></select></td>
+						<td width="2%"></td>
+						<td width="10%" style="text-align:left; margin:10px 0px 0px 0px;" class="filtros_style">&Aacuterea Negocio:</td>
+						<td width="21%" id="cAreaNegocio"><input type="hidden" id="hAreaNegocio"><select id="sAreaNegocio" style="display: none;"></select></td>
+						<td width="2%"></td>
+						<td width="7%" style="text-align:left;" class="filtros_style">Estatus:</td>
+						<td width="21%" id="cEstatus"><input type="hidden" id="hEstatus"><select id="sEstatus" style="display: none;"></select></td>
+						
+					</tr>
+				</table>
+				</br>
+				<div class="divtabla-style">
+					<table class="tabla-style" id="tabla-incidencias" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr>
+								<th width="80px" class="hcenter-row">Folio</th>
+								<th width="290px" class="hcenter-row">Titulo</th>
+								<th width="140px" class="hcenter-row">Aplicativo</th>
+								<th width="80px" class="hcenter-row">F. Registro</th>
+								<th width="10px" class="hcenter-row">Estatus</th>
+								<th width="80px" class="hcenter-row">F. Estatus</th>
+								<th width="110px" class="hcenter-row">F. Compromiso</th>
+								<th width="5px" class="hcenter-row">Ind.</th>
+								<th width="5px" class="hcenter-row">Oc.</th>
+								<th width="180px" class="hcenter-row">&Aacute. Resolutoria</th>
+								
+								<!--th width="5%" class="hcenter-row">Folio</th>
+								<th width="30%" class="hcenter-row">Titulo</th>
+								<th width="12%" class="hcenter-row">Aplicativo</th>
+								<th width="8%" class="hcenter-row">F. Registro</th>
+								<th width="5%" class="hcenter-row">Estatus</th>
+								<th width="8%" class="hcenter-row">F. Estatus</th>
+								<th width="12%" class="hcenter-row">F. Compromiso</th>
+								<th width="5%" class="hcenter-row">Ind.</th>
+								<th width="5%" class="hcenter-row">Oc.</th>
+								<th width="10%" class="hcenter-row">&Aacute. Resolutoria</th-->
+							</tr>
+						</thead>
+						<tbody>
+							
+						
+						</tbody>
+					</table>
+				</div>
+				<div style="display:none">
+					<div id="detalle_inc_content" style="padding:10px; background:#fff;">
+						<table border="0" width="100%" height="92%"  class="filtros_style">
+							<tr>
+								<td class="header_style">Comentarios</td>
+							</tr>
+							<tr>
+								<td id="comentario_text" class="cell_style_justify"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		]]>
+	</Content> 
+</Module>
