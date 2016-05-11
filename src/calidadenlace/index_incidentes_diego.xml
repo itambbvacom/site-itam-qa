@@ -14,7 +14,7 @@
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.editable-select.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.fixedheadertable.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
-			<script src="index_incidentes_diego.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/calidadenlace/index_incidentes_diego.js"></script>
 			<div id="dashboard">
 				
 				<table width="87%" align="center">
