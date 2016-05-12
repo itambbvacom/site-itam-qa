@@ -102,8 +102,8 @@
 	font-weight: bold;
 }
 .divtabla-style {
-        height: 300px;
-		width: 1190px;
+        height: 400px;
+		width: 95%;
 		margin:0 auto;
         overflow-x: auto;
         overflow-y: auto;
@@ -115,4 +115,14 @@
 
 .hcenter-row {
 	text-align: center;
+}
+
+.divtablacoment-style {
+        height: 150px;
+        overflow-x: auto;
+        overflow-y: auto;
+}
+.divtablacoment-width {
+        width: 95%;
+		margin:0 auto;
 }
