@@ -83,11 +83,11 @@
 	border: 1px solid #C8C8C8;
 	padding: 5px;
 }
-.tabla-style th {
+.tabla-style th, .tablacom-style th{
 	border: 1px solid #FFFFFF;
 	padding: 5px;
 }
-.tabla-style tbody tr td {
+.tabla-style tbody tr td, .tablacom-style tbody tr td {
 	background-color: #FFFFFF;
 	font-size: 12px;
 }
@@ -95,7 +95,11 @@
 .tabla-style thead tr th,
 .tabla-style thead tr td,
 .tabla-style tfoot tr th, 
-.tabla-style tfoot tr td {
+.tabla-style tfoot tr td,
+.tablacom-style thead tr th,
+.tablacom-style thead tr td,
+.tablacom-style tfoot tr th, 
+.tablacom-style tfoot tr td {
 	background-color: #094FA4;
 	font-size: 14px;
 	color: #FFFFFF;
@@ -125,4 +129,8 @@
 .divtablacoment-width {
         width: 95%;
 		margin:0 auto;
+}
+.tablacom-style td {
+	border: 1px solid #FFFFFF;
+	padding: 5px;
 }
