@@ -122,15 +122,23 @@
 }
 
 .divtablacoment-style {
-        height: 150px;
-        overflow-x: auto;
-        overflow-y: auto;
+    height: 150px;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 .divtablacoment-width {
-        width: 95%;
-		margin:0 auto;
+    width: 95%;
+	margin:0 auto;
 }
 .tablacom-style td {
 	border: 1px solid #FFFFFF;
 	padding: 5px;
+}
+
+.divtablaoc-style {
+    height: 280px;
+	width: 95%;
+	margin:0 auto;
+    overflow-x: auto;
+    overflow-y: auto;
 }
