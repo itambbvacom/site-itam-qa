@@ -42,6 +42,7 @@ var column_folio_2 = 15;
 var column_folio_3 = 16;
 var data = [];
 var dataDetalle = [];
+var dataOcurrencias = [];
 var data_area_responsable = [];
 var data_area_resolutoria = [];
 var data_aplicativo = [];
@@ -54,6 +55,16 @@ var cdet_fecha = 1;
 var cdet_usuario = 2;
 var cdet_comentario = 3;
 var cdet_tipo = 4;
+
+var coc_folio_padre = 0;
+var coc_folio = 1;
+var coc_titulo = 2;
+var coc_aplicativo = 3;
+var coc_fecha_registro = 4;
+var coc_estatus = 5;
+var coc_fecha_estatus = 6;
+var coc_ind = 7;
+var coc_area_responsable = 8;
 
 if(typeof String.prototype.trim !== 'function') { 
   String.prototype.trim = function() {
@@ -69,7 +80,17 @@ function draw() {
 	query.send(handleQueryResponse);
 	var queryDetalle = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1bvYvZzkrODKRFDfJ2QS6RYMqrWWTI1TI9O4614Ab__M&gid=1919145693');
 	queryDetalle.send(handleQueryResponseDetalle);
+	var queryOcurrencias = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1bvYvZzkrODKRFDfJ2QS6RYMqrWWTI1TI9O4614Ab__M&gid=1604511922');
+	queryOcurrencias.send(handleQueryResponseOcurrencias);
 		
+}
+
+function handleQueryResponseOcurrencias(response) {
+		if (response.isError()) {
+				alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+				return;
+		}
+		dataOcurrencias = response.getDataTable();
 }
 
 function handleQueryResponseDetalle(response) {
@@ -216,7 +237,12 @@ function loadDataTable() {
 			else
 				circle == "";
 			cad = cad + '<td class="vcenter-row hcenter-row " style="color:red;">' + circle + '</td>';
-			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_oc) + '</td>';
+			
+			if (data.getValue(row, column_oc) > 1)
+				cad = cad + '<td class="vcenter-row hcenter-row"><a id="' + data.getValue(row, column_folio) + '" class="detalle_oc" href="#detalle_oc_content" onclick="getOcurrencias(this);">' + data.getValue(row, column_oc) + '</a></td>';
+			else
+				cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_oc) + '</td>';
+			
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_area_resolutoria) + '</td>';
 			cad = cad + '</tr>';
 		}
@@ -229,6 +255,7 @@ function loadDataTable() {
 	$('#tabla-incidencias').fixedHeaderTable('show', 1000);
 	ajustar();
 	$(".detalle_inc").colorbox({inline:true, width:"70%", height:"90%"});
+	$(".detalle_oc").colorbox({inline:true, width:"80%", height:"50%"});
 }
 
 function ajustar() {
@@ -312,8 +339,43 @@ function getDetalle(elemento) {
 	$("#tabla-comentarios tbody").append(cadComentarios);
 	$("#tabla-diagnostico tbody").empty();
 	$("#tabla-diagnostico tbody").append(cadDiagnostico);
-	//$('#tabla-comentarios').fixedHeaderTable('destroy');
-	//$('#tabla-comentarios').fixedHeaderTable();
-	//$('#tabla-comentarios').fixedHeaderTable('show', 1000);
-	//ajustar();
+}
+
+function getOcurrencias(elemento) {
+	var cad = "";
+	var found = true;
+	for (var row = 0; row < dataOcurrencias.getNumberOfRows(); row++) {
+		found = true;
+		
+		if (!(elemento.id == dataOcurrencias.getValue(row, coc_folio_padre))) {
+				found = false;
+		}
+		
+		if (found == true) {
+			var circle = "";
+			cad = cad + '<tr>';
+			
+			cad = cad + '<td width="96px">' + dataOcurrencias.getValue(row, coc_folio) + '</td>';
+			cad = cad + '<td width="315px">' + dataOcurrencias.getValue(row, coc_titulo) + '</td>';
+			cad = cad + '<td width="140px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_aplicativo) + '</td>';
+			cad = cad + '<td width="105px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_fecha_registro) + '</td>';
+			cad = cad + '<td width="110px">' + dataOcurrencias.getValue(row, coc_estatus) + '</td>';
+			cad = cad + '<td width="105px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_fecha_estatus) + '</td>';
+			if (dataOcurrencias.getValue(row, coc_ind) == "1")
+				circle = "&#9899;";
+			else
+				circle == "";
+			cad = cad + '<td width="40px" class="hcenter-row " style="color:red;">' + circle + '</td>';
+			
+			cad = cad + '<td width="140px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_area_responsable) + '</td>';
+			cad = cad + '</tr>';
+		}
+		
+	}
+	$("#tabla-ocurrencias tbody").empty();
+	$("#tabla-ocurrencias tbody").append(cad);
+	$('#tabla-ocurrencias').fixedHeaderTable('destroy');
+	$('#tabla-ocurrencias').fixedHeaderTable();
+	$('#tabla-ocurrencias').fixedHeaderTable('show', 1000);
+	ajustar();
 }
