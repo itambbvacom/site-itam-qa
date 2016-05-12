@@ -16,6 +16,7 @@
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.fixedheadertable.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/src/calidadenlace/index_incidentes_diego.js"></script>
+
 			<div id="dashboard">
 				
 				<table width="87%" align="center">
@@ -139,8 +140,8 @@
 				</div>
 				<div style="display:none">
 					<div id="detalle_oc_content" style="padding:10px; background:#fff;">
-						<div class="divtablacoment-width">
-							<table class="tabla-style" cellpadding="0" cellspacing="0">
+						<div class="divtablaoc-style">
+							<table class="tabla-style" id="tabla-ocurrencias" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr>
 										<th width="100px" class="hcenter-row">Folio</th>
@@ -151,14 +152,10 @@
 										<th width="105px" class="hcenter-row">F. Estatus</th>
 										<th width="22px" class="hcenter-row">Ind.</th>
 										<th width="140px" class="hcenter-row">&Aacute. Resolutoria</th>
+										
 									</tr>
 								</thead>
-							</table>
-						</div>
-						<div class="divtablacoment-width divtablacoment-style">
-							<table class="tabla-style" id="tabla-ocurrencias" cellpadding="0" cellspacing="0" style="border: 1px solid #FFFFFF;">
-								<tbody>
-								</tbody>
+								<tbody></tbody>
 							</table>
 						</div>
 					</div>
