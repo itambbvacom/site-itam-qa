@@ -103,7 +103,7 @@
 						</table>
 						<div style="height: 30px;"></div>
 						<div class="divtablacoment-width">
-							<table class="tabla-style" cellpadding="0" cellspacing="0">
+							<table class="tablacom-style" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr>
 										<th width="1000px" class="hcenter-row">Comentario de Seguimiento</th>
@@ -112,7 +112,7 @@
 							</table>
 						</div>
 						<div class="divtablacoment-width divtablacoment-style">
-							<table class="tabla-style" id="tabla-comentarios" cellpadding="0" cellspacing="0">
+							<table class="tablacom-style" id="tabla-comentarios" cellpadding="0" cellspacing="0">
 								<tbody>
 									
 								</tbody>
@@ -120,7 +120,7 @@
 						</div>
 						<div style="height: 30px;"></div>
 						<div class="divtablacoment-width">
-							<table class="tabla-style" cellpadding="0" cellspacing="0">
+							<table class="tablacom-style" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr>
 										<th width="1000px" class="hcenter-row">Diagn&oacutestico de Soluci&oacuten</th>
@@ -129,9 +129,35 @@
 							</table>
 						</div>
 						<div class="divtablacoment-width divtablacoment-style">
-							<table class="tabla-style" id="tabla-diagnostico" cellpadding="0" cellspacing="0">
+							<table class="tablacom-style" id="tabla-diagnostico" cellpadding="0" cellspacing="0">
 								<tbody>
 									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div style="display:none">
+					<div id="detalle_oc_content" style="padding:10px; background:#fff;">
+						<div class="divtablacoment-width">
+							<table class="tabla-style" cellpadding="0" cellspacing="0">
+								<thead>
+									<tr>
+										<th width="100px" class="hcenter-row">Folio</th>
+										<th width="320px" class="hcenter-row">T&iacutetulo</th>
+										<th width="140px" class="hcenter-row">Aplicativo</th>
+										<th width="105px" class="hcenter-row">F. Registro</th>
+										<th width="110px" class="hcenter-row">Estatus</th>
+										<th width="105px" class="hcenter-row">F. Estatus</th>
+										<th width="22px" class="hcenter-row">Ind.</th>
+										<th width="140px" class="hcenter-row">&Aacute. Resolutoria</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="divtablacoment-width divtablacoment-style">
+							<table class="tabla-style" id="tabla-ocurrencias" cellpadding="0" cellspacing="0" style="border: 1px solid #FFFFFF;">
+								<tbody>
 								</tbody>
 							</table>
 						</div>
