@@ -225,11 +225,11 @@ function loadDataTable() {
 			var circle = "";
 			cad = cad + '<tr>';
 			
-			cad = cad + '<td class="vcenter-row"><a id="' + data.getValue(row, column_folio) + '" class="detalle_inc" href="#detalle_inc_content" onclick="getDetalle(this);">' + data.getValue(row, column_folio) + '</a></td>';
+			cad = cad + '<td class="vcenter-row hcenter-row"><a id="' + data.getValue(row, column_folio) + '" class="detalle_inc" href="#detalle_inc_content" onclick="getDetalle(this);">' + data.getValue(row, column_folio) + '</a></td>';
 			cad = cad + '<td class="vcenter-row">' + data.getValue(row, column_titulo) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_aplicativo) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_registro) + '</td>';
-			cad = cad + '<td class="vcenter-row">' + data.getValue(row, column_estatus) + '</td>';
+			cad = cad + '<td class="vcenter-row hcenter-row">' + data.getValue(row, column_estatus) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_estatus) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_compromiso) + '</td>';
 			if (data.getValue(row, column_ind) == "1")
@@ -355,19 +355,19 @@ function getOcurrencias(elemento) {
 			var circle = "";
 			cad = cad + '<tr>';
 			
-			cad = cad + '<td width="96px">' + dataOcurrencias.getValue(row, coc_folio) + '</td>';
-			cad = cad + '<td width="315px">' + dataOcurrencias.getValue(row, coc_titulo) + '</td>';
-			cad = cad + '<td width="140px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_aplicativo) + '</td>';
-			cad = cad + '<td width="105px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_fecha_registro) + '</td>';
-			cad = cad + '<td width="110px">' + dataOcurrencias.getValue(row, coc_estatus) + '</td>';
-			cad = cad + '<td width="105px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_fecha_estatus) + '</td>';
+			cad = cad + '<td class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_folio) + '</td>';
+			cad = cad + '<td>' + dataOcurrencias.getValue(row, coc_titulo) + '</td>';
+			cad = cad + '<td class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_aplicativo) + '</td>';
+			cad = cad + '<td class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_fecha_registro) + '</td>';
+			cad = cad + '<td class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_estatus) + '</td>';
+			cad = cad + '<td class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_fecha_estatus) + '</td>';
 			if (dataOcurrencias.getValue(row, coc_ind) == "1")
 				circle = "&#9899;";
 			else
 				circle == "";
-			cad = cad + '<td width="40px" class="hcenter-row " style="color:red;">' + circle + '</td>';
+			cad = cad + '<td class="hcenter-row " style="color:red;">' + circle + '</td>';
 			
-			cad = cad + '<td width="140px" class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_area_responsable) + '</td>';
+			cad = cad + '<td class="hcenter-row ">' + dataOcurrencias.getValue(row, coc_area_responsable) + '</td>';
 			cad = cad + '</tr>';
 		}
 		
@@ -375,7 +375,6 @@ function getOcurrencias(elemento) {
 	$("#tabla-ocurrencias tbody").empty();
 	$("#tabla-ocurrencias tbody").append(cad);
 	$('#tabla-ocurrencias').fixedHeaderTable('destroy');
-	$('#tabla-ocurrencias').fixedHeaderTable();
 	$('#tabla-ocurrencias').fixedHeaderTable('show', 1000);
-	ajustar();
 }
+
