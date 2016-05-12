@@ -8,6 +8,7 @@
 			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.editable-select.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/fixedheadertable.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/common_styles.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_gral_itam.css" rel="stylesheet">
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
@@ -56,26 +57,16 @@
 						<thead>
 							<tr>
 								<th width="80px" class="hcenter-row">Folio</th>
-								<th width="290px" class="hcenter-row">Titulo</th>
+								<th width="320px" class="hcenter-row">T&iacutetulo</th>
 								<th width="140px" class="hcenter-row">Aplicativo</th>
 								<th width="80px" class="hcenter-row">F. Registro</th>
-								<th width="10px" class="hcenter-row">Estatus</th>
+								<th width="30px" class="hcenter-row">Estatus</th>
 								<th width="80px" class="hcenter-row">F. Estatus</th>
 								<th width="110px" class="hcenter-row">F. Compromiso</th>
 								<th width="5px" class="hcenter-row">Ind.</th>
 								<th width="5px" class="hcenter-row">Oc.</th>
-								<th width="180px" class="hcenter-row">&Aacute. Resolutoria</th>
+								<th width="130px" class="hcenter-row">&Aacute. Resolutoria</th>
 								
-								<!--th width="5%" class="hcenter-row">Folio</th>
-								<th width="30%" class="hcenter-row">Titulo</th>
-								<th width="12%" class="hcenter-row">Aplicativo</th>
-								<th width="8%" class="hcenter-row">F. Registro</th>
-								<th width="5%" class="hcenter-row">Estatus</th>
-								<th width="8%" class="hcenter-row">F. Estatus</th>
-								<th width="12%" class="hcenter-row">F. Compromiso</th>
-								<th width="5%" class="hcenter-row">Ind.</th>
-								<th width="5%" class="hcenter-row">Oc.</th>
-								<th width="10%" class="hcenter-row">&Aacute. Resolutoria</th-->
 							</tr>
 						</thead>
 						<tbody>
@@ -86,14 +77,65 @@
 				</div>
 				<div style="display:none">
 					<div id="detalle_inc_content" style="padding:10px; background:#fff;">
-						<table border="0" width="100%" height="92%"  class="filtros_style">
+						<table width="87%" align="center">
 							<tr>
-								<td class="header_style">Comentarios</td>
+								<td height="50px" style="text-align:left;" class="filtros_style">Folio IT AM:</td>
+								<td><input type="text" class="input-style" id="sFolioITAM"></td>
+								<td></td>
+								<td style="text-align:left;" class="filtros_style">Folio Usuario:</td>
+								<td ><input type="text" class="input-style" id="sFolioUsuario"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
 							</tr>
 							<tr>
-								<td id="comentario_text" class="cell_style_justify"></td>
+								<td width="12%" height="50px" style="text-align:left;" class="filtros_style">Folio CGR:</td>
+								<td width="18%"><input type="text" class="input-style" id="sFolioCGR"></td>
+								<td width="5%"></td>
+								<td width="12%" height="50px" style="text-align:left;" class="filtros_style">Folio Jira:</td>
+								<td width="18%"><input type="text" class="input-style" id="sFolioJira"></td>
+								<td width="5%"></td>
+								<td width="12%" height="50px" style="text-align:left;" class="filtros_style">Folio Libre:</td>
+								<td width="18%"><input type="text" class="input-style" id="sFolioLibre"></td>
 							</tr>
+
 						</table>
+						</br>
+						<div class="divtablacoment-width">
+							<table class="tabla-style" cellpadding="0" cellspacing="0">
+								<thead>
+									<tr>
+										<th width="1000px" class="hcenter-row">Comentario de Seguimiento</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="divtablacoment-width divtablacoment-style">
+							<table class="tabla-style" id="tabla-comentarios" cellpadding="0" cellspacing="0">
+								<tbody>
+									
+								</tbody>
+							</table>
+						</div>
+						</br>
+						</br>
+						<div class="divtablacoment-width">
+							<table class="tabla-style" cellpadding="0" cellspacing="0">
+								<thead>
+									<tr>
+										<th width="1000px" class="hcenter-row">Diagn&oacutestico de Soluci&oacuten</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="divtablacoment-width divtablacoment-style">
+							<table class="tabla-style" id="tabla-diagnostico" cellpadding="0" cellspacing="0">
+								<tbody>
+									
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
