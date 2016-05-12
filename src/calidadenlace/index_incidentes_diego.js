@@ -41,12 +41,19 @@ var column_folio_1 = 14;
 var column_folio_2 = 15;
 var column_folio_3 = 16;
 var data = [];
+var dataDetalle = [];
 var data_area_responsable = [];
 var data_area_resolutoria = [];
 var data_aplicativo = [];
 var data_usuario_afectado = [];
 var data_area_negocio = [];
 var data_estatus = [];
+
+var cdet_folio = 0;
+var cdet_fecha = 1;
+var cdet_usuario = 2;
+var cdet_comentario = 3;
+var cdet_tipo = 4;
 
 if(typeof String.prototype.trim !== 'function') { 
   String.prototype.trim = function() {
@@ -60,7 +67,17 @@ function draw() {
 
 	var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1bvYvZzkrODKRFDfJ2QS6RYMqrWWTI1TI9O4614Ab__M&gid=0');
 	query.send(handleQueryResponse);
+	var queryDetalle = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1bvYvZzkrODKRFDfJ2QS6RYMqrWWTI1TI9O4614Ab__M&gid=1919145693');
+	queryDetalle.send(handleQueryResponseDetalle);
 		
+}
+
+function handleQueryResponseDetalle(response) {
+		if (response.isError()) {
+				alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+				return;
+		}
+		dataDetalle = response.getDataTable();
 }
 
 function handleQueryResponse(response) {
@@ -184,8 +201,9 @@ function loadDataTable() {
 				}
 		}
 		if (found == true) {
+			var circle = "";
 			cad = cad + '<tr>';
-			//cad = cad + '<td class="vcenter-row">' + data.getValue(row, column_folio) + '</td>';
+			
 			cad = cad + '<td class="vcenter-row"><a id="' + data.getValue(row, column_folio) + '" class="detalle_inc" href="#detalle_inc_content" onclick="getDetalle(this);">' + data.getValue(row, column_folio) + '</a></td>';
 			cad = cad + '<td class="vcenter-row">' + data.getValue(row, column_titulo) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_aplicativo) + '</td>';
@@ -193,7 +211,11 @@ function loadDataTable() {
 			cad = cad + '<td class="vcenter-row">' + data.getValue(row, column_estatus) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_estatus) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_compromiso) + '</td>';
-			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_ind) + '</td>';
+			if (data.getValue(row, column_ind) == "1")
+				circle = "&#9899;";
+			else
+				circle == "";
+			cad = cad + '<td class="vcenter-row hcenter-row " style="color:red;">' + circle + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_oc) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_area_resolutoria) + '</td>';
 			cad = cad + '</tr>';
@@ -206,16 +228,92 @@ function loadDataTable() {
 	$('#tabla-incidencias').fixedHeaderTable();
 	$('#tabla-incidencias').fixedHeaderTable('show', 1000);
 	ajustar();
-	$(".detalle_inc").colorbox({inline:true, width:"60%", height:"50%"});
+	$(".detalle_inc").colorbox({inline:true, width:"70%", height:"90%"});
 }
 
 function ajustar() {
-
+	for (var i = 0; i < 10; i++) {
+		$(".fht-thead tr:last").get(0).children[i].width = $(".fht-tbody tr:last").get(0).children[i].scrollWidth + 1;
+		$(".fht-thead tr:last").get(0).children[i].scrollWidth = $(".fht-tbody tr:last").get(0).children[i].scrollWidth;
+	}
 	if ($('.fht-tbody').hasVerticalScrollbar() == false) {
 		$(".fht-thead th:last").css("padding-right","6px");
 	}
 }
 
 function getDetalle(elemento) {
-	alert(elemento.id);
+	var found;
+	for (var row = 0; row < data.getNumberOfRows(); row++) {
+		found = true;
+
+		
+		if (!(elemento.id == data.getValue(row, column_folio))) {
+					found = false;
+		}
+		if (found == true) {
+			$("#sFolioUsuario").val(data.getValue(row, column_folio_usuario));
+			$("#sFolioCGR").val(data.getValue(row, column_folio_1));
+			$("#sFolioJira").val(data.getValue(row, column_folio_2));
+			$("#sFolioLibre").val(data.getValue(row, column_folio_3));
+			$("#sFolioITAM").val(data.getValue(row, column_folio));
+		
+		}
+	}
+	
+	
+	var cadComentarios = "";
+	var cadDiagnostico = "";
+	for (var row = 0; row < dataDetalle.getNumberOfRows(); row++) {
+		found = true;
+
+		
+		if (!(elemento.id == dataDetalle.getValue(row, cdet_folio))) {
+					found = false;
+		}
+		
+		
+		if (found == true) {
+			
+			
+			var nombres = dataDetalle.getValue(row, cdet_usuario).split(" ");
+			var abr = '(';
+			for (var j = 0; j < nombres.length; j++) {
+				abr = abr + nombres[j].substring(0, 1);
+			}
+			abr = abr + ')';
+			
+			
+			var comentario = dataDetalle.getValue(row, cdet_comentario);
+			if (comentario != null) {
+				comentario = comentario.split('>').join('&#62');
+				comentario = comentario.split('<').join('&#60');
+				comentario = comentario.split('"').join('&#34');
+			}
+			
+			if (dataDetalle.getValue(row, cdet_tipo) != "3") {
+				cadComentarios = cadComentarios + '<tr>';
+				cadComentarios = cadComentarios + '<td width="200px" class="cell_style_justify">' + dataDetalle.getValue(row, cdet_fecha) + ' ' + abr + '</td>';
+				cadComentarios = cadComentarios + '<td width="800px" class="cell_style_justify">' + comentario + '</td>';
+				cadComentarios = cadComentarios + '</tr>';
+			} else {
+				cadDiagnostico = cadDiagnostico + '<tr>';
+				cadDiagnostico = cadDiagnostico + '<td width="200px" class="cell_style_justify">' + dataDetalle.getValue(row, cdet_fecha) + ' ' + abr + '</td>';
+				cadDiagnostico = cadDiagnostico + '<td width="800px" class="cell_style_justify">' + comentario + '</td>';
+				cadDiagnostico = cadDiagnostico + '</tr>';
+			}
+			
+			
+			
+		}
+
+		
+	}
+	$("#tabla-comentarios tbody").empty();
+	$("#tabla-comentarios tbody").append(cadComentarios);
+	$("#tabla-diagnostico tbody").empty();
+	$("#tabla-diagnostico tbody").append(cadDiagnostico);
+	//$('#tabla-comentarios').fixedHeaderTable('destroy');
+	//$('#tabla-comentarios').fixedHeaderTable();
+	//$('#tabla-comentarios').fixedHeaderTable('show', 1000);
+	//ajustar();
 }
