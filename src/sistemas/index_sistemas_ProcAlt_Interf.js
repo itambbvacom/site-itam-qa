@@ -60,7 +60,7 @@ google.setOnLoadCallback(getdata);
 google.load('visualization', '1.1', {packages: ['controls','table']});
 
 function getdata() {
-    
+
 	/* Hojas de LAB
 	https://docs.google.com/spreadsheets/d/1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y/edit#gid=1
 	var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y&gid=1');
@@ -107,12 +107,11 @@ function getdata() {
 	
 	*/
 	
-	
 }
 function handleQueryResponseGAPS(response) {
 	if (response.isError()) {
 		//alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-		alert('No se tiene permisos al archivo de sistemas');
+		alert('No se tiene permisos al archivo de sistemas Gaps.');
 		return;
 	}
 	dataGAPS = response.getDataTable();
@@ -120,7 +119,7 @@ function handleQueryResponseGAPS(response) {
 function handleQueryResponseManuals(response) {
 	if (response.isError()) {
 		//alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-		alert('No se tiene permisos al archivo de sistemas');
+		alert('No se tiene permisos al archivo de sistemas Manuals.');
 		return;
 	}
 	dataManuals = response.getDataTable();
@@ -128,7 +127,7 @@ function handleQueryResponseManuals(response) {
 function handleQueryResponse(response) {
 	if (response.isError()) {
 		//alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-		alert('No se tiene permisos al archivo de sistemas');
+		alert('No se tiene permisos al archivo de sistemas.');
 		return;
 	}
 	data = response.getDataTable();
@@ -231,8 +230,11 @@ function getData(elemento) {
 	$('#id_content04_mapa').remove();
 	$('#content-tab4-gapf-det').remove();
 	$('#content-tab4-gapt-det').remove();
+	$('#content-tab5').remove();
+	$('#content-tab6').remove();
 	row_selected = null;
 	for (var row = 3; row < data.getNumberOfRows(); row++) {
+		
 		if (elemento.text == data.getValue(row, col_aplicativo)) {
 			row_selected = row;
 			$("#id_aplicativo").text(data.getValue(row, col_aplicativo));
@@ -319,8 +321,10 @@ function getData(elemento) {
 	var html_mf = '';
 	var html_mt = '';
 	var html_rutas = '';
+	var html_ba = '';
+	var html_s = '';
 	
-	var countMF = 1, countMT = 1, countRU = 1;
+	var countMF = 1, countMT = 1, countRU = 1, countBA = 1, countS = 1;
 	for (var rowM = 1; rowM < dataManuals.getNumberOfRows(); rowM++) {
 		if (elemento.text == dataManuals.getValue(rowM, col_aplicativoM)) {
 			if (dataManuals.getValue(rowM, col_clasificacionM) == "MF") {
@@ -344,7 +348,24 @@ function getData(elemento) {
 			if (dataManuals.getValue(rowM, col_clasificacionM) == "R") {
 				html_rutas = html_rutas + '<h3 style="margin: 0;">' + dataManuals.getValue(rowM, col_tituloM) + '</h3><p>' + dataManuals.getValue(rowM, col_datoM) + '</p>';
 			}
-
+			if (dataManuals.getValue(rowM, col_clasificacionM) == "B") {
+				if (countBA%2 == 1) {
+					html_ba = html_ba + '<tr><td width="45%"><p><a href="' + dataManuals.getValue(rowM, col_datoM) + '" >' + dataManuals.getValue(rowM, col_tituloM) + '</a></p></td>';
+				} else {
+					html_ba = html_ba + '<td width="10%"></td>';
+					html_ba = html_ba + '<td width="45%"><p><a href="' + dataManuals.getValue(rowM, col_datoM) + '" >' + dataManuals.getValue(rowM, col_tituloM) + '</a></p></td></tr>';
+				}
+				countBA++;
+			}
+			if (dataManuals.getValue(rowM, col_clasificacionM) == "S") {
+				if (countS%2 == 1) {
+					html_s = html_s + '<tr><td width="45%"><p><a href="' + dataManuals.getValue(rowM, col_datoM) + '" >' + dataManuals.getValue(rowM, col_tituloM) + '</a></p></td>';
+				} else {
+					html_s = html_s + '<td width="10%"></td>';
+					html_s = html_s + '<td width="45%"><p><a href="' + dataManuals.getValue(rowM, col_datoM) + '" >' + dataManuals.getValue(rowM, col_tituloM) + '</a></p></td></tr>';
+				}
+				countS++;
+			}
 		}
 	}
 	
@@ -356,6 +377,13 @@ function getData(elemento) {
 	}
 	if (html_rutas.length > 0) {
 		$('#tab3').append('<div id="content-tab3">' + html_rutas + '</div>');
+	}
+	if (html_ba.length > 0) {
+		$('#tab5').append('<div id="content-tab5"><table width="100%">' + html_ba + '</table></div>');
+	}
+	
+	if (html_s.length > 0) {
+		$('#tab6').append('<div id="content-tab6"><table width="100%">' + html_s + '</table></div>');
 	}
 	
 	var col_aplicativoG = 0;
@@ -525,6 +553,6 @@ function mostrarocultardetalle() {
 	cadena = $("#id_header04")[0].className;
 	if (cadena.search("ui-state-active") != -1) {
 		$("#id_header04").trigger('click');
-	}
+	} 
 	
 }
