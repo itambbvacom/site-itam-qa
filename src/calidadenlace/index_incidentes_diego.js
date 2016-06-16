@@ -135,6 +135,14 @@ function loadSelect() {
 	data_usuario_afectado = data_usuario_afectado.unique();
 	data_area_negocio = data_area_negocio.unique();
 	data_estatus = data_estatus.unique();
+	
+	data_area_responsable = data_area_responsable.sort();
+	data_area_resolutoria = data_area_resolutoria.sort();
+	data_aplicativo = data_aplicativo.sort();
+	data_usuario_afectado = data_usuario_afectado.sort();
+	data_area_negocio = data_area_negocio.sort();
+	data_estatus = data_estatus.sort();
+	
 	loadSelectOptions($("#sAreaResponsable"), data_area_responsable);
 	loadSelectOptions($("#sAreaResolutoria"), data_area_resolutoria);
 	loadSelectOptions($("#sAplicativo"), data_aplicativo);
@@ -150,6 +158,26 @@ function loadSelect() {
 	$("#sFolio").blur(function() {
 		loadDataTable();
 	});
+	$("#sFolio").focus(function() {
+		$(this).select();
+	});
+	$("#sFolio").keypress(function(event) {
+		if (event.keyCode == 13) {
+			loadDataTable();
+		}
+	});
+	$(".es-input").focus(function() {
+		$(this).select();
+	});
+	$(".es-input").keypress(function(event) {
+		if (event.keyCode == 13) {
+			var id = $(this).get(0).parentNode.id;
+			id = id.replace("c","h");
+			$("#"+id).val($(this).val().trim());
+			loadDataTable();
+		}
+	});
+	
 }
 
 function loadSelectOptions(combo, data_select) {
@@ -168,10 +196,13 @@ function loadSelectOptions(combo, data_select) {
 			
 		}
 	});
+
 }
 
 function loadDataTable() {
 	var cad = "";
+	var fecha_actual = new Date();
+    fecha_actual = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate());
 	var found = true;
 	for (var row = 0; row < data.getNumberOfRows(); row++) {
 		found = true;
@@ -229,9 +260,19 @@ function loadDataTable() {
 			cad = cad + '<td class="vcenter-row">' + data.getValue(row, column_titulo) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_aplicativo) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_registro) + '</td>';
-			cad = cad + '<td class="vcenter-row hcenter-row">' + data.getValue(row, column_estatus) + '</td>';
+			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_estatus) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_estatus) + '</td>';
-			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_compromiso) + '</td>';
+			
+			var fecha_compromiso = getFechaCompromiso(data.getValue(row, column_fecha_compromiso));
+			var estilo_fecha_compromiso = "";
+			
+			if (((((fecha_compromiso - fecha_actual)/1000)/60)/60)/24 <= 2) {
+				estilo_fecha_compromiso = 'class="subrayado_amarillo"';
+			}
+			if (fecha_actual >= fecha_compromiso) {
+				estilo_fecha_compromiso = 'class="subrayado_rojo"';
+			}
+			cad = cad + '<td class="vcenter-row hcenter-row "><div ' + estilo_fecha_compromiso + '>' + data.getValue(row, column_fecha_compromiso) + '</div></td>';
 			if (data.getValue(row, column_ind) == "1")
 				circle = "&#9899;";
 			else
@@ -378,3 +419,56 @@ function getOcurrencias(elemento) {
 	$('#tabla-ocurrencias').fixedHeaderTable('show', 1000);
 }
 
+function getFechaCompromiso(fecha_compromiso) {
+	var dia = fecha_compromiso.substring(0,3);
+	dia = dia - 0;
+	var mes = 0;
+	switch (fecha_compromiso.substring(3,6).toUpperCase()) {
+		case "ENE":
+			mes = 0;
+			break;
+		case "FEB":
+			mes = 1;
+			break;
+		case "MAR":
+			mes = 2;
+			break;
+		case "ABR":
+			mes = 3;
+			break;
+		case "MAY":
+			mes = 4;
+			break;
+		case "JUN":
+			mes = 5;
+			break;
+		case "JUL":
+			mes = 6;
+			break;
+		case "AGO":
+			mes = 7;
+			break;
+		case "SEP":
+			mes = 8;
+			break;
+		case "OCT":
+			mes = 9;
+			break;
+		case "NOV":
+			mes = 10;
+			break;
+		case "DIC":
+			mes = 11;
+			break;
+	}
+	var anio = fecha_compromiso.substring(7,10);
+	anio = anio - 0;
+	anio = anio + 2000;
+	return new Date(anio, mes, dia);
+}
+function limpiar() {
+	$("input:hidden").val('');
+	$(".es-input").val('');
+	$("#sFolio").val('');
+	loadDataTable();
+}
