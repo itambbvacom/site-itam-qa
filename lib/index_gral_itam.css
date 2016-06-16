@@ -142,3 +142,15 @@
     overflow-x: auto;
     overflow-y: auto;
 }
+
+.subrayado_rojo {
+	border-style: solid;
+    border-color: #FFFFFF #FFFFFF #FF0000 #FFFFFF;
+	display: inline-block;
+}
+
+.subrayado_amarillo {
+	border-style: solid;
+    border-color: #FFFFFF #FFFFFF #FFD966 #FFFFFF;
+	display: inline-block;
+}
