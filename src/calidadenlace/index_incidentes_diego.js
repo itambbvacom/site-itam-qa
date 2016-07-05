@@ -40,6 +40,7 @@ var column_folio_usuario = 13;
 var column_folio_1 = 14;
 var column_folio_2 = 15;
 var column_folio_3 = 16;
+var column_clave_estatus = 17;
 var data = [];
 var dataDetalle = [];
 var dataOcurrencias = [];
@@ -266,12 +267,15 @@ function loadDataTable() {
 			var fecha_compromiso = getFechaCompromiso(data.getValue(row, column_fecha_compromiso));
 			var estilo_fecha_compromiso = "";
 			
-			if (((((fecha_compromiso - fecha_actual)/1000)/60)/60)/24 <= 2) {
-				estilo_fecha_compromiso = 'class="subrayado_amarillo"';
+			//if (((((fecha_compromiso - fecha_actual)/1000)/60)/60)/24 <= 2) {
+			//	estilo_fecha_compromiso = 'class="subrayado_amarillo"';
+			//}
+			if (data.getValue(row, column_clave_estatus) == 2) {
+				if (((((fecha_actual - fecha_compromiso)/1000)/60)/60)/24 >= 2) {
+					estilo_fecha_compromiso = 'class="subrayado_rojo"';
+				}
 			}
-			if (fecha_actual >= fecha_compromiso) {
-				estilo_fecha_compromiso = 'class="subrayado_rojo"';
-			}
+			
 			cad = cad + '<td class="vcenter-row hcenter-row "><div ' + estilo_fecha_compromiso + '>' + data.getValue(row, column_fecha_compromiso) + '</div></td>';
 			if (data.getValue(row, column_ind) == "1")
 				circle = "&#9899;";
