@@ -256,8 +256,11 @@ function loadDataTable() {
 		if (found == true) {
 			var circle = "";
 			cad = cad + '<tr>';
-			
-			cad = cad + '<td class="vcenter-row hcenter-row"><a id="' + data.getValue(row, column_folio) + '" class="detalle_inc" href="#detalle_inc_content" onclick="getDetalle(this);">' + data.getValue(row, column_folio) + '</a></td>';
+			var folio_id = data.getValue(row, column_folio);
+			if (data.getValue(row, column_folio_1).toUpperCase().startsWith("CGR")) {
+				folio_id = data.getValue(row, column_folio_1);
+			}
+			cad = cad + '<td class="vcenter-row hcenter-row"><a id="' + data.getValue(row, column_folio) + '" class="detalle_inc" href="#detalle_inc_content" onclick="getDetalle(this);">' + folio_id + '</a></td>';
 			cad = cad + '<td class="vcenter-row">' + data.getValue(row, column_titulo) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_aplicativo) + '</td>';
 			cad = cad + '<td class="vcenter-row hcenter-row ">' + data.getValue(row, column_fecha_registro) + '</td>';
