@@ -44,7 +44,7 @@
 						<td height="50px" id="cAplicativo"><input type="hidden" id="hAplicativo"><select id="sAplicativo" style="display: none;"></select></td>
 					</tr>
 					<tr>
-						<td width="13%" height="50px" style="text-align:left;" class="filtros_style">Usuario Afectado:</td>
+						<td width="13%" height="50px" style="text-align:left;" class="filtros_style">Campo Usuario_Afectado:</td>
 						<td width="23%" id="cUsuarioAfectado"><input type="hidden" id="hUsuarioAfectado"><select id="sUsuarioAfectado" style="display: none;"></select></td>
 						<td width="2%"></td>
 						<td width="10%" style="text-align:left; margin:10px 0px 0px 0px;" class="filtros_style">&Aacuterea Negocio:</td>
